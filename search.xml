@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/design/default/"/>
+      <url>/wiki/design/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> design </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/spring/springcloud/default/"/>
+      <url>/wiki/spring/springcloud/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+          <category> springcloud </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/python/default/"/>
+      <url>/wiki/python/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/database/h2/default/"/>
+      <url>/wiki/database/h2/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+          <category> h2 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/database/sql/default/"/>
+      <url>/wiki/database/sql/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+          <category> sql </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/tools/default/"/>
+      <url>/wiki/tools/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/algorithm/default/"/>
+      <url>/wiki/algorithm/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithm </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java集合框架</title>
+      <link href="/wiki/java/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/"/>
+      <url>/wiki/java/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="java8集合架构"><a href="#java8集合架构" class="headerlink" title="java8集合架构"></a>java8集合架构</h2><h3 id="常用成员"><a href="#常用成员" class="headerlink" title="常用成员"></a>常用成员</h3><img src="/wiki/java/java集合框架/集合框架架构.png" title="[集合常用成员]"><h3 id="Collection-接口系单列集合"><a href="#Collection-接口系单列集合" class="headerlink" title="Collection 接口系单列集合"></a>Collection 接口系单列集合</h3><img src="/wiki/java/java集合框架/Iterable.png" title="[collection]"><h3 id="Map-接口系双列集合"><a href="#Map-接口系双列集合" class="headerlink" title="Map 接口系双列集合"></a>Map 接口系双列集合</h3><img src="/wiki/java/java集合框架/Map.png" title="[Map]"><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springboot 启动流程分析</title>
+      <link href="/wiki/spring/springboot/springboot%20%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/"/>
+      <url>/wiki/spring/springboot/springboot%20%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-启动入口-（SrpingApplication）"><a href="#1-启动入口-（SrpingApplication）" class="headerlink" title="1.启动入口 （SrpingApplication）"></a>1.启动入口 （SrpingApplication）</h2><p> 大家熟悉的springboot的启动类，@SpringBootApplicationv + psvm（main方法）+ new SpringApplication().run(XXXX.class, args)</p><pre><code class="java">@SpringBootApplicationpublic class SummaryApplication {    public static void main(String[] args) {        SpringApplication application = new SpringApplication(); // 2        application.run(SummaryApplication.class, args); //3//      SpringApplication.run(SummaryApplication.class, args);  也可简化调用静态方法    }}</code></pre><h3 id="1-1-SpringBootApplication-注解"><a href="#1-1-SpringBootApplication-注解" class="headerlink" title="1.1 @SpringBootApplication 注解"></a>1.1 @SpringBootApplication 注解</h3><p>通过源码发现该注解只是@Configuration，@EnableAutoConfiguration，@ComponentScan 三个注解的组合，这是在springboot 1.5以后为这三个注解做的一个简写。接下来简单说下这三个注解的功能：</p><pre><code class="java">@Target(ElementType.TYPE)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration //1.1.1 注册为配置类@EnableAutoConfiguration //1.1.2 配置可自动装配@ComponentScan(excludeFilters = { //1.1.3 声明可扫描Bean   @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),  @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) })public @interface SpringBootApplication {  ...}</code></pre><h4 id="1-1-1-SpringBootConfiguration"><a href="#1-1-1-SpringBootConfiguration" class="headerlink" title="1.1.1 @SpringBootConfiguration"></a>1.1.1 @SpringBootConfiguration</h4><p>该注解就是spirng ioc容器中java config 配置方式的@Configuration ，注册当前类为spring ioc容器的配置类。</p><p>搭配@bean注解创建一个简单spring ioc配置类</p><pre><code class="java"> @Configuration      public class Conf {          @Bean          public Car car() {             Car car = new Car();              car.setWheel(wheel());              return car;          }         @Bean          public Wheel wheel() {              return new Wheel();          }      }</code></pre><h4 id="1-1-2-EnableAutoConfiguration"><a href="#1-1-2-EnableAutoConfiguration" class="headerlink" title="1.1.2 @EnableAutoConfiguration"></a>1.1.2 @EnableAutoConfiguration</h4><pre><code class="java">@Target(ElementType.TYPE)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@AutoConfigurationPackage@Import(AutoConfigurationImportSelector.class) //最为重要public @interface EnableAutoConfiguration {   String ENABLED_OVERRIDE_PROPERTY = &quot;spring.boot.enableautoconfiguration&quot;;   /**    * Exclude specific auto-configuration classes such that they will never be applied.    * @return the classes to exclude    */   Class&lt;?&gt;[] exclude() default {};   /**    * Exclude specific auto-configuration class names such that they will never be    * applied.    * @return the class names to exclude    * @since 1.3.0    */   String[] excludeName() default {};}</code></pre><p>@EnableAutoConfiguration借助@Import的帮助，将所有符合自动配置条件的bean定义加载到IoC容器，会根据类路径中的jar依赖为项目进行自动配置，如：添加了spring-boot-starter-web依赖，会自动添加Tomcat和Spring MVC的依赖，Spring Boot会对Tomcat和Spring MVC进行自动配置。</p><p><strong>最关键的要属@Import(EnableAutoConfigurationImportSelector.class)</strong> ，借助EnableAutoConfigurationImportSelector，@EnableAutoConfiguration可以帮助SpringBoot应用将所有符合条件的@Configuration配置都加载到当前SpringBoot创建并使用的IoC容器。就像一只“八爪鱼”一样，借助于Spring框架原有的一个工具类：SpringFactoriesLoader的支持，@EnableAutoConfiguration可以智能的自动配置功效才得以大功告成！</p><h4 id="1-1-3-ComponentScan"><a href="#1-1-3-ComponentScan" class="headerlink" title="1.1.3 @ComponentScan"></a>1.1.3 @ComponentScan</h4><p>@ComponentScan这个注解在Spring中很重要，它对应XML配置中的元素，@ComponentScan的功能其实就是自动扫描并加载符合条件的组件（比如@Component和@Repository等）或者bean定义，最终将这些bean定义加载到IoC容器中。</p><p>我们可以通过basePackages等属性来细粒度的定制@ComponentScan自动扫描的范围，如果不指定，则默认Spring框架实现会从声明@ComponentScan所在类的package进行扫描。</p><p>注：所以SpringBoot的启动类最好是放在root package下，因为默认不指定basePackages。</p><h2 id="2-构造器（Constructor）"><a href="#2-构造器（Constructor）" class="headerlink" title="2.构造器（Constructor）"></a>2.构造器（Constructor）</h2><pre><code class="java">/** * Create a new {@link SpringApplication} instance. The application context will load * beans from the specified primary sources (see {@link SpringApplication class-level} * documentation for details. The instance can be customized before calling * {@link #run(String...)}. * @param resourceLoader the resource loader to use * @param primarySources the primary bean sources * @see #run(Class, String[]) * @see #setSources(Set) */@SuppressWarnings({ &quot;unchecked&quot;, &quot;rawtypes&quot; })public SpringApplication(ResourceLoader resourceLoader, Class&lt;?&gt;... primarySources) {   this.resourceLoader = resourceLoader;   Assert.notNull(primarySources, &quot;PrimarySources must not be null&quot;);   this.primarySources = new LinkedHashSet&lt;&gt;(Arrays.asList(primarySources));   //2.1 判断当前程序类型   this.webApplicationType = WebApplicationType.deduceFromClasspath();   //2.2 使用SpringFactoriesLoader 实例化所有可用的初始器   setInitializers((Collection)                            getSpringFactoriesInstances(ApplicationContextInitializer.class));   //2.3 使用SpringFactoriesLoader 实例化所有可用的监听器  setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));   //2.4 配置应用主方法所在类   this.mainApplicationClass = deduceMainApplicationClass();}</code></pre><h4 id="2-1-判断当前程序类型"><a href="#2-1-判断当前程序类型" class="headerlink" title="2.1 判断当前程序类型"></a>2.1 判断当前程序类型</h4><p>根据classpath里面是否存在某个特征类</p><p>（org.springframework.web.context.ConfigurableWebApplicationContext）来决定是否应该创建一个为Web应用使用的ApplicationContext类型。</p><pre><code>/** * The application should not run as a web application and should not start an * embedded web server. */NONE,/** * The application should run as a servlet-based web application and should start an * embedded servlet web server. */SERVLET,/** * The application should run as a reactive web application and should start an * embedded reactive web server. */REACTIVE;</code></pre><h2 id="3-启动方法（RUN）"><a href="#3-启动方法（RUN）" class="headerlink" title="3.启动方法（RUN）"></a>3.启动方法（RUN）</h2><p>初始化完成之后就进到了run方法，run方法完成了所有Spring的整个启动过程：</p><ul><li><p>准备Environment</p></li><li><p>发布事件</p></li><li><p>创建上下文、bean</p></li><li><p>刷新上下文</p></li><li><p>结束，</p><p>其中穿插了很多监听器的动作，并且很多逻辑都是靠各种监听器的实现类执行的。</p></li></ul><pre><code class="java">/** * Run the Spring application, creating and refreshing a new * {@link ApplicationContext}. * @param args the application arguments (usually passed from a Java main method) * @return a running {@link ApplicationContext} */public ConfigurableApplicationContext run(String... args) {   //开启时钟计时   StopWatch stopWatch = new StopWatch();   stopWatch.start();   //spirng 上下文   ConfigurableApplicationContext context = null;   //启动异常报告容器   Collection&lt;SpringBootExceptionReporter&gt; exceptionReporters = new ArrayList&lt;&gt;();   //开启设置，让系统模拟不存在io设备   configureHeadlessProperty();   // 3.1 初始化SpringApplicationRunListener 监听器，并进行封装   SpringApplicationRunListeners listeners = getRunListeners(args);   listeners.starting();   try {      ApplicationArguments applicationArguments = new DefaultApplicationArguments(args);     //3.2 Environment 的准备       ConfigurableEnvironment environment = prepareEnvironment(listeners, applicationArguments);      configureIgnoreBeanInfo(environment);      Banner printedBanner = printBanner(environment); // 打印标语 彩蛋     //3.3 创建上下文实例      context = createApplicationContext();     //异常播报器，默认有org.springframework.boot.diagnostics.FailureAnalyzers      exceptionReporters = getSpringFactoriesInstances(SpringBootExceptionReporter.class,            new Class[] { ConfigurableApplicationContext.class }, context);     //3.4 容器初始化      prepareContext(context, environment, listeners, applicationArguments, printedBanner);     //3.5 刷新上下文容器       refreshContext(context);     //给实现类留的钩子，这里是一个空方法。      afterRefresh(context, applicationArguments);      stopWatch.stop();      if (this.logStartupInfo) {         new StartupInfoLogger(this.mainApplicationClass).logStarted(getApplicationLog(), stopWatch);      }      listeners.started(context);      callRunners(context, applicationArguments);   }   catch (Throwable ex) {      handleRunFailure(context, ex, exceptionReporters, listeners);      throw new IllegalStateException(ex);   }   try {      listeners.running(context);   }   catch (Throwable ex) {      handleRunFailure(context, ex, exceptionReporters, null);      throw new IllegalStateException(ex);   }   return context;}</code></pre><h3 id="3-1-SpringApplicationRunListener-的使用"><a href="#3-1-SpringApplicationRunListener-的使用" class="headerlink" title="3.1 SpringApplicationRunListener 的使用"></a>3.1 SpringApplicationRunListener 的使用</h3><p>首先通过getSpringFactoriesInstances 获取到所有实现SpringApplicationRunListener  接口的实例，默认情况下该接口的实现类只有 EventPublishingRunListener  他的主要作用是作为springboot 的一个广播器</p><pre><code class="java">public interface SpringApplicationRunListener {  /**EventPublishingRunListener 前期采用 SimpleApplicationEventMulticaster.multicastEvent(ApplicationEvent) 进行广播  **/   default void starting() {}    default void environmentPrepared(ConfigurableEnvironment environment) {}   default void contextPrepared(ConfigurableApplicationContext context) {}   default void contextLoaded(ConfigurableApplicationContext context) {}  /**  EventPublishingRunListener 后期采用 context.publishEvent(ApplicationEvent)  **/   default void started(ConfigurableApplicationContext context) {}   default void running(ConfigurableApplicationContext context) {}   default void failed(ConfigurableApplicationContext context, Throwable exception) {}}</code></pre><h3 id="3-2-prepareEnvironment"><a href="#3-2-prepareEnvironment" class="headerlink" title="3.2 prepareEnvironment"></a>3.2 prepareEnvironment</h3><p>一般在写业务代码时使用的都是只读类型的接口<code>Environment</code>，该接口是对运行程序环境的抽象，是保存系统配置的中心，而在启动过程中使用的则是可编辑的<code>ConfigurableEnvironment</code>。接口的UML类图如下，提供了合并父环境、添加active profile以及一些设置解析配置文件方式的接口。</p><p>其中一个比较重要的方法<code>MutablePropertySources getPropertySources();</code>，该方法返回一个可编辑的<code>PropertySources</code>，如果有在启动阶段自定义环境的PropertySources的需求，就可以通过该方法设置。</p><pre><code class="java">private ConfigurableEnvironment prepareEnvironment(SpringApplicationRunListeners listeners,      ApplicationArguments applicationArguments) {   // Create and configure the environment  //根据不同环境不同的Enviroment （StandardServletEnvironment，StandardReactiveWebEnvironment，StandardEnvironment）   ConfigurableEnvironment environment = getOrCreateEnvironment();  //填充启动类参数到enviroment 对象   configureEnvironment(environment, applicationArguments.getSourceArgs());  //更新参数  ConfigurationPropertySources.attach(environment);  //发布事件   listeners.environmentPrepared(environment);  //绑定主类   bindToSpringApplication(environment);   if (!this.isCustomEnvironment) {//转换environment的类型，但这里应该类型和deduce的相同不用转换      environment = new EnvironmentConverter(getClassLoader()).convertEnvironmentIfNecessary(environment,            deduceEnvironmentClass());   }  //将现有参数有封装成proertySources   ConfigurationPropertySources.attach(environment);   return environment;}</code></pre><h3 id="3-3-创建springApplicationContext-上下文"><a href="#3-3-创建springApplicationContext-上下文" class="headerlink" title="3.3  创建springApplicationContext 上下文"></a>3.3  创建springApplicationContext 上下文</h3><img src="/wiki/spring/springboot/springboot%20启动流程分析/springApplicationContext.webp" title="[启动流程分析]"><p>继承的三个父类接口里，<code>Closeable</code>提供了关闭时资源释放的接口，<code>Lifecycle</code>是提供对生命周期控制的接口(start\stop)以及查询当前运行状态的接口，<code>ApplicationContext</code>则是配置上下文的中心配置接口，继承了其他很多配置接口，其本身提供查询诸如id、应用程序名等上下文档案信息的只读接口，以及构建自动装配bean的工厂。</p><ul><li>EnvironmentCapable</li></ul><p>提供Environment接口。</p><ul><li>MessageSource</li></ul><p>国际化资源接口。</p><ul><li>ApplicationEventPublisher</li></ul><p>事件发布器。</p><ul><li>ResourcePatternResolver</li></ul><p>资源加载器。</p><ul><li>HierarchicalBeanFactory、ListableBeanFactory</li></ul><p>这两个都继承了bean容器的根接口<code>BeanFactory</code></p><p>简而言之就是根据Web容器类型的不同来创建不用的上下文实例。</p><h3 id="3-4-上下文初始化"><a href="#3-4-上下文初始化" class="headerlink" title="3.4 上下文初始化"></a>3.4 上下文初始化</h3><pre><code class="java">private void prepareContext(ConfigurableApplicationContext context, ConfigurableEnvironment environment,      SpringApplicationRunListeners listeners, ApplicationArguments applicationArguments, Banner printedBanner) {  //绑定环境   context.setEnvironment(environment);  //如果application有设置beanNameGenerator、resourceLoader就将其注入到上下文中，并将转换工具也注入到上下文中  postProcessApplicationContext(context);  //调用初始化的切面   applyInitializers(context);  //发布ApplicationContextInitializedEvent事件   listeners.contextPrepared(context);  //日志   if (this.logStartupInfo) {      logStartupInfo(context.getParent() == null);      logStartupProfileInfo(context);   }   // Add boot specific singleton beans   ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();   beanFactory.registerSingleton(&quot;springApplicationArguments&quot;, applicationArguments);   if (printedBanner != null) {      beanFactory.registerSingleton(&quot;springBootBanner&quot;, printedBanner);   }   if (beanFactory instanceof DefaultListableBeanFactory) {     //如果bean名相同的话是否允许覆盖，默认为false，相同会抛出异常      ((DefaultListableBeanFactory) beanFactory)            .setAllowBeanDefinitionOverriding(this.allowBeanDefinitionOverriding);   }   if (this.lazyInitialization) {      context.addBeanFactoryPostProcessor(new LazyInitializationBeanFactoryPostProcessor());   }   // Load the sources  // 这里获取到的是BootstrapImportSelectorConfiguration这个class，而不是自己写的启动来，这个class是在之前注册的BootstrapApplicationListener的监听方法中注入的   Set&lt;Object&gt; sources = getAllSources();   Assert.notEmpty(sources, &quot;Sources must not be empty&quot;);  //加载sources 到上下文中   load(context, sources.toArray(new Object[0]));  //发布ApplicationPreparedEvent事件   listeners.contextLoaded(context);}</code></pre><h3 id="3-5-刷新上下文"><a href="#3-5-刷新上下文" class="headerlink" title="3.5 刷新上下文"></a>3.5 刷新上下文</h3><pre><code>AbstractApplicationContext</code></pre><pre><code class="java">public void refresh() throws BeansException, IllegalStateException {    synchronized (this.startupShutdownMonitor) {        //记录启动时间、状态，web容器初始化其property，复制listener        prepareRefresh();        //这里返回的是context的BeanFactory        ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();        //beanFactory注入一些标准组件，例如ApplicationContextAwareProcessor，ClassLoader等        prepareBeanFactory(beanFactory);        try {            //给实现类留的一个钩子，例如注入BeanPostProcessors，这里是个空方法            postProcessBeanFactory(beanFactory);            // 调用切面方法            invokeBeanFactoryPostProcessors(beanFactory);            // 注册切面bean            registerBeanPostProcessors(beanFactory);            // Initialize message source for this context.            initMessageSource();            // bean工厂注册一个key为applicationEventMulticaster的广播器            initApplicationEventMulticaster();            // 给实现类留的一钩子，可以执行其他refresh的工作，这里是个空方法            onRefresh();            // 将listener注册到广播器中            registerListeners();            // 实例化未实例化的bean            finishBeanFactoryInitialization(beanFactory);            // 清理缓存，注入DefaultLifecycleProcessor，发布ContextRefreshedEvent            finishRefresh();        }        catch (BeansException ex) {            if (logger.isWarnEnabled()) {                logger.warn(&quot;Exception encountered during context initialization - &quot; +                        &quot;cancelling refresh attempt: &quot; + ex);            }            // Destroy already created singletons to avoid dangling resources.            destroyBeans();            // Reset &#39;active&#39; flag.            cancelRefresh(ex);            // Propagate exception to caller.            throw ex;        }        finally {            // Reset common introspection caches in Spring&#39;s core, since we            // might not ever need metadata for singleton beans anymore...            resetCommonCaches();        }    }}</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><p><a href="https://www.jianshu.com/p/a46392c5cc50" rel="external nofollow noopener noreferrer" target="_blank">springboot启动的流程图</a></p></li><li><p><a href="https://blog.csdn.net/zlc3323/article/details/100137222?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf" rel="external nofollow noopener noreferrer" target="_blank">能说下springboot启动原理吗</a></p></li><li><p><a href="https://www.jianshu.com/p/603d125f21b3" rel="external nofollow noopener noreferrer" target="_blank">Springboot 启动过程分析</a></p></li><li><p><a href="https://www.processon.com/view/link/59812124e4b0de2518b32b6e" rel="external nofollow noopener noreferrer" target="_blank">springboot结构图</a></p><p>​</p></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+          <category> springboot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spring boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>活用linux命令:netstat</title>
+      <link href="/wiki/linux/shell/%E6%B4%BB%E7%94%A8linux%E5%91%BD%E4%BB%A4-netstat/"/>
+      <url>/wiki/linux/shell/%E6%B4%BB%E7%94%A8linux%E5%91%BD%E4%BB%A4-netstat/</url>
+      
+        <content type="html"><![CDATA[<p>netstat命令用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各端口的网络连接情况。netstat是在内核中访问网络及相关信息的程序，它能提供TCP连接，TCP和UDP监听，进程内存管理的相关报告。  </p><h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><pre><code>$ netstat [-acCeFghilMnNoprstuvVwx] [-A&lt;网络类型&gt;][--ip]</code></pre><h3 id="命令功能"><a href="#命令功能" class="headerlink" title="命令功能"></a>命令功能</h3><p> netstat 用于显示IP，TCP，UDP和ICMP协议相关的统计数据，一般用于检验本机端口的网络连接情况。</p><h3 id="命令参数"><a href="#命令参数" class="headerlink" title="命令参数"></a>命令参数</h3><table><thead><tr><th>命令</th><th>描述</th></tr></thead><tbody><tr><td>-a或–all</td><td>显示所有连线中的Socket</td></tr><tr><td>-A&lt;网络类型&gt;或–&lt;网络类型&gt;</td><td>列出该网络类型连线中的相关地址</td></tr><tr><td>-c或–continuous</td><td>持续列出网络状态</td></tr><tr><td>-C或–cache</td><td>显示路由器配置的快取信息</td></tr><tr><td>-e或–extend</td><td>显示网络其他相关信息</td></tr><tr><td>-F或–fib</td><td>显示FIB</td></tr><tr><td>-g或–groups</td><td>显示多重广播功能群组组员名单</td></tr><tr><td>-h或–help</td><td>在线帮助</td></tr><tr><td>-i或–interfaces</td><td>显示网络界面信息表单</td></tr><tr><td>-l或–listening</td><td>显示监控中的服务器的Socket</td></tr><tr><td>-M或–masquerade</td><td>显示伪装的网络连线</td></tr><tr><td>-n或–numeric</td><td>直接使用IP地址，而不通过域名服务器</td></tr><tr><td>-N或–netlink或–symbolic</td><td>显示网络硬件外围设备的符号连接名称</td></tr><tr><td>-o或–timers</td><td>显示计时器</td></tr><tr><td>-p或–programs</td><td>显示正在使用Socket的程序识别码和程序名称</td></tr><tr><td>-r或–route</td><td>显示Routing Table</td></tr><tr><td>-s或–statistice</td><td>显示网络工作信息统计表</td></tr><tr><td>-t或–tcp</td><td>显示TCP传输协议的连线状况</td></tr><tr><td>-u或–udp</td><td>显示UDP传输协议的连线状况</td></tr><tr><td>-v或–verbose</td><td>显示指令执行过程</td></tr><tr><td>-V或–version</td><td>显示版本信息</td></tr><tr><td>-w或–raw</td><td>显示RAW传输协议的连线状况</td></tr><tr><td>-x或–unix</td><td>此参数的效果和指定”-A unix”参数相同</td></tr><tr><td>–ip或–inet</td><td>此参数的效果和指定”-A inet”参数相同</td></tr></tbody></table><h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><h4 id="无参数使用"><a href="#无参数使用" class="headerlink" title="无参数使用"></a>无参数使用</h4><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://yelog.org/2017/01/10/linux-command%EF%BC%8841%EF%BC%89-netstat/" rel="external nofollow noopener noreferrer" target="_blank">每天一个linux命令（41）: netstat</a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springboot中controller用aop统一做参数验证</title>
+      <link href="/wiki/spring/springboot%E4%B8%ADcontroller%E7%94%A8aop%E7%BB%9F%E4%B8%80%E5%81%9A%E5%8F%82%E6%95%B0%E9%AA%8C%E8%AF%81/"/>
+      <url>/wiki/spring/springboot%E4%B8%ADcontroller%E7%94%A8aop%E7%BB%9F%E4%B8%80%E5%81%9A%E5%8F%82%E6%95%B0%E9%AA%8C%E8%AF%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springMvc处理流程</title>
+      <link href="/wiki/spring/springMvc%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/"/>
+      <url>/wiki/spring/springMvc%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="spring-mvc相关组件及介绍"><a href="#spring-mvc相关组件及介绍" class="headerlink" title="spring mvc相关组件及介绍"></a>spring mvc相关组件及介绍</h1><ul><li><h4 id="DispatchServlet"><a href="#DispatchServlet" class="headerlink" title="DispatchServlet"></a>DispatchServlet</h4>java开发在经历了超级servlet阶段后，开始为servlet减负的尝试，MVC结构把servlet的工作分为frontController与Page Controller，前着进行必要请求的转发，后者负责具体的业务逻辑处理，DispathServlet就是frontController的角色，负责接收web请求建立连接，然后调用合适的处理类获得结果，返回。</li><li><h4 id="handlerMapping"><a href="#handlerMapping" class="headerlink" title="handlerMapping"></a>handlerMapping</h4>在DispatchServlet接收到客户端的请求之后，通过handlerMapping匹配到具体的处理类（handler），handler代表所有的次级控制类，除了我们常用的controller意外还有第三方WEB开发框架中的Page Controller组件。<br>handerMapping类的实现类有多个：</li></ul><ol><li>SimpleUrlHandlerMapping</li><li>ControllerClassnameHandlerMapping</li><li>DefaultAnnotationHandlerMapping(基于注解的配置方式)<br>这些hangdlerMapping一个dispatchSerlet中可以配置多个，他们通过实现的Ordered接口按照序列优先级执行</li></ol><ul><li><h4 id="Handler（Controller）"><a href="#Handler（Controller）" class="headerlink" title="Handler（Controller）"></a>Handler（Controller）</h4>在SpirngMvc中，任何可以用于Web请求处理的对象统称为handler，Controller是Handler中的一个特殊类型</li><li><h4 id="HandlerAdapter"><a href="#HandlerAdapter" class="headerlink" title="HandlerAdapter"></a>HandlerAdapter</h4>主要工作只是调用这个HandlerAdaptor“认识”的Handler的web请求处理方法，然后将处理结果转换为DispatcherServlet统一使用的ModelAndView就行。</li><li><h4 id="HanderExceptionResolver"><a href="#HanderExceptionResolver" class="headerlink" title="HanderExceptionResolver"></a>HanderExceptionResolver</h4>提供统一的异常处理方式，让handler的throws Exception看起来更加“理直气壮”</li></ul><h3 id="spring-mvc各组件交互流程"><a href="#spring-mvc各组件交互流程" class="headerlink" title="spring mvc各组件交互流程"></a>spring mvc各组件交互流程</h3><ul><li><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><img src="/wiki/spring/springMvc处理流程/springMvc处理流程图.png" title="[spring MVC 时序图]"></li><li><h4 id="步骤详细描述"><a href="#步骤详细描述" class="headerlink" title="步骤详细描述"></a>步骤详细描述</h4></li></ul><ol><li>DispatcherServlet 接收到满足web.xml配置的Http请求，daspatcherServlet通过handlerAdapter从HandlerMapping获取对应该请求得处理器</li><li>Handler 通过handlerRequest(request,reponse)处理具体的请求，然后返回处理结果ModelAndView</li><li>DispatcherServlet接收到ModelAndView后通过调用ViewResolve 组装View，返回View<br>4.DispatcherServlet返回处理结果</li></ol><h3 id="相关技术字典"><a href="#相关技术字典" class="headerlink" title="相关技术字典"></a>相关技术字典</h3><ol><li><h4 id="Restful-web-请求风格"><a href="#Restful-web-请求风格" class="headerlink" title="Restful web 请求风格"></a>Restful web 请求风格</h4> 采用Restful 架构的web请求分割的原则</li></ol><ul><li>每一个URI代表一种资源（URI中应该全是名词，动作操作全部传给Http协议）</li><li>客户端和服务端之间，传递这种资源的某种变现层</li><li>客户端通过四个HTTP动词，对服务器端资源进行操作，实现“表现层状态转化”</li></ul><ol start="2"><li><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4> HTTP 是基于 TCP/IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.ruanyifeng.com/blog/2011/09/restful.html" rel="external nofollow noopener noreferrer" target="_blank">理解RESTful架构</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" rel="external nofollow noopener noreferrer" target="_blank">HTTP 协议入门</a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pageHelper的使用</title>
+      <link href="/wiki/spring/pageHelp%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <url>/wiki/spring/pageHelp%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pageHelper的使用"><a href="#pageHelper的使用" class="headerlink" title="pageHelper的使用"></a>pageHelper的使用</h1><h2 id="pageHelper"><a href="#pageHelper" class="headerlink" title="pageHelper"></a>pageHelper</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><h3 id="第一种，RowBounds方式的调用"><a href="#第一种，RowBounds方式的调用" class="headerlink" title="第一种，RowBounds方式的调用"></a>第一种，RowBounds方式的调用</h3><pre><code>List&lt;Country&gt; list = sqlSession.selectList(&quot;x.y.selectIf&quot;, null, new RowBounds(0, 10));</code></pre><h3 id="第二种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第二种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第二种，Mapper接口方式的调用，推荐这种使用方式。"></a>第二种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.startPage(1, 10);List&lt;Country&gt; list = countryMapper.selectIf(1);</code></pre><h3 id="第三种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第三种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第三种，Mapper接口方式的调用，推荐这种使用方式。"></a>第三种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.offsetPage(1, 10);List&lt;Country&gt; list = countryMapper.selectIf(1);</code></pre><h3 id="第四种，参数方法调用"><a href="#第四种，参数方法调用" class="headerlink" title="第四种，参数方法调用"></a>第四种，参数方法调用</h3><pre><code>//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数public interface CountryMapper {    List&lt;Country&gt; selectByPageNumSize(            @Param(&quot;user&quot;) User user,            @Param(&quot;pageNum&quot;) int pageNum,            @Param(&quot;pageSize&quot;) int pageSize);}//配置supportMethodsArguments=true//在代码中直接调用：List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user, 1, 10);</code></pre><h3 id="第五种，参数对象"><a href="#第五种，参数对象" class="headerlink" title="第五种，参数对象"></a>第五种，参数对象</h3><p>如果 pageNum 和 pageSize 存在于 User 对象中，只要参数有值，也会被分页<br>有如下 User 对象</p><pre><code>public class User {    //其他fields    //下面两个参数名和 params 配置的名字一致    private Integer pageNum;    private Integer pageSize;}//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数public interface CountryMapper {    List&lt;Country&gt; selectByPageNumSize(User user);}//当 user 中的 pageNum!= null &amp;&amp; pageSize!= null 时，会自动分页List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user);</code></pre><h3 id="第六种，ISelect-接口方式"><a href="#第六种，ISelect-接口方式" class="headerlink" title="第六种，ISelect 接口方式"></a>第六种，ISelect 接口方式</h3><pre><code>//jdk6,7用法，创建接口Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectGroupBy();    }});//jdk8 lambda用法Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(()-&gt; countryMapper.selectGroupBy());//也可以直接返回PageInfo，注意doSelectPageInfo方法和doSelectPagepageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectGroupBy();    }});//对应的lambda用法pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(() -&gt; countryMapper.selectGroupBy());//count查询，返回一个查询语句的count数long total = PageHelper.count(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectLike(country);    }});//lambdatotal = PageHelper.count(()-&gt;countryMapper.selectLike(country));</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

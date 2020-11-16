@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>springMvc处理流程 | Home</title>
+  <meta name="keywords" content>
+  <meta name="description" content="springMvc处理流程 | Home">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Categories">
+<meta property="og:url" content="../index.html/categories/index.html">
+<meta property="og:site_name" content="Home">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2020-05-29T10:25:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Categories">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>gnuochen</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/gnuochen" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/3820503216" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/d25aebc33466" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/gnuochen/activities" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/u/4186022" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:gnuochen@163.com" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=944932048&site=qq&menu=yes" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=264622197" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(13)</small></div></li>
+    
+        
+            
+            <li><div data-rel="spring"><i class="fold iconfont icon-right"></i>spring<small>(5)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="springcloud">springcloud<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="springboot">springboot<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="design">design<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="python">python<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="algorithm">algorithm<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="tools">tools<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux"><i class="fold iconfont icon-right"></i>linux<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="shell">shell<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="java">java<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="database"><i class="fold iconfont icon-right"></i>database<small>(2)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="sql">sql<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="h2">h2<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url" href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="13">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/" rel="external nofollow noopener noreferrer">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">java2</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">spring boot</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a class="design " href="/wiki/design/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="algorithm " href="/wiki/algorithm/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="python " href="/wiki/python/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="spring " href="/wiki/spring/pageHelp的使用/" data-tag="java2" data-author>
+            <span class="post-title" title="pageHelper的使用">pageHelper的使用</span>
+            <span class="post-date" title="2018-09-21 12:22:02">2018/09/21</span>
+        </a>
+        
+        <a class="java " href="/wiki/java/java集合框架/" data-tag data-author>
+            <span class="post-title" title="java集合框架">java集合框架</span>
+            <span class="post-date" title="2020-06-11 12:15:53">2020/06/11</span>
+        </a>
+        
+        <a class="spring " href="/wiki/spring/springMvc处理流程/" data-tag data-author>
+            <span class="post-title" title="springMvc处理流程">springMvc处理流程</span>
+            <span class="post-date" title="2018-11-21 14:18:34">2018/11/21</span>
+        </a>
+        
+        <a class="spring " href="/wiki/spring/springboot中controller用aop统一做参数验证/" data-tag data-author>
+            <span class="post-title" title="springboot中controller用aop统一做参数验证">springboot中controller用aop统一做参数验证</span>
+            <span class="post-date" title="2019-08-21 16:32:08">2019/08/21</span>
+        </a>
+        
+        <a class="tools " href="/wiki/tools/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="database sql " href="/wiki/database/sql/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="database h2 " href="/wiki/database/h2/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="spring springboot " href="/wiki/spring/springboot/springboot 启动流程分析/" data-tag="spring boot" data-author>
+            <span class="post-title" title="springboot 启动流程分析">springboot 启动流程分析</span>
+            <span class="post-date" title="2020-01-13 10:00:22">2020/01/13</span>
+        </a>
+        
+        <a class="linux shell " href="/wiki/linux/shell/活用linux命令-netstat/" data-tag data-author>
+            <span class="post-title" title="活用linux命令:netstat">活用linux命令:netstat</span>
+            <span class="post-date" title="2019-11-22 14:14:35">2019/11/22</span>
+        </a>
+        
+        <a class="spring springcloud " href="/wiki/spring/springcloud/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-spring/springMvc处理流程" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">springMvc处理流程</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a data-rel="spring">spring</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2020-06-16 11:42:33">2018-11-21 14:18</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-mvc相关组件及介绍"><span class="toc-text">spring mvc相关组件及介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DispatchServlet"><span class="toc-text">DispatchServlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#handlerMapping"><span class="toc-text">handlerMapping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Handler（Controller）"><span class="toc-text">Handler（Controller）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HandlerAdapter"><span class="toc-text">HandlerAdapter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HanderExceptionResolver"><span class="toc-text">HanderExceptionResolver</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#spring-mvc各组件交互流程"><span class="toc-text">spring mvc各组件交互流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#流程图"><span class="toc-text">流程图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤详细描述"><span class="toc-text">步骤详细描述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关技术字典"><span class="toc-text">相关技术字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Restful-web-请求风格"><span class="toc-text">Restful web 请求风格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP协议"><span class="toc-text">HTTP协议</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="spring-mvc相关组件及介绍"><a href="#spring-mvc相关组件及介绍" class="headerlink" title="spring mvc相关组件及介绍"></a>spring mvc相关组件及介绍</h1><ul>
+<li><h4 id="DispatchServlet"><a href="#DispatchServlet" class="headerlink" title="DispatchServlet"></a>DispatchServlet</h4>java开发在经历了超级servlet阶段后，开始为servlet减负的尝试，MVC结构把servlet的工作分为frontController与Page Controller，前着进行必要请求的转发，后者负责具体的业务逻辑处理，DispathServlet就是frontController的角色，负责接收web请求建立连接，然后调用合适的处理类获得结果，返回。</li>
+<li><h4 id="handlerMapping"><a href="#handlerMapping" class="headerlink" title="handlerMapping"></a>handlerMapping</h4>在DispatchServlet接收到客户端的请求之后，通过handlerMapping匹配到具体的处理类（handler），handler代表所有的次级控制类，除了我们常用的controller意外还有第三方WEB开发框架中的Page Controller组件。<br>handerMapping类的实现类有多个：</li>
+</ul>
+<ol>
+<li>SimpleUrlHandlerMapping</li>
+<li>ControllerClassnameHandlerMapping</li>
+<li>DefaultAnnotationHandlerMapping(基于注解的配置方式)<br>这些hangdlerMapping一个dispatchSerlet中可以配置多个，他们通过实现的Ordered接口按照序列优先级执行</li>
+</ol>
+<ul>
+<li><h4 id="Handler（Controller）"><a href="#Handler（Controller）" class="headerlink" title="Handler（Controller）"></a>Handler（Controller）</h4>在SpirngMvc中，任何可以用于Web请求处理的对象统称为handler，Controller是Handler中的一个特殊类型</li>
+<li><h4 id="HandlerAdapter"><a href="#HandlerAdapter" class="headerlink" title="HandlerAdapter"></a>HandlerAdapter</h4>主要工作只是调用这个HandlerAdaptor“认识”的Handler的web请求处理方法，然后将处理结果转换为DispatcherServlet统一使用的ModelAndView就行。</li>
+<li><h4 id="HanderExceptionResolver"><a href="#HanderExceptionResolver" class="headerlink" title="HanderExceptionResolver"></a>HanderExceptionResolver</h4>提供统一的异常处理方式，让handler的throws Exception看起来更加“理直气壮”</li>
+</ul>
+<h3 id="spring-mvc各组件交互流程"><a href="#spring-mvc各组件交互流程" class="headerlink" title="spring mvc各组件交互流程"></a>spring mvc各组件交互流程</h3><ul>
+<li><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><img src="/wiki/spring/springMvc处理流程/springMvc处理流程图.png" title="[spring MVC 时序图]">
+</li>
+<li><h4 id="步骤详细描述"><a href="#步骤详细描述" class="headerlink" title="步骤详细描述"></a>步骤详细描述</h4></li>
+</ul>
+<ol>
+<li>DispatcherServlet 接收到满足web.xml配置的Http请求，daspatcherServlet通过handlerAdapter从HandlerMapping获取对应该请求得处理器</li>
+<li>Handler 通过handlerRequest(request,reponse)处理具体的请求，然后返回处理结果ModelAndView</li>
+<li>DispatcherServlet接收到ModelAndView后通过调用ViewResolve 组装View，返回View<br>4.DispatcherServlet返回处理结果</li>
+</ol>
+<h3 id="相关技术字典"><a href="#相关技术字典" class="headerlink" title="相关技术字典"></a>相关技术字典</h3><ol>
+<li><h4 id="Restful-web-请求风格"><a href="#Restful-web-请求风格" class="headerlink" title="Restful web 请求风格"></a>Restful web 请求风格</h4> 采用Restful 架构的web请求分割的原则</li>
+</ol>
+<ul>
+<li>每一个URI代表一种资源（URI中应该全是名词，动作操作全部传给Http协议）</li>
+<li>客户端和服务端之间，传递这种资源的某种变现层</li>
+<li>客户端通过四个HTTP动词，对服务器端资源进行操作，实现“表现层状态转化”</li>
+</ul>
+<ol start="2">
+<li><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4> HTTP 是基于 TCP/IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2011/09/restful.html" rel="external nofollow noopener noreferrer" target="_blank">理解RESTful架构</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" rel="external nofollow noopener noreferrer" target="_blank">HTTP 协议入门</a></li>
+</ul>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 gnuochen@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>springMvc处理流程</p>
+    
+    <p><span class="copy-title">本文作者:</span><a title="gnuochen">gnuochen</a></p>
+    <p><span class="copy-title">发布时间:</span>2018-11-21, 14:18:34</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-16, 11:42:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/spring/springMvc处理流程/" title="springMvc处理流程">../index.html/wiki/spring/springMvc处理流程/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017-2020 gnuochen</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="external nofollow noopener noreferrer">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class id="rocket"></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1"></script>
+
+<script src="/js/script.js?v=1.0.1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#java2','#spring boot',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true,&#34;flowchart&#34;:{&#34;useMaxWidth&#34;:false,&#34;htmlLabels&#34;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/list_background.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out">
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url" href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+</html>
