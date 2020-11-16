@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>default | Home</title>
+  <title>SpringCloud架构 | Home</title>
   <meta name="keywords" content>
-  <meta name="description" content="default | Home">
+  <meta name="description" content="SpringCloud架构 | Home">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Categories">
@@ -444,9 +444,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-python/default" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-spring/springcloud/SpringCloud架构" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">default</h1>
+        <h1 class="article-title">SpringCloud架构</h1>
     
     <div class="article-meta">
         
@@ -454,7 +454,9 @@
         
         <span class="book">
             
-                <a data-rel="python">python</a>
+                <a data-rel="spring">spring</a>/
+            
+                <a data-rel="springcloud">springcloud</a>
             
         </span>
         
@@ -462,7 +464,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2020-11-13 10:00:22">2020-11-13 10:00</time>
+        创建时间:<time class="date" title="更新时间: 2020-11-16 10:45:40">2020-05-13 10:00</time>
         
     </div>
     <div class="article-meta">
@@ -484,7 +486,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#架构图"><span class="toc-text">架构图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心组件"><span class="toc-text">核心组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#netflix-Eureka："><span class="toc-text">netflix-Eureka：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#netflix-Ribbon："><span class="toc-text">netflix-Ribbon：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#netflix-Feign："><span class="toc-text">netflix-Feign：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#netflix-Hystrix："><span class="toc-text">netflix-Hystrix：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#netflix-Zuul："><span class="toc-text">netflix-Zuul：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#netflix-Archaius"><span class="toc-text">netflix-Archaius:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Config："><span class="toc-text">Config：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cloud-Bus："><span class="toc-text">Cloud Bus：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Sleuth："><span class="toc-text">Spring Cloud Sleuth：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Data-Flow："><span class="toc-text">Spring Cloud Data Flow：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Security："><span class="toc-text">Spring Cloud Security：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Consul："><span class="toc-text">Spring Cloud Consul：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Zookeeper："><span class="toc-text">Spring Cloud Zookeeper：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Stream："><span class="toc-text">Spring Cloud Stream：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-CLI："><span class="toc-text">Spring Cloud CLI：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-for-Cloud-Foundry："><span class="toc-text">Spring Cloud for Cloud Foundry：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -500,10 +502,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+        <h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><img src="/wiki/spring/springcloud/SpringCloud架构/Springcloud微服务架构图1.png" title="[]">
+
+<hr>
+<h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ul>
+<li><h3 id="netflix-Eureka："><a href="#netflix-Eureka：" class="headerlink" title="netflix-Eureka："></a>netflix-Eureka：</h3><p>各个服务启动时，Eureka Client都会将服务注册到Eureka Server，并且Eureka Client还可以反过来从Eureka Server拉取注册表，从而知道其他服务在哪里</p>
+</li>
+<li><h3 id="netflix-Ribbon："><a href="#netflix-Ribbon：" class="headerlink" title="netflix-Ribbon："></a>netflix-Ribbon：</h3><p>服务间发起请求的时候，基于Ribbon做负载均衡，从一个服务的多台机器中选择一台</p>
+</li>
+<li><h3 id="netflix-Feign："><a href="#netflix-Feign：" class="headerlink" title="netflix-Feign："></a>netflix-Feign：</h3><p>基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求</p>
+</li>
+<li><h3 id="netflix-Hystrix："><a href="#netflix-Hystrix：" class="headerlink" title="netflix-Hystrix："></a>netflix-Hystrix：</h3><p>发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题</p>
+</li>
+<li><h3 id="netflix-Zuul："><a href="#netflix-Zuul：" class="headerlink" title="netflix-Zuul："></a>netflix-Zuul：</h3><p>如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务</p>
+</li>
+<li><h3 id="netflix-Archaius"><a href="#netflix-Archaius" class="headerlink" title="netflix-Archaius:"></a>netflix-Archaius:</h3><p>配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</p>
+<hr>
+<p>​</p>
+</li>
+<li><h3 id="Config："><a href="#Config：" class="headerlink" title="Config："></a>Config：</h3><p>配置管理开发工具包，可以让你把配置放到远程服务器，目前支持本地存储、Git以及Subversion。</p>
+</li>
+<li><h3 id="Cloud-Bus："><a href="#Cloud-Bus：" class="headerlink" title="Cloud Bus："></a>Cloud Bus：</h3><p>事件、消息总线，用于在集群（例如，配置变化事件）中传播状态变化，可与Spring Cloud Config联合实现热部署。</p>
+</li>
+<li><h3 id="Spring-Cloud-Sleuth："><a href="#Spring-Cloud-Sleuth：" class="headerlink" title="Spring Cloud Sleuth："></a>Spring Cloud Sleuth：</h3><p>日志收集工具包，封装了Dapper,Zipkin和HTrace操作。</p>
+</li>
+<li><h3 id="Spring-Cloud-Data-Flow："><a href="#Spring-Cloud-Data-Flow：" class="headerlink" title="Spring Cloud Data Flow："></a>Spring Cloud Data Flow：</h3><p>大数据操作工具，通过命令行方式操作数据流。</p>
+</li>
+<li><h3 id="Spring-Cloud-Security："><a href="#Spring-Cloud-Security：" class="headerlink" title="Spring Cloud Security："></a>Spring Cloud Security：</h3><p>安全工具包，为你的应用程序添加安全控制，主要是指OAuth2。</p>
+</li>
+<li><h3 id="Spring-Cloud-Consul："><a href="#Spring-Cloud-Consul：" class="headerlink" title="Spring Cloud Consul："></a>Spring Cloud Consul：</h3><p>封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</p>
+</li>
+<li><h3 id="Spring-Cloud-Zookeeper："><a href="#Spring-Cloud-Zookeeper：" class="headerlink" title="Spring Cloud Zookeeper："></a>Spring Cloud Zookeeper：</h3><p>操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。</p>
+</li>
+<li><h3 id="Spring-Cloud-Stream："><a href="#Spring-Cloud-Stream：" class="headerlink" title="Spring Cloud Stream："></a>Spring Cloud Stream：</h3><p>数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</p>
+</li>
+<li><h3 id="Spring-Cloud-CLI："><a href="#Spring-Cloud-CLI：" class="headerlink" title="Spring Cloud CLI："></a>Spring Cloud CLI：</h3><p>基于 Spring Boot CLI，可以让你以命令行方式快速建立云组件。</p>
+</li>
+<li><h3 id="Spring-Cloud-for-Cloud-Foundry："><a href="#Spring-Cloud-for-Cloud-Foundry：" class="headerlink" title="Spring Cloud for Cloud Foundry："></a>Spring Cloud for Cloud Foundry：</h3><p>通过Oauth2协议绑定服务到CloudFoundry，CloudFoundry是VMware推出的开源PaaS云平台。</p>
+</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
-<li><a href></a></li>
-<li><a href></a></li>
+<li><p><a href="https://blog.csdn.net/wujian_csdn_csdn/article/details/81701320" rel="external nofollow noopener noreferrer" target="_blank">SpringCloud微服务架构</a></p>
+<p>​</p>
+</li>
 </ul>
 </blockquote>
 
@@ -519,12 +561,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>default</p>
+    <p><span class="copy-title">文章标题:</span>SpringCloud架构</p>
     
     <p><span class="copy-title">本文作者:</span><a title="gnuochen">gnuochen</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-11-13, 10:00:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-13, 10:00:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/python/default/" title="default">../index.html/wiki/python/default/</a>
+    <p><span class="copy-title">发布时间:</span>2020-05-13, 10:00:22</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-16, 10:45:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/spring/springcloud/SpringCloud架构/" title="SpringCloud架构">../index.html/wiki/spring/springcloud/SpringCloud架构/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

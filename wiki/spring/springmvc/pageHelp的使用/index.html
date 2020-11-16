@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>default | Home</title>
-  <meta name="keywords" content>
-  <meta name="description" content="default | Home">
+  <title>pageHelper的使用 | Home</title>
+  <meta name="keywords" content=" java2 ">
+  <meta name="description" content="pageHelper的使用 | Home">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Categories">
@@ -444,9 +444,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-python/default" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-spring/springmvc/pageHelp的使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">default</h1>
+        <h1 class="article-title">pageHelper的使用</h1>
     
     <div class="article-meta">
         
@@ -454,15 +454,23 @@
         
         <span class="book">
             
-                <a data-rel="python">python</a>
+                <a data-rel="spring">spring</a>/
+            
+                <a data-rel="springmvc">springmvc</a>
             
         </span>
         
         
+        <span class="tag">
+            
+            <a class="color1">java2</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2020-11-13 10:00:22">2020-11-13 10:00</time>
+        创建时间:<time class="date" title="更新时间: 2020-11-16 09:14:49">2018-09-21 12:22</time>
         
     </div>
     <div class="article-meta">
@@ -484,7 +492,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pageHelper的使用"><span class="toc-text">pageHelper的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pageHelper"><span class="toc-text">pageHelper</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方式"><span class="toc-text">使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种，RowBounds方式的调用"><span class="toc-text">第一种，RowBounds方式的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种，Mapper接口方式的调用，推荐这种使用方式。"><span class="toc-text">第二种，Mapper接口方式的调用，推荐这种使用方式。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三种，Mapper接口方式的调用，推荐这种使用方式。"><span class="toc-text">第三种，Mapper接口方式的调用，推荐这种使用方式。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四种，参数方法调用"><span class="toc-text">第四种，参数方法调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五种，参数对象"><span class="toc-text">第五种，参数对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第六种，ISelect-接口方式"><span class="toc-text">第六种，ISelect 接口方式</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -500,10 +508,66 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+        <h1 id="pageHelper的使用"><a href="#pageHelper的使用" class="headerlink" title="pageHelper的使用"></a>pageHelper的使用</h1><h2 id="pageHelper"><a href="#pageHelper" class="headerlink" title="pageHelper"></a>pageHelper</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><h3 id="第一种，RowBounds方式的调用"><a href="#第一种，RowBounds方式的调用" class="headerlink" title="第一种，RowBounds方式的调用"></a>第一种，RowBounds方式的调用</h3><pre><code>List&lt;Country&gt; list = sqlSession.selectList(&quot;x.y.selectIf&quot;, null, new RowBounds(0, 10));
+</code></pre><h3 id="第二种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第二种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第二种，Mapper接口方式的调用，推荐这种使用方式。"></a>第二种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.startPage(1, 10);
+List&lt;Country&gt; list = countryMapper.selectIf(1);
+</code></pre><h3 id="第三种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第三种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第三种，Mapper接口方式的调用，推荐这种使用方式。"></a>第三种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.offsetPage(1, 10);
+List&lt;Country&gt; list = countryMapper.selectIf(1);
+</code></pre><h3 id="第四种，参数方法调用"><a href="#第四种，参数方法调用" class="headerlink" title="第四种，参数方法调用"></a>第四种，参数方法调用</h3><pre><code>//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数
+public interface CountryMapper {
+    List&lt;Country&gt; selectByPageNumSize(
+            @Param(&quot;user&quot;) User user,
+            @Param(&quot;pageNum&quot;) int pageNum,
+            @Param(&quot;pageSize&quot;) int pageSize);
+}
+//配置supportMethodsArguments=true
+//在代码中直接调用：
+List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user, 1, 10);
+</code></pre><h3 id="第五种，参数对象"><a href="#第五种，参数对象" class="headerlink" title="第五种，参数对象"></a>第五种，参数对象</h3><p>如果 pageNum 和 pageSize 存在于 User 对象中，只要参数有值，也会被分页<br>有如下 User 对象</p>
+<pre><code>public class User {
+    //其他fields
+    //下面两个参数名和 params 配置的名字一致
+    private Integer pageNum;
+    private Integer pageSize;
+}
+//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数
+public interface CountryMapper {
+    List&lt;Country&gt; selectByPageNumSize(User user);
+}
+//当 user 中的 pageNum!= null &amp;&amp; pageSize!= null 时，会自动分页
+List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user);
+</code></pre><h3 id="第六种，ISelect-接口方式"><a href="#第六种，ISelect-接口方式" class="headerlink" title="第六种，ISelect 接口方式"></a>第六种，ISelect 接口方式</h3><pre><code>//jdk6,7用法，创建接口
+Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(new ISelect() {
+    @Override
+    public void doSelect() {
+        countryMapper.selectGroupBy();
+    }
+});
+//jdk8 lambda用法
+Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(()-&gt; countryMapper.selectGroupBy());
+
+//也可以直接返回PageInfo，注意doSelectPageInfo方法和doSelectPage
+pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(new ISelect() {
+    @Override
+    public void doSelect() {
+        countryMapper.selectGroupBy();
+    }
+});
+//对应的lambda用法
+pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(() -&gt; countryMapper.selectGroupBy());
+
+//count查询，返回一个查询语句的count数
+long total = PageHelper.count(new ISelect() {
+    @Override
+    public void doSelect() {
+        countryMapper.selectLike(country);
+    }
+});
+//lambda
+total = PageHelper.count(()-&gt;countryMapper.selectLike(country));
+</code></pre><blockquote>
 <ul>
-<li><a href></a></li>
-<li><a href></a></li>
+<li>​</li>
 </ul>
 </blockquote>
 
@@ -519,12 +583,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>default</p>
+    <p><span class="copy-title">文章标题:</span>pageHelper的使用</p>
     
     <p><span class="copy-title">本文作者:</span><a title="gnuochen">gnuochen</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-11-13, 10:00:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-13, 10:00:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/python/default/" title="default">../index.html/wiki/python/default/</a>
+    <p><span class="copy-title">发布时间:</span>2018-09-21, 12:22:02</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-16, 09:14:49</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/spring/springmvc/pageHelp的使用/" title="pageHelper的使用">../index.html/wiki/spring/springmvc/pageHelp的使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

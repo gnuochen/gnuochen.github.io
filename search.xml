@@ -5,6 +5,44 @@
     
     <entry>
       <title>default</title>
+      <link href="/wiki/algorithm/default/"/>
+      <url>/wiki/algorithm/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithm </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
+      <link href="/wiki/tools/default/"/>
+      <url>/wiki/tools/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
       <link href="/wiki/design/default/"/>
       <url>/wiki/design/default/</url>
       
@@ -14,46 +52,6 @@
       <categories>
           
           <category> design </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>default</title>
-      <link href="/wiki/spring/springcloud/default/"/>
-      <url>/wiki/spring/springcloud/default/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> spring </category>
-          
-          <category> springcloud </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>default</title>
-      <link href="/wiki/python/default/"/>
-      <url>/wiki/python/default/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
           
       </categories>
       
@@ -85,6 +83,25 @@
     
     <entry>
       <title>default</title>
+      <link href="/wiki/python/default/"/>
+      <url>/wiki/python/default/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>default</title>
       <link href="/wiki/database/sql/default/"/>
       <url>/wiki/database/sql/default/</url>
       
@@ -105,44 +122,6 @@
     
     
     <entry>
-      <title>default</title>
-      <link href="/wiki/tools/default/"/>
-      <url>/wiki/tools/default/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> tools </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>default</title>
-      <link href="/wiki/algorithm/default/"/>
-      <url>/wiki/algorithm/default/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> algorithm </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>java集合框架</title>
       <link href="/wiki/java/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/"/>
       <url>/wiki/java/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</url>
@@ -153,6 +132,27 @@
       <categories>
           
           <category> java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringCloud架构</title>
+      <link href="/wiki/spring/springcloud/SpringCloud%E6%9E%B6%E6%9E%84/"/>
+      <url>/wiki/spring/springcloud/SpringCloud%E6%9E%B6%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><img src="/wiki/spring/springcloud/SpringCloud架构/Springcloud微服务架构图1.png" title="[]"><hr><h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ul><li><h3 id="netflix-Eureka："><a href="#netflix-Eureka：" class="headerlink" title="netflix-Eureka："></a>netflix-Eureka：</h3><p>各个服务启动时，Eureka Client都会将服务注册到Eureka Server，并且Eureka Client还可以反过来从Eureka Server拉取注册表，从而知道其他服务在哪里</p></li><li><h3 id="netflix-Ribbon："><a href="#netflix-Ribbon：" class="headerlink" title="netflix-Ribbon："></a>netflix-Ribbon：</h3><p>服务间发起请求的时候，基于Ribbon做负载均衡，从一个服务的多台机器中选择一台</p></li><li><h3 id="netflix-Feign："><a href="#netflix-Feign：" class="headerlink" title="netflix-Feign："></a>netflix-Feign：</h3><p>基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求</p></li><li><h3 id="netflix-Hystrix："><a href="#netflix-Hystrix：" class="headerlink" title="netflix-Hystrix："></a>netflix-Hystrix：</h3><p>发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题</p></li><li><h3 id="netflix-Zuul："><a href="#netflix-Zuul：" class="headerlink" title="netflix-Zuul："></a>netflix-Zuul：</h3><p>如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务</p></li><li><h3 id="netflix-Archaius"><a href="#netflix-Archaius" class="headerlink" title="netflix-Archaius:"></a>netflix-Archaius:</h3><p>配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</p><hr><p>​</p></li><li><h3 id="Config："><a href="#Config：" class="headerlink" title="Config："></a>Config：</h3><p>配置管理开发工具包，可以让你把配置放到远程服务器，目前支持本地存储、Git以及Subversion。</p></li><li><h3 id="Cloud-Bus："><a href="#Cloud-Bus：" class="headerlink" title="Cloud Bus："></a>Cloud Bus：</h3><p>事件、消息总线，用于在集群（例如，配置变化事件）中传播状态变化，可与Spring Cloud Config联合实现热部署。</p></li><li><h3 id="Spring-Cloud-Sleuth："><a href="#Spring-Cloud-Sleuth：" class="headerlink" title="Spring Cloud Sleuth："></a>Spring Cloud Sleuth：</h3><p>日志收集工具包，封装了Dapper,Zipkin和HTrace操作。</p></li><li><h3 id="Spring-Cloud-Data-Flow："><a href="#Spring-Cloud-Data-Flow：" class="headerlink" title="Spring Cloud Data Flow："></a>Spring Cloud Data Flow：</h3><p>大数据操作工具，通过命令行方式操作数据流。</p></li><li><h3 id="Spring-Cloud-Security："><a href="#Spring-Cloud-Security：" class="headerlink" title="Spring Cloud Security："></a>Spring Cloud Security：</h3><p>安全工具包，为你的应用程序添加安全控制，主要是指OAuth2。</p></li><li><h3 id="Spring-Cloud-Consul："><a href="#Spring-Cloud-Consul：" class="headerlink" title="Spring Cloud Consul："></a>Spring Cloud Consul：</h3><p>封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</p></li><li><h3 id="Spring-Cloud-Zookeeper："><a href="#Spring-Cloud-Zookeeper：" class="headerlink" title="Spring Cloud Zookeeper："></a>Spring Cloud Zookeeper：</h3><p>操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。</p></li><li><h3 id="Spring-Cloud-Stream："><a href="#Spring-Cloud-Stream：" class="headerlink" title="Spring Cloud Stream："></a>Spring Cloud Stream：</h3><p>数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</p></li><li><h3 id="Spring-Cloud-CLI："><a href="#Spring-Cloud-CLI：" class="headerlink" title="Spring Cloud CLI："></a>Spring Cloud CLI：</h3><p>基于 Spring Boot CLI，可以让你以命令行方式快速建立云组件。</p></li><li><h3 id="Spring-Cloud-for-Cloud-Foundry："><a href="#Spring-Cloud-for-Cloud-Foundry：" class="headerlink" title="Spring Cloud for Cloud Foundry："></a>Spring Cloud for Cloud Foundry：</h3><p>通过Oauth2协议绑定服务到CloudFoundry，CloudFoundry是VMware推出的开源PaaS云平台。</p></li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><p><a href="https://blog.csdn.net/wujian_csdn_csdn/article/details/81701320" rel="external nofollow noopener noreferrer" target="_blank">SpringCloud微服务架构</a></p><p>​</p></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+          <category> springcloud </category>
           
       </categories>
       
@@ -210,35 +210,18 @@
     
     
     <entry>
-      <title>springboot中controller用aop统一做参数验证</title>
-      <link href="/wiki/spring/springboot%E4%B8%ADcontroller%E7%94%A8aop%E7%BB%9F%E4%B8%80%E5%81%9A%E5%8F%82%E6%95%B0%E9%AA%8C%E8%AF%81/"/>
-      <url>/wiki/spring/springboot%E4%B8%ADcontroller%E7%94%A8aop%E7%BB%9F%E4%B8%80%E5%81%9A%E5%8F%82%E6%95%B0%E9%AA%8C%E8%AF%81/</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> spring </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>springMvc处理流程</title>
-      <link href="/wiki/spring/springMvc%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/"/>
-      <url>/wiki/spring/springMvc%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/</url>
+      <link href="/wiki/spring/springmvc/springMvc%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/"/>
+      <url>/wiki/spring/springmvc/springMvc%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<h1 id="spring-mvc相关组件及介绍"><a href="#spring-mvc相关组件及介绍" class="headerlink" title="spring mvc相关组件及介绍"></a>spring mvc相关组件及介绍</h1><ul><li><h4 id="DispatchServlet"><a href="#DispatchServlet" class="headerlink" title="DispatchServlet"></a>DispatchServlet</h4>java开发在经历了超级servlet阶段后，开始为servlet减负的尝试，MVC结构把servlet的工作分为frontController与Page Controller，前着进行必要请求的转发，后者负责具体的业务逻辑处理，DispathServlet就是frontController的角色，负责接收web请求建立连接，然后调用合适的处理类获得结果，返回。</li><li><h4 id="handlerMapping"><a href="#handlerMapping" class="headerlink" title="handlerMapping"></a>handlerMapping</h4>在DispatchServlet接收到客户端的请求之后，通过handlerMapping匹配到具体的处理类（handler），handler代表所有的次级控制类，除了我们常用的controller意外还有第三方WEB开发框架中的Page Controller组件。<br>handerMapping类的实现类有多个：</li></ul><ol><li>SimpleUrlHandlerMapping</li><li>ControllerClassnameHandlerMapping</li><li>DefaultAnnotationHandlerMapping(基于注解的配置方式)<br>这些hangdlerMapping一个dispatchSerlet中可以配置多个，他们通过实现的Ordered接口按照序列优先级执行</li></ol><ul><li><h4 id="Handler（Controller）"><a href="#Handler（Controller）" class="headerlink" title="Handler（Controller）"></a>Handler（Controller）</h4>在SpirngMvc中，任何可以用于Web请求处理的对象统称为handler，Controller是Handler中的一个特殊类型</li><li><h4 id="HandlerAdapter"><a href="#HandlerAdapter" class="headerlink" title="HandlerAdapter"></a>HandlerAdapter</h4>主要工作只是调用这个HandlerAdaptor“认识”的Handler的web请求处理方法，然后将处理结果转换为DispatcherServlet统一使用的ModelAndView就行。</li><li><h4 id="HanderExceptionResolver"><a href="#HanderExceptionResolver" class="headerlink" title="HanderExceptionResolver"></a>HanderExceptionResolver</h4>提供统一的异常处理方式，让handler的throws Exception看起来更加“理直气壮”</li></ul><h3 id="spring-mvc各组件交互流程"><a href="#spring-mvc各组件交互流程" class="headerlink" title="spring mvc各组件交互流程"></a>spring mvc各组件交互流程</h3><ul><li><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><img src="/wiki/spring/springMvc处理流程/springMvc处理流程图.png" title="[spring MVC 时序图]"></li><li><h4 id="步骤详细描述"><a href="#步骤详细描述" class="headerlink" title="步骤详细描述"></a>步骤详细描述</h4></li></ul><ol><li>DispatcherServlet 接收到满足web.xml配置的Http请求，daspatcherServlet通过handlerAdapter从HandlerMapping获取对应该请求得处理器</li><li>Handler 通过handlerRequest(request,reponse)处理具体的请求，然后返回处理结果ModelAndView</li><li>DispatcherServlet接收到ModelAndView后通过调用ViewResolve 组装View，返回View<br>4.DispatcherServlet返回处理结果</li></ol><h3 id="相关技术字典"><a href="#相关技术字典" class="headerlink" title="相关技术字典"></a>相关技术字典</h3><ol><li><h4 id="Restful-web-请求风格"><a href="#Restful-web-请求风格" class="headerlink" title="Restful web 请求风格"></a>Restful web 请求风格</h4> 采用Restful 架构的web请求分割的原则</li></ol><ul><li>每一个URI代表一种资源（URI中应该全是名词，动作操作全部传给Http协议）</li><li>客户端和服务端之间，传递这种资源的某种变现层</li><li>客户端通过四个HTTP动词，对服务器端资源进行操作，实现“表现层状态转化”</li></ul><ol start="2"><li><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4> HTTP 是基于 TCP/IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.ruanyifeng.com/blog/2011/09/restful.html" rel="external nofollow noopener noreferrer" target="_blank">理解RESTful架构</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" rel="external nofollow noopener noreferrer" target="_blank">HTTP 协议入门</a></li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="spring-mvc相关组件及介绍"><a href="#spring-mvc相关组件及介绍" class="headerlink" title="spring mvc相关组件及介绍"></a>spring mvc相关组件及介绍</h1><ul><li><h4 id="DispatchServlet"><a href="#DispatchServlet" class="headerlink" title="DispatchServlet"></a>DispatchServlet</h4>java开发在经历了超级servlet阶段后，开始为servlet减负的尝试，MVC结构把servlet的工作分为frontController与Page Controller，前着进行必要请求的转发，后者负责具体的业务逻辑处理，DispathServlet就是frontController的角色，负责接收web请求建立连接，然后调用合适的处理类获得结果，返回。</li><li><h4 id="handlerMapping"><a href="#handlerMapping" class="headerlink" title="handlerMapping"></a>handlerMapping</h4>在DispatchServlet接收到客户端的请求之后，通过handlerMapping匹配到具体的处理类（handler），handler代表所有的次级控制类，除了我们常用的controller意外还有第三方WEB开发框架中的Page Controller组件。<br>handerMapping类的实现类有多个：</li></ul><ol><li>SimpleUrlHandlerMapping</li><li>ControllerClassnameHandlerMapping</li><li>DefaultAnnotationHandlerMapping(基于注解的配置方式)<br>这些hangdlerMapping一个dispatchSerlet中可以配置多个，他们通过实现的Ordered接口按照序列优先级执行</li></ol><ul><li><h4 id="Handler（Controller）"><a href="#Handler（Controller）" class="headerlink" title="Handler（Controller）"></a>Handler（Controller）</h4>在SpirngMvc中，任何可以用于Web请求处理的对象统称为handler，Controller是Handler中的一个特殊类型</li><li><h4 id="HandlerAdapter"><a href="#HandlerAdapter" class="headerlink" title="HandlerAdapter"></a>HandlerAdapter</h4>主要工作只是调用这个HandlerAdaptor“认识”的Handler的web请求处理方法，然后将处理结果转换为DispatcherServlet统一使用的ModelAndView就行。</li><li><h4 id="HanderExceptionResolver"><a href="#HanderExceptionResolver" class="headerlink" title="HanderExceptionResolver"></a>HanderExceptionResolver</h4>提供统一的异常处理方式，让handler的throws Exception看起来更加“理直气壮”</li></ul><h3 id="spring-mvc各组件交互流程"><a href="#spring-mvc各组件交互流程" class="headerlink" title="spring mvc各组件交互流程"></a>spring mvc各组件交互流程</h3><ul><li><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><img src="/wiki/spring/springmvc/springMvc处理流程/springMvc处理流程图.png" title="[spring MVC 时序图]"></li><li><h4 id="步骤详细描述"><a href="#步骤详细描述" class="headerlink" title="步骤详细描述"></a>步骤详细描述</h4></li></ul><ol><li>DispatcherServlet 接收到满足web.xml配置的Http请求，daspatcherServlet通过handlerAdapter从HandlerMapping获取对应该请求得处理器</li><li>Handler 通过handlerRequest(request,reponse)处理具体的请求，然后返回处理结果ModelAndView</li><li>DispatcherServlet接收到ModelAndView后通过调用ViewResolve 组装View，返回View<br>4.DispatcherServlet返回处理结果</li></ol><h3 id="相关技术字典"><a href="#相关技术字典" class="headerlink" title="相关技术字典"></a>相关技术字典</h3><ol><li><h4 id="Restful-web-请求风格"><a href="#Restful-web-请求风格" class="headerlink" title="Restful web 请求风格"></a>Restful web 请求风格</h4> 采用Restful 架构的web请求分割的原则</li></ol><ul><li>每一个URI代表一种资源（URI中应该全是名词，动作操作全部传给Http协议）</li><li>客户端和服务端之间，传递这种资源的某种变现层</li><li>客户端通过四个HTTP动词，对服务器端资源进行操作，实现“表现层状态转化”</li></ul><ol start="2"><li><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4> HTTP 是基于 TCP/IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.ruanyifeng.com/blog/2011/09/restful.html" rel="external nofollow noopener noreferrer" target="_blank">理解RESTful架构</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" rel="external nofollow noopener noreferrer" target="_blank">HTTP 协议入门</a></li></ul></blockquote>]]></content>
       
       
       <categories>
           
           <category> spring </category>
+          
+          <category> springmvc </category>
           
       </categories>
       
@@ -249,15 +232,17 @@
     
     <entry>
       <title>pageHelper的使用</title>
-      <link href="/wiki/spring/pageHelp%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-      <url>/wiki/spring/pageHelp%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      <link href="/wiki/spring/springmvc/pageHelp%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <url>/wiki/spring/springmvc/pageHelp%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
       
-        <content type="html"><![CDATA[<h1 id="pageHelper的使用"><a href="#pageHelper的使用" class="headerlink" title="pageHelper的使用"></a>pageHelper的使用</h1><h2 id="pageHelper"><a href="#pageHelper" class="headerlink" title="pageHelper"></a>pageHelper</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><h3 id="第一种，RowBounds方式的调用"><a href="#第一种，RowBounds方式的调用" class="headerlink" title="第一种，RowBounds方式的调用"></a>第一种，RowBounds方式的调用</h3><pre><code>List&lt;Country&gt; list = sqlSession.selectList(&quot;x.y.selectIf&quot;, null, new RowBounds(0, 10));</code></pre><h3 id="第二种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第二种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第二种，Mapper接口方式的调用，推荐这种使用方式。"></a>第二种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.startPage(1, 10);List&lt;Country&gt; list = countryMapper.selectIf(1);</code></pre><h3 id="第三种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第三种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第三种，Mapper接口方式的调用，推荐这种使用方式。"></a>第三种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.offsetPage(1, 10);List&lt;Country&gt; list = countryMapper.selectIf(1);</code></pre><h3 id="第四种，参数方法调用"><a href="#第四种，参数方法调用" class="headerlink" title="第四种，参数方法调用"></a>第四种，参数方法调用</h3><pre><code>//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数public interface CountryMapper {    List&lt;Country&gt; selectByPageNumSize(            @Param(&quot;user&quot;) User user,            @Param(&quot;pageNum&quot;) int pageNum,            @Param(&quot;pageSize&quot;) int pageSize);}//配置supportMethodsArguments=true//在代码中直接调用：List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user, 1, 10);</code></pre><h3 id="第五种，参数对象"><a href="#第五种，参数对象" class="headerlink" title="第五种，参数对象"></a>第五种，参数对象</h3><p>如果 pageNum 和 pageSize 存在于 User 对象中，只要参数有值，也会被分页<br>有如下 User 对象</p><pre><code>public class User {    //其他fields    //下面两个参数名和 params 配置的名字一致    private Integer pageNum;    private Integer pageSize;}//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数public interface CountryMapper {    List&lt;Country&gt; selectByPageNumSize(User user);}//当 user 中的 pageNum!= null &amp;&amp; pageSize!= null 时，会自动分页List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user);</code></pre><h3 id="第六种，ISelect-接口方式"><a href="#第六种，ISelect-接口方式" class="headerlink" title="第六种，ISelect 接口方式"></a>第六种，ISelect 接口方式</h3><pre><code>//jdk6,7用法，创建接口Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectGroupBy();    }});//jdk8 lambda用法Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(()-&gt; countryMapper.selectGroupBy());//也可以直接返回PageInfo，注意doSelectPageInfo方法和doSelectPagepageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectGroupBy();    }});//对应的lambda用法pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(() -&gt; countryMapper.selectGroupBy());//count查询，返回一个查询语句的count数long total = PageHelper.count(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectLike(country);    }});//lambdatotal = PageHelper.count(()-&gt;countryMapper.selectLike(country));</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="pageHelper的使用"><a href="#pageHelper的使用" class="headerlink" title="pageHelper的使用"></a>pageHelper的使用</h1><h2 id="pageHelper"><a href="#pageHelper" class="headerlink" title="pageHelper"></a>pageHelper</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><h3 id="第一种，RowBounds方式的调用"><a href="#第一种，RowBounds方式的调用" class="headerlink" title="第一种，RowBounds方式的调用"></a>第一种，RowBounds方式的调用</h3><pre><code>List&lt;Country&gt; list = sqlSession.selectList(&quot;x.y.selectIf&quot;, null, new RowBounds(0, 10));</code></pre><h3 id="第二种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第二种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第二种，Mapper接口方式的调用，推荐这种使用方式。"></a>第二种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.startPage(1, 10);List&lt;Country&gt; list = countryMapper.selectIf(1);</code></pre><h3 id="第三种，Mapper接口方式的调用，推荐这种使用方式。"><a href="#第三种，Mapper接口方式的调用，推荐这种使用方式。" class="headerlink" title="第三种，Mapper接口方式的调用，推荐这种使用方式。"></a>第三种，Mapper接口方式的调用，推荐这种使用方式。</h3><pre><code>PageHelper.offsetPage(1, 10);List&lt;Country&gt; list = countryMapper.selectIf(1);</code></pre><h3 id="第四种，参数方法调用"><a href="#第四种，参数方法调用" class="headerlink" title="第四种，参数方法调用"></a>第四种，参数方法调用</h3><pre><code>//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数public interface CountryMapper {    List&lt;Country&gt; selectByPageNumSize(            @Param(&quot;user&quot;) User user,            @Param(&quot;pageNum&quot;) int pageNum,            @Param(&quot;pageSize&quot;) int pageSize);}//配置supportMethodsArguments=true//在代码中直接调用：List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user, 1, 10);</code></pre><h3 id="第五种，参数对象"><a href="#第五种，参数对象" class="headerlink" title="第五种，参数对象"></a>第五种，参数对象</h3><p>如果 pageNum 和 pageSize 存在于 User 对象中，只要参数有值，也会被分页<br>有如下 User 对象</p><pre><code>public class User {    //其他fields    //下面两个参数名和 params 配置的名字一致    private Integer pageNum;    private Integer pageSize;}//存在以下 Mapper 接口方法，你不需要在 xml 处理后两个参数public interface CountryMapper {    List&lt;Country&gt; selectByPageNumSize(User user);}//当 user 中的 pageNum!= null &amp;&amp; pageSize!= null 时，会自动分页List&lt;Country&gt; list = countryMapper.selectByPageNumSize(user);</code></pre><h3 id="第六种，ISelect-接口方式"><a href="#第六种，ISelect-接口方式" class="headerlink" title="第六种，ISelect 接口方式"></a>第六种，ISelect 接口方式</h3><pre><code>//jdk6,7用法，创建接口Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectGroupBy();    }});//jdk8 lambda用法Page&lt;Country&gt; page = PageHelper.startPage(1, 10).doSelectPage(()-&gt; countryMapper.selectGroupBy());//也可以直接返回PageInfo，注意doSelectPageInfo方法和doSelectPagepageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectGroupBy();    }});//对应的lambda用法pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(() -&gt; countryMapper.selectGroupBy());//count查询，返回一个查询语句的count数long total = PageHelper.count(new ISelect() {    @Override    public void doSelect() {        countryMapper.selectLike(country);    }});//lambdatotal = PageHelper.count(()-&gt;countryMapper.selectLike(country));</code></pre><blockquote><ul><li>​</li></ul></blockquote>]]></content>
       
       
       <categories>
           
           <category> spring </category>
+          
+          <category> springmvc </category>
           
       </categories>
       

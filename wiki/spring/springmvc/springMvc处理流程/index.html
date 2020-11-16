@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>default | Home</title>
+  <title>springMvc处理流程 | Home</title>
   <meta name="keywords" content>
-  <meta name="description" content="default | Home">
+  <meta name="description" content="springMvc处理流程 | Home">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Categories">
@@ -444,9 +444,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-python/default" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-spring/springmvc/springMvc处理流程" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">default</h1>
+        <h1 class="article-title">springMvc处理流程</h1>
     
     <div class="article-meta">
         
@@ -454,7 +454,9 @@
         
         <span class="book">
             
-                <a data-rel="python">python</a>
+                <a data-rel="spring">spring</a>/
+            
+                <a data-rel="springmvc">springmvc</a>
             
         </span>
         
@@ -462,7 +464,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2020-11-13 10:00:22">2020-11-13 10:00</time>
+        创建时间:<time class="date" title="更新时间: 2020-06-16 11:42:33">2018-11-21 14:18</time>
         
     </div>
     <div class="article-meta">
@@ -484,7 +486,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-mvc相关组件及介绍"><span class="toc-text">spring mvc相关组件及介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DispatchServlet"><span class="toc-text">DispatchServlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#handlerMapping"><span class="toc-text">handlerMapping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Handler（Controller）"><span class="toc-text">Handler（Controller）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HandlerAdapter"><span class="toc-text">HandlerAdapter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HanderExceptionResolver"><span class="toc-text">HanderExceptionResolver</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#spring-mvc各组件交互流程"><span class="toc-text">spring mvc各组件交互流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#流程图"><span class="toc-text">流程图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤详细描述"><span class="toc-text">步骤详细描述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关技术字典"><span class="toc-text">相关技术字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Restful-web-请求风格"><span class="toc-text">Restful web 请求风格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP协议"><span class="toc-text">HTTP协议</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li>
     
 <style>
     .left-col .switch-btn,
@@ -500,10 +502,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+        <h1 id="spring-mvc相关组件及介绍"><a href="#spring-mvc相关组件及介绍" class="headerlink" title="spring mvc相关组件及介绍"></a>spring mvc相关组件及介绍</h1><ul>
+<li><h4 id="DispatchServlet"><a href="#DispatchServlet" class="headerlink" title="DispatchServlet"></a>DispatchServlet</h4>java开发在经历了超级servlet阶段后，开始为servlet减负的尝试，MVC结构把servlet的工作分为frontController与Page Controller，前着进行必要请求的转发，后者负责具体的业务逻辑处理，DispathServlet就是frontController的角色，负责接收web请求建立连接，然后调用合适的处理类获得结果，返回。</li>
+<li><h4 id="handlerMapping"><a href="#handlerMapping" class="headerlink" title="handlerMapping"></a>handlerMapping</h4>在DispatchServlet接收到客户端的请求之后，通过handlerMapping匹配到具体的处理类（handler），handler代表所有的次级控制类，除了我们常用的controller意外还有第三方WEB开发框架中的Page Controller组件。<br>handerMapping类的实现类有多个：</li>
+</ul>
+<ol>
+<li>SimpleUrlHandlerMapping</li>
+<li>ControllerClassnameHandlerMapping</li>
+<li>DefaultAnnotationHandlerMapping(基于注解的配置方式)<br>这些hangdlerMapping一个dispatchSerlet中可以配置多个，他们通过实现的Ordered接口按照序列优先级执行</li>
+</ol>
 <ul>
-<li><a href></a></li>
-<li><a href></a></li>
+<li><h4 id="Handler（Controller）"><a href="#Handler（Controller）" class="headerlink" title="Handler（Controller）"></a>Handler（Controller）</h4>在SpirngMvc中，任何可以用于Web请求处理的对象统称为handler，Controller是Handler中的一个特殊类型</li>
+<li><h4 id="HandlerAdapter"><a href="#HandlerAdapter" class="headerlink" title="HandlerAdapter"></a>HandlerAdapter</h4>主要工作只是调用这个HandlerAdaptor“认识”的Handler的web请求处理方法，然后将处理结果转换为DispatcherServlet统一使用的ModelAndView就行。</li>
+<li><h4 id="HanderExceptionResolver"><a href="#HanderExceptionResolver" class="headerlink" title="HanderExceptionResolver"></a>HanderExceptionResolver</h4>提供统一的异常处理方式，让handler的throws Exception看起来更加“理直气壮”</li>
+</ul>
+<h3 id="spring-mvc各组件交互流程"><a href="#spring-mvc各组件交互流程" class="headerlink" title="spring mvc各组件交互流程"></a>spring mvc各组件交互流程</h3><ul>
+<li><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><img src="/wiki/spring/springmvc/springMvc处理流程/springMvc处理流程图.png" title="[spring MVC 时序图]">
+</li>
+<li><h4 id="步骤详细描述"><a href="#步骤详细描述" class="headerlink" title="步骤详细描述"></a>步骤详细描述</h4></li>
+</ul>
+<ol>
+<li>DispatcherServlet 接收到满足web.xml配置的Http请求，daspatcherServlet通过handlerAdapter从HandlerMapping获取对应该请求得处理器</li>
+<li>Handler 通过handlerRequest(request,reponse)处理具体的请求，然后返回处理结果ModelAndView</li>
+<li>DispatcherServlet接收到ModelAndView后通过调用ViewResolve 组装View，返回View<br>4.DispatcherServlet返回处理结果</li>
+</ol>
+<h3 id="相关技术字典"><a href="#相关技术字典" class="headerlink" title="相关技术字典"></a>相关技术字典</h3><ol>
+<li><h4 id="Restful-web-请求风格"><a href="#Restful-web-请求风格" class="headerlink" title="Restful web 请求风格"></a>Restful web 请求风格</h4> 采用Restful 架构的web请求分割的原则</li>
+</ol>
+<ul>
+<li>每一个URI代表一种资源（URI中应该全是名词，动作操作全部传给Http协议）</li>
+<li>客户端和服务端之间，传递这种资源的某种变现层</li>
+<li>客户端通过四个HTTP动词，对服务器端资源进行操作，实现“表现层状态转化”</li>
+</ul>
+<ol start="2">
+<li><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4> HTTP 是基于 TCP/IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2011/09/restful.html" rel="external nofollow noopener noreferrer" target="_blank">理解RESTful架构</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" rel="external nofollow noopener noreferrer" target="_blank">HTTP 协议入门</a></li>
 </ul>
 </blockquote>
 
@@ -519,12 +556,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>default</p>
+    <p><span class="copy-title">文章标题:</span>springMvc处理流程</p>
     
     <p><span class="copy-title">本文作者:</span><a title="gnuochen">gnuochen</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-11-13, 10:00:22</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-13, 10:00:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/python/default/" title="default">../index.html/wiki/python/default/</a>
+    <p><span class="copy-title">发布时间:</span>2018-11-21, 14:18:34</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-16, 11:42:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/spring/springmvc/springMvc处理流程/" title="springMvc处理流程">../index.html/wiki/spring/springmvc/springMvc处理流程/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
