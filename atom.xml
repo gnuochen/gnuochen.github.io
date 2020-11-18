@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="../index.html/"/>
-  <updated>2020-11-13T02:00:22.524Z</updated>
+  <updated>2020-11-18T10:53:53.471Z</updated>
   <id>../index.html/</id>
   
   <author>
@@ -17,9 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>十大经典排序算法</title>
+    <link href="../index.html/wiki/algorithm/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>../index.html/wiki/algorithm/十大经典排序算法/</id>
+    <published>2020-11-13T02:00:22.000Z</published>
+    <updated>2020-11-18T10:53:53.471Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-算法的分类"><a href="#1-算法的分类" class="headerlink" title="1.算法的分类"></a>1.算法的分类</h2><img src="/wiki/algorithm/十大经典排序算法/排序算法分类.png" title="[排序算法分类]"><h2 id="2-各算法性能比较"><a href="#2-各算法性能比较" class="headerlink" title="2.各算法性能比较"></a>2.各算法性能比较</h2><table><thead><tr><th>排序方法</th><th>时间复杂度（平均）</th><th>时间复杂度（最差）</th><th>时间复杂度（最好）</th><th>空间复杂度</th><th>稳定性</th></tr></thead><tbody><tr><td>冒泡排序</td><td>O(n^2)</td><td>O(n^2)</td><td>O(n)</td><td>O(1)</td><td>稳定</td></tr><tr><td>快速排序</td><td>O(nlog~2n)</td><td>O(n^2)</td><td>O(nlog~2n)</td><td>O(nlog~2n)</td><td>不稳定</td></tr><tr><td>插入排序</td><td>O(n^2)</td><td>O(n^2)</td><td>O(n)</td><td>O(1)</td><td>稳定</td></tr><tr><td>希尔排序</td><td>O(n^1.3)</td><td>O(n^2)</td><td>O(n)</td><td>O(1)</td><td>不稳定</td></tr><tr><td>选择排序</td><td>O(n^2)</td><td>O(n^2)</td><td>O(n^2)</td><td>O(1)</td><td>不稳定</td></tr><tr><td>堆排序</td><td>O(nlog~2n)</td><td>O(nlog~2n)</td><td>O(nlog~2n)</td><td>O(1)</td><td>不稳定</td></tr><tr><td>归并排序</td><td>O(nlog~2n)</td><td>O(nlog~2n)</td><td>O(nlog~2n)</td><td>O(n)</td><td>稳定</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>计数排序</td><td>O(n+K)</td><td>O(n+K)</td><td>O(n+K)</td><td>O(n+K)</td><td>稳定</td></tr><tr><td>桶排序</td><td>O(n+K)</td><td>O(n^2)</td><td>O(n)</td><td>O(n+K)</td><td>稳定</td></tr><tr><td>基数排序</td><td>O(n*k)</td><td>O(n*k)</td><td>O(n*k)</td><td>O(n+k)</td><td>稳定</td></tr></tbody></table><p><em>相关概念</em></p><blockquote><p><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。</p><p><strong>不稳定</strong>：如果a原本在b的前面，而a=b，排序之后 a 可能会出现在 b 的后面。</p><p><strong>时间复杂度</strong>：对排序数据的总的操作次数。反映当n变化时，操作次数呈现什么规律。</p><p><strong>空间复杂度：</strong>是指算法在计算机内执行时所需存储空间的度量，它也是数据规模n的函数。 </p></blockquote><h2 id="3-算法实现"><a href="#3-算法实现" class="headerlink" title="3.算法实现"></a>3.算法实现</h2><h3 id="3-1-冒泡排序（Bubble-sort）"><a href="#3-1-冒泡排序（Bubble-sort）" class="headerlink" title="3.1 冒泡排序（Bubble sort）"></a>3.1 冒泡排序（Bubble sort）</h3><p>​    冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。 </p><h4 id="3-1-1算法描述"><a href="#3-1-1算法描述" class="headerlink" title="3.1.1算法描述"></a>3.1.1算法描述</h4><ul><li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li><li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li><li>针对所有的元素重复以上的步骤，除了最后一个；</li><li>重复步骤1~3，直到排序完成。</li></ul><h4 id="3-1-2-动图演示"><a href="#3-1-2-动图演示" class="headerlink" title="3.1.2 动图演示"></a>3.1.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/bubble_sort.gif" title="[冒泡排序]"><h4 id="3-1-3-代码实现"><a href="#3-1-3-代码实现" class="headerlink" title="3.1.3 代码实现"></a>3.1.3 代码实现</h4><pre><code class="java">    public static int[] bubbleSort(int[] array) {        if (array.length == 0)            return array;        for (int i = 0; i &lt; array.length; i++)            for (int j = 0; j &lt; array.length - 1 - i; j++)                if (array[j + 1] &lt; array[j]) {                    int temp = array[j + 1];                    array[j + 1] = array[j];                    array[j] = temp;                }        return array;    }</code></pre><h3 id="3-2-快速排序-quick-sort"><a href="#3-2-快速排序-quick-sort" class="headerlink" title="3.2 快速排序(quick sort)"></a>3.2 快速排序(quick sort)</h3><p>快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p><h4 id="3-2-1-算法描述"><a href="#3-2-1-算法描述" class="headerlink" title="3.2.1 算法描述"></a>3.2.1 算法描述</h4><p>快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：</p><ul><li>从数列中挑出一个元素，称为 “基准”（pivot）；</li><li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</li><li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li></ul><h4 id="3-2-2-动图演示"><a href="#3-2-2-动图演示" class="headerlink" title="3.2.2 动图演示"></a>3.2.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/quick_sort.gif" title="[快速排序]"><h4 id="3-2-3-代码实现"><a href="#3-2-3-代码实现" class="headerlink" title="3.2.3 代码实现"></a>3.2.3 代码实现</h4><pre><code class="java">//快速排序方法public static int[] QuickSort(int[] array, int start, int end) {    if (array.length &lt; 1 || start &lt; 0 || end &gt;= array.length || start &gt; end) return null;    int smallIndex = partition(array, start, end);    if (smallIndex &gt; start)        QuickSort(array, start, smallIndex - 1);    if (smallIndex &lt; end)        QuickSort(array, smallIndex + 1, end);    return array;}// 快速排序算法——partitionpublic static int partition(int[] array, int start, int end) {    int pivot = (int) (start + Math.random() * (end - start + 1));    int smallIndex = start - 1;    swap(array, pivot, end);    for (int i = start; i &lt;= end; i++)        if (array[i] &lt;= array[end]) {            smallIndex++;            if (i &gt; smallIndex)                swap(array, i, smallIndex);        }    return smallIndex;}// 交换数组内两个元素public static void swap(int[] array, int i, int j) {    int temp = array[i];    array[i] = array[j];    array[j] = temp;}</code></pre><h3 id="3-3-插入排序（insertion-sort）"><a href="#3-3-插入排序（insertion-sort）" class="headerlink" title="3.3 插入排序（insertion sort）"></a>3.3 插入排序（insertion sort）</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p><h4 id="3-3-1-算法描述"><a href="#3-3-1-算法描述" class="headerlink" title="3.3.1 算法描述"></a>3.3.1 算法描述</h4><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p><ul><li>从第一个元素开始，该元素可以认为已经被排序；</li><li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li><li>如果该元素（已排序）大于新元素，将该元素移到下一位置；</li><li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</li><li>将新元素插入到该位置后；</li><li>重复步骤2~5。</li></ul><h4 id="3-3-2-动图演示"><a href="#3-3-2-动图演示" class="headerlink" title="3.3.2 动图演示"></a>3.3.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/insertion_sort.gif" title="[插入排序]"><h4 id="3-3-3-代码实现"><a href="#3-3-3-代码实现" class="headerlink" title="3.3.3 代码实现"></a>3.3.3 代码实现</h4><pre><code class="java">public static int[] insertionSort(int[] array) {    if (array.length == 0)        return array;    int current;    for (int i = 0; i &lt; array.length - 1; i++) {        current = array[i + 1];        int preIndex = i;        while (preIndex &gt;= 0 &amp;&amp; current &lt; array[preIndex]) {            array[preIndex + 1] = array[preIndex];            preIndex--;        }        array[preIndex + 1] = current;    }    return array;}</code></pre><h3 id="3-4-希尔排序（shell-sort）"><a href="#3-4-希尔排序（shell-sort）" class="headerlink" title="3.4 希尔排序（shell sort）"></a>3.4 希尔排序（shell sort）</h3><p>希尔排序也是一种插入排序，它是简单插入排序经过改进之后的一个更高效的版本，也称为缩小增量排序，同时该算法是冲破O(n2）的第一批算法之一。它与插入排序的不同之处在于，它会优先比较距离较远的元素。</p><h4 id="3-4-1-算法描述"><a href="#3-4-1-算法描述" class="headerlink" title="3.4.1 算法描述"></a>3.4.1 算法描述</h4><ul><li>选择一个增量序列t1，t2，…，tk，其中ti&gt;tj，tk=1；</li><li>按增量序列个数k，对序列进行k 趟排序；</li><li>每趟排序，根据对应的增量ti，将待排序列分割成若干长度为m 的子序列，分别对各子表进行直接插入排序。仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li></ul><h4 id="3-4-2-动图演示"><a href="#3-4-2-动图演示" class="headerlink" title="3.4.2 动图演示"></a>3.4.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/shell_sort.gif" title="[缩小增量排序]"><h4 id="3-4-3-代码实现"><a href="#3-4-3-代码实现" class="headerlink" title="3.4.3 代码实现"></a>3.4.3 代码实现</h4><pre><code class="java">public static int[] ShellSort(int[] array) {    int len = array.length;    int temp, gap = len / 2;    while (gap &gt; 0) {        for (int i = gap; i &lt; len; i++) {            temp = array[i];            int preIndex = i - gap;            while (preIndex &gt;= 0 &amp;&amp; array[preIndex] &gt; temp) {                array[preIndex + gap] = array[preIndex];                preIndex -= gap;            }            array[preIndex + gap] = temp;        }        gap /= 2;    }    return array;}</code></pre><h3 id="3-5-选择排序（selection-sort）"><a href="#3-5-选择排序（selection-sort）" class="headerlink" title="3.5 选择排序（selection sort）"></a>3.5 选择排序（selection sort）</h3><p>选择排序(Selection-sort)是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 </p><h4 id="3-5-1-算法描述"><a href="#3-5-1-算法描述" class="headerlink" title="3.5.1 算法描述"></a>3.5.1 算法描述</h4><ul><li>初始状态：无序区为R[1..n]，有序区为空；</li><li>第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中-选出关键字最小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</li><li>n-1趟结束，数组有序化了。</li></ul><h4 id="3-5-2-动图演示"><a href="#3-5-2-动图演示" class="headerlink" title="3.5.2 动图演示"></a>3.5.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/selection_sort.gif" title="[选择排序]"><h4 id="3-5-3-代码实现"><a href="#3-5-3-代码实现" class="headerlink" title="3.5.3 代码实现"></a>3.5.3 代码实现</h4><pre><code class="java">public static int[] selectionSort(int[] array) {    if (array.length == 0)        return array;    for (int i = 0; i &lt; array.length; i++) {        int minIndex = i;        for (int j = i; j &lt; array.length; j++) {            if (array[j] &lt; array[minIndex]) //找到最小的数                minIndex = j; //将最小数的索引保存        }        int temp = array[minIndex];        array[minIndex] = array[i];        array[i] = temp;    }    return array;}</code></pre><h3 id="3-6-堆排序（Heap-sort）"><a href="#3-6-堆排序（Heap-sort）" class="headerlink" title="3.6 堆排序（Heap sort）"></a>3.6 堆排序（Heap sort）</h3><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p><h4 id="3-6-1-算法描述"><a href="#3-6-1-算法描述" class="headerlink" title="3.6.1 算法描述"></a>3.6.1 算法描述</h4><ul><li>将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；</li><li>将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；</li><li>由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。</li></ul><h4 id="3-6-2-动图演示"><a href="#3-6-2-动图演示" class="headerlink" title="3.6.2 动图演示"></a>3.6.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/heap_sort.gif" title="[堆排序]"><h4 id="3-6-3-代码实现"><a href="#3-6-3-代码实现" class="headerlink" title="3.6.3 代码实现"></a>3.6.3 代码实现</h4><pre><code class="java">//声明全局变量，用于记录数组array的长度；static int len;// 堆排序算法public static int[] heapSort(int[] array) {    len = array.length;    if (len &lt; 1) return array;    //1.构建一个最大堆    buildMaxHeap(array);    System.out.println(&quot;第一次构建最大堆：&quot;+ Arrays.toString(array));    //2.循环将堆首位（最大值）与末位交换，然后在重新调整最大堆    while (len &gt; 0) {        swap(array, 0, len - 1);        len--;        adjustHeap(array, 0);        System.out.println(&quot;len:&quot;+len+&quot;构建后为：&quot;+Arrays.toString(array));    }    return array;}//建立最大堆public static void buildMaxHeap(int[] array) {    //从最后一个非叶子节点开始向上构造最大堆    for (int i = (len/2 - 1); i &gt;= 0; i--) { //感谢 @让我发会呆 网友的提醒，此处应该为 i = (len/2 - 1)        adjustHeap(array, i);    }}//调整使之成为最大堆 public static void adjustHeap(int[] array, int i) {    int maxIndex = i;    //如果有左子树，且左子树大于父节点，则将最大指针指向左子树    if (i * 2 &lt; len &amp;&amp; array[i * 2] &gt; array[maxIndex])        maxIndex = i * 2;    //如果有右子树，且右子树大于父节点，则将最大指针指向右子树    if (i * 2 + 1 &lt; len &amp;&amp; array[i * 2 + 1] &gt; array[maxIndex])        maxIndex = i * 2 + 1;    //如果父节点不是最大值，则将父节点与最大值交换，并且递归调整与父节点交换的位置。    if (maxIndex != i) {        swap(array, maxIndex, i);        adjustHeap(array, maxIndex);    }}</code></pre><h3 id="3-7-归并排序（Merge-sort）"><a href="#3-7-归并排序（Merge-sort）" class="headerlink" title="3.7 归并排序（Merge sort）"></a>3.7 归并排序（Merge sort）</h3><p>归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为2-路归并。</p><h4 id="3-7-1-算法描述"><a href="#3-7-1-算法描述" class="headerlink" title="3.7.1 算法描述"></a>3.7.1 算法描述</h4><ul><li>把长度为n的输入序列分成两个长度为n/2的子序列；</li><li>对这两个子序列分别采用归并排序；</li><li>将两个排序好的子序列合并成一个最终的排序序列。</li></ul><h4 id="3-7-2-动图演示"><a href="#3-7-2-动图演示" class="headerlink" title="3.7.2 动图演示"></a>3.7.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/merge_sort.gif" title="[归并排序]"><h4 id="3-7-3-代码实现"><a href="#3-7-3-代码实现" class="headerlink" title="3.7.3 代码实现"></a>3.7.3 代码实现</h4><pre><code class="java">// 归并排序public static int[] MergeSort(int[] array) {    if (array.length &lt; 2) return array;    int mid = array.length / 2;    int[] left = Arrays.copyOfRange(array, 0, mid);    int[] right = Arrays.copyOfRange(array, mid, array.length);    return merge(MergeSort(left), MergeSort(right));}//归并排序——将两段排序好的数组结合成一个排序数组public static int[] merge(int[] left, int[] right) {    int[] result = new int[left.length + right.length];    for (int index = 0, i = 0, j = 0; index &lt; result.length; index++) {        if (i &gt;= left.length)            result[index] = right[j++];        else if (j &gt;= right.length)            result[index] = left[i++];        else if (left[i] &gt; right[j])            result[index] = right[j++];        else            result[index] = left[i++];    }    return result;}</code></pre><h3 id="3-8-计数排序（counting-sort）"><a href="#3-8-计数排序（counting-sort）" class="headerlink" title="3.8 计数排序（counting sort）"></a>3.8 计数排序（counting sort）</h3><p>计数排序不是基于比较的排序算法，其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。 作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p><h4 id="3-8-1-算法描述"><a href="#3-8-1-算法描述" class="headerlink" title="3.8.1 算法描述"></a>3.8.1 算法描述</h4><ul><li>找出待排序的数组中最大和最小的元素；</li><li>统计数组中每个值为i的元素出现的次数，存入数组C的第i项；</li><li>对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）；</li><li>反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1。</li></ul><h4 id="3-8-2-动图演示"><a href="#3-8-2-动图演示" class="headerlink" title="3.8.2 动图演示"></a>3.8.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/counting_sort.gif" title="[计数排序]"><h4 id="3-8-3-代码实现"><a href="#3-8-3-代码实现" class="headerlink" title="3.8.3 代码实现"></a>3.8.3 代码实现</h4><pre><code class="java">// 计数排序public static int[] CountingSort(int[] array) {    if (array.length == 0) return array;    int bias, min = array[0], max = array[0];    for (int i = 1; i &lt; array.length; i++) {        if (array[i] &gt; max)            max = array[i];        if (array[i] &lt; min)            min = array[i];    }    bias = 0 - min;    int[] bucket = new int[max - min + 1];    Arrays.fill(bucket, 0);    for (int i = 0; i &lt; array.length; i++) {        bucket[array[i] + bias]++;    }    int index = 0, i = 0;    while (index &lt; array.length) {        if (bucket[i] != 0) {            array[index] = i - bias;            bucket[i]--;            index++;        } else            i++;    }    return array;}</code></pre><h3 id="3-9-桶排序（Bucket-sort）"><a href="#3-9-桶排序（Bucket-sort）" class="headerlink" title="3.9 桶排序（Bucket sort）"></a>3.9 桶排序（Bucket sort）</h3><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。桶排序 (Bucket sort)的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排）。</p><h4 id="3-9-1-算法描述"><a href="#3-9-1-算法描述" class="headerlink" title="3.9.1 算法描述"></a>3.9.1 算法描述</h4><ul><li>设置一个定量的数组当作空桶；</li><li>遍历输入数据，并且把数据一个一个放到对应的桶里去；</li><li>对每个不是空的桶进行排序；</li><li>从不是空的桶里把排好序的数据拼接起来。 </li></ul><h4 id="3-9-2-动图演示"><a href="#3-9-2-动图演示" class="headerlink" title="3.9.2 动图演示"></a>3.9.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/bucket_sort.gif" title="[桶排序]"><h4 id="3-9-3-代码实现"><a href="#3-9-3-代码实现" class="headerlink" title="3.9.3 代码实现"></a>3.9.3 代码实现</h4><pre><code class="java">// 桶排序public static ArrayList&lt;Integer&gt; BucketSort(ArrayList&lt;Integer&gt; array, int bucketSize) {    if (array == null || array.size() &lt; 2)        return array;    int max = array.get(0), min = array.get(0);    // 找到最大值最小值    for (int i = 0; i &lt; array.size(); i++) {        if (array.get(i) &gt; max)            max = array.get(i);        if (array.get(i) &lt; min)            min = array.get(i);    }    int bucketCount = (max - min) / bucketSize + 1;    ArrayList&lt;ArrayList&lt;Integer&gt;&gt; bucketArr = new ArrayList&lt;&gt;(bucketCount);    ArrayList&lt;Integer&gt; resultArr = new ArrayList&lt;&gt;();    for (int i = 0; i &lt; bucketCount; i++) {        bucketArr.add(new ArrayList&lt;Integer&gt;());    }    for (int i = 0; i &lt; array.size(); i++) {        bucketArr.get((array.get(i) - min) / bucketSize).add(array.get(i));    }    for (int i = 0; i &lt; bucketCount; i++) {        if (bucketSize == 1) { // 如果带排序数组中有重复数字时            for (int j = 0; j &lt; bucketArr.get(i).size(); j++)                resultArr.add(bucketArr.get(i).get(j));        } else {            if (bucketCount == 1)                bucketSize--;            ArrayList&lt;Integer&gt; temp = BucketSort(bucketArr.get(i), bucketSize);            for (int j = 0; j &lt; temp.size(); j++)                resultArr.add(temp.get(j));        }    }    return resultArr;}</code></pre><h3 id="3-10-基数排序-（Radix-sort）"><a href="#3-10-基数排序-（Radix-sort）" class="headerlink" title="3.10 基数排序 （Radix sort）"></a>3.10 基数排序 （Radix sort）</h3><p>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。</p><h4 id="3-10-1-算法描述"><a href="#3-10-1-算法描述" class="headerlink" title="3.10.1 算法描述"></a>3.10.1 算法描述</h4><ul><li>取得数组中的最大数，并取得位数；</li><li>arr为原始数组，从最低位开始取每个位组成radix数组；</li><li>对radix进行计数排序（利用计数排序适用于小范围数的特点）；</li></ul><h4 id="3-10-2-动图演示"><a href="#3-10-2-动图演示" class="headerlink" title="3.10.2 动图演示"></a>3.10.2 动图演示</h4><img src="/wiki/algorithm/十大经典排序算法/radix_sort.gif" title="[基数排序]"><h4 id="3-10-3-代码实现"><a href="#3-10-3-代码实现" class="headerlink" title="3.10.3 代码实现"></a>3.10.3 代码实现</h4><pre><code class="java">//基数排序public static int[] RadixSort(int[] array) {    if (array == null || array.length &lt; 2)        return array;    // 1.先算出最大数的位数；    int max = array[0];    for (int i = 1; i &lt; array.length; i++) {        max = Math.max(max, array[i]);    }    int maxDigit = 0;    while (max != 0) {        max /= 10;        maxDigit++;    }    int mod = 10, div = 1;    ArrayList&lt;ArrayList&lt;Integer&gt;&gt; bucketList = new ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();    for (int i = 0; i &lt; 10; i++)        bucketList.add(new ArrayList&lt;Integer&gt;());    for (int i = 0; i &lt; maxDigit; i++, mod *= 10, div *= 10) {        for (int j = 0; j &lt; array.length; j++) {            int num = (array[j] % mod) / div;            bucketList.get(num).add(array[j]);        }        int index = 0;        for (int j = 0; j &lt; bucketList.size(); j++) {            for (int k = 0; k &lt; bucketList.get(j).size(); k++)                array[index++] = bucketList.get(j).get(k);            bucketList.get(j).clear();        }    }    return array;}</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.cnblogs.com/zhi-ming/p/10453124.html" rel="external nofollow noopener noreferrer" target="_blank">十大经典排序算法（动图演示）</a></li><li><a href="https://blog.csdn.net/wq_1995/article/details/81937926#1%E3%80%81%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%88Bubble%20Sort%EF%BC%89" rel="external nofollow noopener noreferrer" target="_blank">十大经典排序算法总结（Java语言实现）</a></li><li><a href="https://www.sohu.com/a/278768401_478315" rel="external nofollow noopener noreferrer" target="_blank">【图解数据结构】 一组动画彻底理解桶排序 </a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-算法的分类&quot;&gt;&lt;a href=&quot;#1-算法的分类&quot; class=&quot;headerlink&quot; title=&quot;1.算法的分类&quot;&gt;&lt;/a&gt;1.算法的分类&lt;/h2&gt;&lt;img src=&quot;/wiki/algorithm/十大经典排序算法/排序算法分类.png&quot; title=
+      
+    
+    </summary>
+    
+      <category term="algorithm" scheme="../index.html/categories/algorithm/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>default</title>
-    <link href="../index.html/wiki/algorithm/default/"/>
-    <id>../index.html/wiki/algorithm/default/</id>
+    <link href="../index.html/wiki/python/default/"/>
+    <id>../index.html/wiki/python/default/</id>
     <published>2020-11-13T02:00:22.000Z</published>
     <updated>2020-11-13T02:00:22.524Z</updated>
     
@@ -38,17 +61,17 @@
     
     </summary>
     
-      <category term="algorithm" scheme="../index.html/categories/algorithm/"/>
+      <category term="python" scheme="../index.html/categories/python/"/>
     
     
   </entry>
   
   <entry>
-    <title>default</title>
-    <link href="../index.html/wiki/tools/default/"/>
-    <id>../index.html/wiki/tools/default/</id>
+    <title>常用idea插件汇总</title>
+    <link href="../index.html/wiki/tools/%E5%B8%B8%E7%94%A8idea%20%E6%8F%92%E4%BB%B6%E6%B1%87%E6%80%BB/"/>
+    <id>../index.html/wiki/tools/常用idea 插件汇总/</id>
     <published>2020-11-13T02:00:22.000Z</published>
-    <updated>2020-11-13T02:00:22.524Z</updated>
+    <updated>2020-11-16T07:02:34.622Z</updated>
     
     <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
     
@@ -72,8 +95,8 @@
   
   <entry>
     <title>default</title>
-    <link href="../index.html/wiki/design/default/"/>
-    <id>../index.html/wiki/design/default/</id>
+    <link href="../index.html/wiki/database/sql/default/"/>
+    <id>../index.html/wiki/database/sql/default/</id>
     <published>2020-11-13T02:00:22.000Z</published>
     <updated>2020-11-13T02:00:22.524Z</updated>
     
@@ -88,6 +111,32 @@
 &lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/u
+      
+    
+    </summary>
+    
+      <category term="database" scheme="../index.html/categories/database/"/>
+    
+      <category term="sql" scheme="../index.html/categories/database/sql/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式总结</title>
+    <link href="../index.html/wiki/design/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/"/>
+    <id>../index.html/wiki/design/设计模式总结/</id>
+    <published>2020-11-13T02:00:22.000Z</published>
+    <updated>2020-11-16T06:29:07.526Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-设计模式的六大原则"><a href="#1-设计模式的六大原则" class="headerlink" title="1.设计模式的六大原则"></a>1.设计模式的六大原则</h2><ul><li><h3 id="开闭原则（Open-close-principle）"><a href="#开闭原则（Open-close-principle）" class="headerlink" title="开闭原则（Open close principle）"></a>开闭原则（Open close principle）</h3><p>软件对象（类、模块、方法等）应该对于扩展是开放的，对修改是关闭的。用抽象构建框架，用实现扩展细节。因为抽象灵活性好，适应性广，只要抽象的合理，可以基本保持软件架构的稳定。而软件中易变的细节，我们用从抽象派生的实现类来进行扩展，当软件需要发生变化时，我们只需要根据需求重新派生一个实现类来扩展就可以了。当然前提是我们的抽象要合理，要对需求的变更有前瞻性和预见性才行。</p></li><li><h3 id="里氏替换原则（Liskov-substitution-principle）"><a href="#里氏替换原则（Liskov-substitution-principle）" class="headerlink" title="里氏替换原则（Liskov substitution principle）"></a>里氏替换原则（Liskov substitution principle）</h3><p>里氏代换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一。 里氏代换原则中说，任何基类可以出现的地方，子类一定可以出现。 </p><p>1、里氏替换原则是针对继承而言的，如果继承是为了实现代码重用，也就是为了共享方法，那么共享的父类方法就应该保持不变，不能被子类重新定义。子类只能通过新添加方法来扩展功能，父类和子类都可以实例化，而子类继承的方法和父类是一样的，父类调用方法的地方，子类也可以调用同一个继承得来的，逻辑和父类一致的方法，这时用子类对象将父类对象替换掉时，当然逻辑一致，相安无事。</p><p>2、如果继承的目的是为了多态，而多态的前提就是子类覆盖并重新定义父类的方法，为了符合LSP，我们应该将父类定义为抽象类，并定义抽象方法，让子类重新定义这些方法，当父类是抽象类时，父类就是不能实例化，所以也不存在可实例化的父类对象在程序里。也就不存在子类替换父类实例（根本不存在父类实例了）时逻辑不一致的可能。</p></li><li><h3 id="依赖倒转原则-（Dependence-iversion-principle）"><a href="#依赖倒转原则-（Dependence-iversion-principle）" class="headerlink" title="依赖倒转原则 （Dependence iversion principle）"></a>依赖倒转原则 （Dependence iversion principle）</h3><p>这个是开闭原则的基础，具体内容：真对接口编程，依赖于抽象而不依赖于具体。</p></li><li><h3 id="接口隔离原则（interface-segregation-principle）"><a href="#接口隔离原则（interface-segregation-principle）" class="headerlink" title="接口隔离原则（interface segregation principle）"></a>接口隔离原则（interface segregation principle）</h3><p>使用多个隔离的接口，比使用单个接口要好。还是一个降低类之间的耦合度的意思，从这儿我们看出，其实设计模式就是一个软件的设计思想，从大型软件架构出发，为了升级和维护方便。所以上文中多次出现：降低依赖，降低耦合。</p></li><li><h3 id="迪米特原则-最少知道原则（Demeter-principle）"><a href="#迪米特原则-最少知道原则（Demeter-principle）" class="headerlink" title="迪米特原则-最少知道原则（Demeter principle）"></a>迪米特原则-最少知道原则（Demeter principle）</h3><p>　也叫最少知识原则。迪米特法则的定义是只与你的直接朋友交谈，不与”陌生人”说话。如果两个软件实体无须直接通信，那么就不应当发生直接的相互调用，可以通过第三方转发该应用。其目的是降低类之间的耦合度，提高模块的相对独立性。</p></li><li><h3 id="合成复用原则（composite-reuse-principle）"><a href="#合成复用原则（composite-reuse-principle）" class="headerlink" title="合成复用原则（composite reuse principle）"></a>合成复用原则（composite reuse principle）</h3><p>原则是尽量使用合成/聚合的方式，而不是使用继承。、</p></li><li><h3 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h3><p> 对象不应承担太多功能，正如一心不能而用，比如太多的工作(种类)会使人崩溃。唯有专注才能保证对象的高内聚；唯有唯一，才能保证对象的细粒度。</p><p>​</p></li></ul><h2 id="2-设计模式分类"><a href="#2-设计模式分类" class="headerlink" title="2.设计模式分类"></a>2.设计模式分类</h2><h3 id="2-1-总体来说设计模式分为三大类："><a href="#2-1-总体来说设计模式分为三大类：" class="headerlink" title="2.1 总体来说设计模式分为三大类："></a>2.1 总体来说设计模式分为三大类：</h3><p>​     （1）创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。</p><p>​     （2）结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。</p><p>​     （3）行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。</p><h3 id="2-2-一张图说明23种设计模式直接的关系"><a href="#2-2-一张图说明23种设计模式直接的关系" class="headerlink" title="2.2 一张图说明23种设计模式直接的关系"></a>2.2 一张图说明23种设计模式直接的关系</h3><img src="/wiki/design/设计模式总结/23种设计模式之间的关系.jpg" title="[23种设计模式之间的关系]"><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.cnblogs.com/az4215/p/11489712.html" rel="external nofollow noopener noreferrer" target="_blank">设计模式六大原则</a></li><li><a href="https://blog.csdn.net/wanbf123/article/details/72528705" rel="external nofollow noopener noreferrer" target="_blank">设计模式结构图及设计原则</a></li><li><a href="https://design-patterns.readthedocs.io/zh_CN/latest/" rel="external nofollow noopener noreferrer" target="_blank">Graphic Design patterns</a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-设计模式的六大原则&quot;&gt;&lt;a href=&quot;#1-设计模式的六大原则&quot; class=&quot;headerlink&quot; title=&quot;1.设计模式的六大原则&quot;&gt;&lt;/a&gt;1.设计模式的六大原则&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h3 id=&quot;开闭原则（Open-close-prin
       
     
     </summary>
@@ -127,62 +176,6 @@
   </entry>
   
   <entry>
-    <title>default</title>
-    <link href="../index.html/wiki/python/default/"/>
-    <id>../index.html/wiki/python/default/</id>
-    <published>2020-11-13T02:00:22.000Z</published>
-    <updated>2020-11-13T02:00:22.524Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/u
-      
-    
-    </summary>
-    
-      <category term="python" scheme="../index.html/categories/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>default</title>
-    <link href="../index.html/wiki/database/sql/default/"/>
-    <id>../index.html/wiki/database/sql/default/</id>
-    <published>2020-11-13T02:00:22.000Z</published>
-    <updated>2020-11-13T02:00:22.524Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/u
-      
-    
-    </summary>
-    
-      <category term="database" scheme="../index.html/categories/database/"/>
-    
-      <category term="sql" scheme="../index.html/categories/database/sql/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>java集合框架</title>
     <link href="../index.html/wiki/java/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/"/>
     <id>../index.html/wiki/java/java集合框架/</id>
@@ -210,9 +203,9 @@
     <link href="../index.html/wiki/spring/springcloud/SpringCloud%E6%9E%B6%E6%9E%84/"/>
     <id>../index.html/wiki/spring/springcloud/SpringCloud架构/</id>
     <published>2020-05-13T02:00:22.000Z</published>
-    <updated>2020-11-16T02:45:40.790Z</updated>
+    <updated>2020-11-16T02:49:33.043Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><img src="/wiki/spring/springcloud/SpringCloud架构/Springcloud微服务架构图1.png" title="[]"><hr><h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ul><li><h3 id="netflix-Eureka："><a href="#netflix-Eureka：" class="headerlink" title="netflix-Eureka："></a>netflix-Eureka：</h3><p>各个服务启动时，Eureka Client都会将服务注册到Eureka Server，并且Eureka Client还可以反过来从Eureka Server拉取注册表，从而知道其他服务在哪里</p></li><li><h3 id="netflix-Ribbon："><a href="#netflix-Ribbon：" class="headerlink" title="netflix-Ribbon："></a>netflix-Ribbon：</h3><p>服务间发起请求的时候，基于Ribbon做负载均衡，从一个服务的多台机器中选择一台</p></li><li><h3 id="netflix-Feign："><a href="#netflix-Feign：" class="headerlink" title="netflix-Feign："></a>netflix-Feign：</h3><p>基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求</p></li><li><h3 id="netflix-Hystrix："><a href="#netflix-Hystrix：" class="headerlink" title="netflix-Hystrix："></a>netflix-Hystrix：</h3><p>发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题</p></li><li><h3 id="netflix-Zuul："><a href="#netflix-Zuul：" class="headerlink" title="netflix-Zuul："></a>netflix-Zuul：</h3><p>如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务</p></li><li><h3 id="netflix-Archaius"><a href="#netflix-Archaius" class="headerlink" title="netflix-Archaius:"></a>netflix-Archaius:</h3><p>配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</p><hr><p>​</p></li><li><h3 id="Config："><a href="#Config：" class="headerlink" title="Config："></a>Config：</h3><p>配置管理开发工具包，可以让你把配置放到远程服务器，目前支持本地存储、Git以及Subversion。</p></li><li><h3 id="Cloud-Bus："><a href="#Cloud-Bus：" class="headerlink" title="Cloud Bus："></a>Cloud Bus：</h3><p>事件、消息总线，用于在集群（例如，配置变化事件）中传播状态变化，可与Spring Cloud Config联合实现热部署。</p></li><li><h3 id="Spring-Cloud-Sleuth："><a href="#Spring-Cloud-Sleuth：" class="headerlink" title="Spring Cloud Sleuth："></a>Spring Cloud Sleuth：</h3><p>日志收集工具包，封装了Dapper,Zipkin和HTrace操作。</p></li><li><h3 id="Spring-Cloud-Data-Flow："><a href="#Spring-Cloud-Data-Flow：" class="headerlink" title="Spring Cloud Data Flow："></a>Spring Cloud Data Flow：</h3><p>大数据操作工具，通过命令行方式操作数据流。</p></li><li><h3 id="Spring-Cloud-Security："><a href="#Spring-Cloud-Security：" class="headerlink" title="Spring Cloud Security："></a>Spring Cloud Security：</h3><p>安全工具包，为你的应用程序添加安全控制，主要是指OAuth2。</p></li><li><h3 id="Spring-Cloud-Consul："><a href="#Spring-Cloud-Consul：" class="headerlink" title="Spring Cloud Consul："></a>Spring Cloud Consul：</h3><p>封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</p></li><li><h3 id="Spring-Cloud-Zookeeper："><a href="#Spring-Cloud-Zookeeper：" class="headerlink" title="Spring Cloud Zookeeper："></a>Spring Cloud Zookeeper：</h3><p>操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。</p></li><li><h3 id="Spring-Cloud-Stream："><a href="#Spring-Cloud-Stream：" class="headerlink" title="Spring Cloud Stream："></a>Spring Cloud Stream：</h3><p>数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</p></li><li><h3 id="Spring-Cloud-CLI："><a href="#Spring-Cloud-CLI：" class="headerlink" title="Spring Cloud CLI："></a>Spring Cloud CLI：</h3><p>基于 Spring Boot CLI，可以让你以命令行方式快速建立云组件。</p></li><li><h3 id="Spring-Cloud-for-Cloud-Foundry："><a href="#Spring-Cloud-for-Cloud-Foundry：" class="headerlink" title="Spring Cloud for Cloud Foundry："></a>Spring Cloud for Cloud Foundry：</h3><p>通过Oauth2协议绑定服务到CloudFoundry，CloudFoundry是VMware推出的开源PaaS云平台。</p></li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><p><a href="https://blog.csdn.net/wujian_csdn_csdn/article/details/81701320" rel="external nofollow noopener noreferrer" target="_blank">SpringCloud微服务架构</a></p><p>​</p></li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><img src="/wiki/spring/springcloud/SpringCloud架构/Springcloud微服务架构图1.png" title="[]"><img src="/wiki/spring/springcloud/SpringCloud架构/Springcloud微服务架构图2.png" title="[]"><hr><h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ul><li><h3 id="netflix-Eureka："><a href="#netflix-Eureka：" class="headerlink" title="netflix-Eureka："></a>netflix-Eureka：</h3><p>各个服务启动时，Eureka Client都会将服务注册到Eureka Server，并且Eureka Client还可以反过来从Eureka Server拉取注册表，从而知道其他服务在哪里</p></li><li><h3 id="netflix-Ribbon："><a href="#netflix-Ribbon：" class="headerlink" title="netflix-Ribbon："></a>netflix-Ribbon：</h3><p>服务间发起请求的时候，基于Ribbon做负载均衡，从一个服务的多台机器中选择一台</p></li><li><h3 id="netflix-Feign："><a href="#netflix-Feign：" class="headerlink" title="netflix-Feign："></a>netflix-Feign：</h3><p>基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求</p></li><li><h3 id="netflix-Hystrix："><a href="#netflix-Hystrix：" class="headerlink" title="netflix-Hystrix："></a>netflix-Hystrix：</h3><p>发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题</p></li><li><h3 id="netflix-Zuul："><a href="#netflix-Zuul：" class="headerlink" title="netflix-Zuul："></a>netflix-Zuul：</h3><p>如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务</p></li><li><h3 id="netflix-Archaius"><a href="#netflix-Archaius" class="headerlink" title="netflix-Archaius:"></a>netflix-Archaius:</h3><p>配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</p><hr><p>​</p></li><li><h3 id="Config："><a href="#Config：" class="headerlink" title="Config："></a>Config：</h3><p>配置管理开发工具包，可以让你把配置放到远程服务器，目前支持本地存储、Git以及Subversion。</p></li><li><h3 id="Cloud-Bus："><a href="#Cloud-Bus：" class="headerlink" title="Cloud Bus："></a>Cloud Bus：</h3><p>事件、消息总线，用于在集群（例如，配置变化事件）中传播状态变化，可与Spring Cloud Config联合实现热部署。</p></li><li><h3 id="Spring-Cloud-Sleuth："><a href="#Spring-Cloud-Sleuth：" class="headerlink" title="Spring Cloud Sleuth："></a>Spring Cloud Sleuth：</h3><p>日志收集工具包，封装了Dapper,Zipkin和HTrace操作。</p></li><li><h3 id="Spring-Cloud-Data-Flow："><a href="#Spring-Cloud-Data-Flow：" class="headerlink" title="Spring Cloud Data Flow："></a>Spring Cloud Data Flow：</h3><p>大数据操作工具，通过命令行方式操作数据流。</p></li><li><h3 id="Spring-Cloud-Security："><a href="#Spring-Cloud-Security：" class="headerlink" title="Spring Cloud Security："></a>Spring Cloud Security：</h3><p>安全工具包，为你的应用程序添加安全控制，主要是指OAuth2。</p></li><li><h3 id="Spring-Cloud-Consul："><a href="#Spring-Cloud-Consul：" class="headerlink" title="Spring Cloud Consul："></a>Spring Cloud Consul：</h3><p>封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</p></li><li><h3 id="Spring-Cloud-Zookeeper："><a href="#Spring-Cloud-Zookeeper：" class="headerlink" title="Spring Cloud Zookeeper："></a>Spring Cloud Zookeeper：</h3><p>操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。</p></li><li><h3 id="Spring-Cloud-Stream："><a href="#Spring-Cloud-Stream：" class="headerlink" title="Spring Cloud Stream："></a>Spring Cloud Stream：</h3><p>数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</p></li><li><h3 id="Spring-Cloud-CLI："><a href="#Spring-Cloud-CLI：" class="headerlink" title="Spring Cloud CLI："></a>Spring Cloud CLI：</h3><p>基于 Spring Boot CLI，可以让你以命令行方式快速建立云组件。</p></li><li><h3 id="Spring-Cloud-for-Cloud-Foundry："><a href="#Spring-Cloud-for-Cloud-Foundry：" class="headerlink" title="Spring Cloud for Cloud Foundry："></a>Spring Cloud for Cloud Foundry：</h3><p>通过Oauth2协议绑定服务到CloudFoundry，CloudFoundry是VMware推出的开源PaaS云平台。</p></li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><p><a href="https://blog.csdn.net/wujian_csdn_csdn/article/details/81701320" rel="external nofollow noopener noreferrer" target="_blank">SpringCloud微服务架构</a></p><p>​</p></li></ul></blockquote>]]></content>
     
     <summary type="html">
     
