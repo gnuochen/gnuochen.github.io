@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>java8新特性 | Home</title>
+  <meta name="keywords" content>
+  <meta name="description" content="java8新特性 | Home">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Categories">
+<meta property="og:url" content="../index.html/categories/index.html">
+<meta property="og:site_name" content="Home">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2020-05-29T10:25:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Categories">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>gnuochen</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/gnuochen" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/3820503216" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/d25aebc33466" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/gnuochen/activities" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/u/4186022" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:gnuochen@163.com" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=944932048&site=qq&menu=yes" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=264622197" target="_blank" rel="external nofollow noopener noreferrer">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(14)</small></div></li>
+    
+        
+            
+            <li><div data-rel="java">java<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="python">python<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="tools">tools<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="design">design<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux"><i class="fold iconfont icon-right"></i>linux<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="shell">shell<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="database"><i class="fold iconfont icon-right"></i>database<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="sql">sql<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="spring"><i class="fold iconfont icon-right"></i>spring<small>(4)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="springmvc">springmvc<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="springboot">springboot<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="springcloud">springcloud<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="algorithm">algorithm<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url" href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="14">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/" rel="external nofollow noopener noreferrer">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">spring boot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">java2</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a class="design " href="/wiki/design/设计模式总结/" data-tag data-author>
+            <span class="post-title" title="设计模式总结">设计模式总结</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="java " href="/wiki/java/JVM内存模型/" data-tag data-author>
+            <span class="post-title" title="JVM内存模型">JVM内存模型</span>
+            <span class="post-date" title="2019-10-22 15:36:14">2019/10/22</span>
+        </a>
+        
+        <a class="java " href="/wiki/java/java8新特性/" data-tag data-author>
+            <span class="post-title" title="java8新特性">java8新特性</span>
+            <span class="post-date" title="2020-11-26 10:22:16">2020/11/26</span>
+        </a>
+        
+        <a class="java " href="/wiki/java/java集合框架/" data-tag data-author>
+            <span class="post-title" title="java集合框架">java集合框架</span>
+            <span class="post-date" title="2020-06-11 12:15:53">2020/06/11</span>
+        </a>
+        
+        <a class="algorithm " href="/wiki/algorithm/十大经典排序算法/" data-tag data-author>
+            <span class="post-title" title="十大经典排序算法">十大经典排序算法</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="python " href="/wiki/python/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="tools " href="/wiki/tools/常用idea 插件汇总/" data-tag data-author>
+            <span class="post-title" title="常用idea插件汇总">常用idea插件汇总</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="java " href="/wiki/java/TreadLocal/" data-tag data-author>
+            <span class="post-title" title="TreadLocal">TreadLocal</span>
+            <span class="post-date" title="2020-11-22 15:36:55">2020/11/22</span>
+        </a>
+        
+        <a class="database sql " href="/wiki/database/sql/default/" data-tag data-author>
+            <span class="post-title" title="default">default</span>
+            <span class="post-date" title="2020-11-13 10:00:22">2020/11/13</span>
+        </a>
+        
+        <a class="linux shell " href="/wiki/linux/shell/活用linux命令-netstat/" data-tag data-author>
+            <span class="post-title" title="活用linux命令:netstat">活用linux命令:netstat</span>
+            <span class="post-date" title="2019-11-22 14:14:35">2019/11/22</span>
+        </a>
+        
+        <a class="spring springboot " href="/wiki/spring/springboot/springboot 启动流程分析/" data-tag="spring boot" data-author>
+            <span class="post-title" title="springboot 启动流程分析">springboot 启动流程分析</span>
+            <span class="post-date" title="2020-01-13 10:00:22">2020/01/13</span>
+        </a>
+        
+        <a class="spring springmvc " href="/wiki/spring/springmvc/springMvc处理流程/" data-tag data-author>
+            <span class="post-title" title="springMvc处理流程">springMvc处理流程</span>
+            <span class="post-date" title="2018-11-21 14:18:34">2018/11/21</span>
+        </a>
+        
+        <a class="spring springcloud " href="/wiki/spring/springcloud/SpringCloud架构/" data-tag data-author>
+            <span class="post-title" title="SpringCloud架构">SpringCloud架构</span>
+            <span class="post-date" title="2020-05-13 10:00:22">2020/05/13</span>
+        </a>
+        
+        <a class="spring springmvc " href="/wiki/spring/springmvc/pageHelp的使用/" data-tag="java2" data-author>
+            <span class="post-title" title="pageHelper的使用">pageHelper的使用</span>
+            <span class="post-date" title="2018-09-21 12:22:02">2018/09/21</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-java/java8新特性" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">java8新特性</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a data-rel="java">java</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2020-11-26 12:16:40">2020-11-26 10:22</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-语言新特性"><span class="toc-text">一.语言新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-接口的默认方法"><span class="toc-text">1.接口的默认方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-lamda表达式"><span class="toc-text">2.lamda表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-函数式接口"><span class="toc-text">2.1 函数式接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-方法与构造函数引用"><span class="toc-text">2.2 方法与构造函数引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-lambda作用域"><span class="toc-text">2.3.lambda作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-访问局部变量"><span class="toc-text">2.3.1.访问局部变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-访问对象字段与静态变量"><span class="toc-text">2.3.2.访问对象字段与静态变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-访问接口的默认方法"><span class="toc-text">2.3.3.访问接口的默认方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Predicate接口"><span class="toc-text">Predicate接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Function-接口"><span class="toc-text">Function 接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Supplier-接口"><span class="toc-text">Supplier 接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Consumer-接口"><span class="toc-text">Consumer 接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Comparator-接口"><span class="toc-text">Comparator 接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Optional-接口"><span class="toc-text">Optional 接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Stream-接口"><span class="toc-text">Stream 接口</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-annotation注解"><span class="toc-text">3.annotation注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-Java编译器的新特性"><span class="toc-text">二. Java编译器的新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-参数名称"><span class="toc-text">1.参数名称</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-java官方库的新特性"><span class="toc-text">三.java官方库的新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Date"><span class="toc-text">1.Date</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1Clock-时钟"><span class="toc-text">1.1Clock 时钟</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2Timezones-时区"><span class="toc-text">1.2Timezones 时区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-LocalTime-本地时间"><span class="toc-text">1.3 LocalTime 本地时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-LocalDate-本地日期"><span class="toc-text">1.4 LocalDate 本地日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-LocalDateTime-本地日期时间"><span class="toc-text">1.5 LocalDateTime 本地日期时间</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Optional"><span class="toc-text">2. Optional</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Nashorn-JavaScript"><span class="toc-text">3. Nashorn JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Base64"><span class="toc-text">4. Base64</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-并行数组"><span class="toc-text">5. 并行数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-并发性"><span class="toc-text">6.并发性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-java工具"><span class="toc-text">四.java工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Nashorn引擎：jjs"><span class="toc-text">1.Nashorn引擎：jjs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-类依赖分析器：jdeps"><span class="toc-text">2.类依赖分析器：jdeps</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-JVM的新特性"><span class="toc-text">五. JVM的新特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-语言新特性"><a href="#一-语言新特性" class="headerlink" title="一.语言新特性"></a>一.语言新特性</h2><h3 id="1-接口的默认方法"><a href="#1-接口的默认方法" class="headerlink" title="1.接口的默认方法"></a>1.接口的默认方法</h3><p>用default关键字可以在接口实现一个非抽象方法，也称为扩展方法</p>
+<pre><code class="java">interface Formula {
+    double calculate(int a);
+
+    default double sqrt(int a) {
+        return Math.sqrt(a);
+    }
+}
+</code></pre>
+<pre><code class="java">Formula formula = new Formula() {
+    @Override
+    public double calculate(int a) {
+        return sqrt(a * 100);
+    }
+};
+
+formula.calculate(100);     // 100.0
+formula.sqrt(16);           // 4.0
+</code></pre>
+<p>打破了java单继承的限制，可以在接口实现扩展方法然后多继承。</p>
+<h3 id="2-lamda表达式"><a href="#2-lamda表达式" class="headerlink" title="2.lamda表达式"></a>2.lamda表达式</h3><p>以排序为例</p>
+<pre><code class="java">Collections.sort(names, (a, b) -&gt; b.compareTo(a));
+</code></pre>
+<p>作为之前Comparator 匿名的间接写法</p>
+<pre><code class="java">List&lt;String&gt; names = Arrays.asList(&quot;peter&quot;, &quot;anna&quot;, &quot;mike&quot;, &quot;xenia&quot;);
+
+Collections.sort(names, new Comparator&lt;String&gt;() {
+    @Override
+    public int compare(String a, String b) {
+        return b.compareTo(a);
+    }
+});
+</code></pre>
+<p>通过lamda表达式可以简化很多之前java的写法，下面的函数式就是</p>
+<h4 id="2-1-函数式接口"><a href="#2-1-函数式接口" class="headerlink" title="2.1 函数式接口"></a>2.1 函数式接口</h4><p>Lambda表达式是如何在java的类型系统中表示的呢？每一个lambda表达式都对应一个类型，通常是接口类型。而“函数式接口”是指仅仅只包含一个抽象方法的接口，每一个该类型的lambda表达式都会被匹配到这个抽象方法。因为 默认方法 不算抽象方法，所以你也可以给你的函数式接口添加默认方法。</p>
+<p>我们可以将lambda表达式当作任意只包含一个抽象方法的接口类型，确保你的接口一定达到这个要求，你只需要给你的接口添加 @FunctionalInterface 注解，编译器如果发现你标注了这个注解的接口有多于一个抽象方法的时候会报错的。</p>
+<pre><code class="java">@FunctionalInterface
+interface Converter&lt;F, T&gt; {
+    T convert(F from);
+}
+Converter&lt;String, Integer&gt; converter = (from) -&gt; Integer.valueOf(from);
+Integer converted = converter.convert(&quot;123&quot;);
+System.out.println(converted);    // 123
+</code></pre>
+<p>需要注意如果@FunctionalInterface如果没有指定，上面的代码也是对的。</p>
+<h4 id="2-2-方法与构造函数引用"><a href="#2-2-方法与构造函数引用" class="headerlink" title="2.2 方法与构造函数引用"></a>2.2 方法与构造函数引用</h4><p>前一节中的代码还可以通过静态方法引用来表示：</p>
+<pre><code class="java">Converter&lt;String, Integer&gt; converter = Integer::valueOf;
+Integer converted = converter.convert(&quot;123&quot;);
+System.out.println(converted);   // 123
+</code></pre>
+<p>Java 8 允许你使用 :: 关键字来传递方法或者构造函数引用，上面的代码展示了如何引用一个静态方法，我们也可以引用一个对象的方法：</p>
+<pre><code class="java"> converter = something::startsWith;
+String converted = converter.convert(&quot;Java&quot;);
+System.out.println(converted);    // &quot;J&quot;
+</code></pre>
+<p>接下来看看构造函数是如何使用::关键字来引用的，首先我们定义一个包含多个构造函数的简单类：</p>
+<pre><code class="java">class Person {
+    String firstName;
+    String lastName;
+
+    Person() {}
+
+    Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+</code></pre>
+<p>接下来我们指定一个用来创建Person对象的对象工厂接口：</p>
+<pre><code class="java">interface PersonFactory&lt;P extends Person&gt; {
+    P create(String firstName, String lastName);
+}
+</code></pre>
+<p>这里我们使用构造函数引用来将他们关联起来，而不是实现一个完整的工厂：</p>
+<pre><code class="java">PersonFactory&lt;Person&gt; personFactory = Person::new;
+Person person = personFactory.create(&quot;Peter&quot;, &quot;Parker&quot;);
+</code></pre>
+<p>我们只需要使用 Person::new 来获取Person类构造函数的引用，Java编译器会自动根据PersonFactory.create方法的签名来选择合适的构造函数。</p>
+<h4 id="2-3-lambda作用域"><a href="#2-3-lambda作用域" class="headerlink" title="2.3.lambda作用域"></a>2.3.lambda作用域</h4><p>在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。</p>
+<h5 id="2-3-1-访问局部变量"><a href="#2-3-1-访问局部变量" class="headerlink" title="2.3.1.访问局部变量"></a>2.3.1.访问局部变量</h5><p>我们可以直接在lambda表达式中访问外层的局部变量：</p>
+<pre><code class="java">final int num = 1;
+Converter&lt;Integer, String&gt; stringConverter = (from) -&gt; String.valueOf(from + num);
+stringConverter.convert(2);     // 3
+</code></pre>
+<p>但是和匿名对象不同的是，这里的变量num可以不用声明为final，该代码同样正确：</p>
+<pre><code class="java">int num = 1;
+Converter&lt;Integer, String&gt; stringConverter = (from) -&gt; String.valueOf(from + num);
+stringConverter.convert(2);     // 3
+</code></pre>
+<p>不过这里的num必须不可被后面的代码修改（即隐性的具有final的语义），例如下面的就无法编译：</p>
+<pre><code class="java">int num = 1;
+Converter&lt;Integer, String&gt; stringConverter = (from) -&gt; String.valueOf(from + num);
+num = 3;
+</code></pre>
+<p>在lambda表达式中试图修改num同样是不允许的。</p>
+<h5 id="2-3-2-访问对象字段与静态变量"><a href="#2-3-2-访问对象字段与静态变量" class="headerlink" title="2.3.2.访问对象字段与静态变量"></a>2.3.2.访问对象字段与静态变量</h5><p>和本地变量不同的是，lambda内部对于实例的字段以及静态变量是即可读又可写。该行为和匿名对象是一致的：</p>
+<p>class Lambda4 {</p>
+<pre><code class="java">static int outerStaticNum;
+int outerNum;
+
+void testScopes() {
+    Converter&lt;Integer, String&gt; stringConverter1 = (from) -&gt; {
+        outerNum = 23;
+        return String.valueOf(from);
+    };
+
+    Converter&lt;Integer, String&gt; stringConverter2 = (from) -&gt; {
+        outerStaticNum = 72;
+        return String.valueOf(from);
+    };
+}
+</code></pre>
+<p>}</p>
+<h5 id="2-3-3-访问接口的默认方法"><a href="#2-3-3-访问接口的默认方法" class="headerlink" title="2.3.3.访问接口的默认方法"></a>2.3.3.访问接口的默认方法</h5><p>还记得第一节中的formula例子么，接口Formula定义了一个默认方法sqrt可以直接被formula的实例包括匿名对象访问到，但是在lambda表达式中这个是不行的。<br>Lambda表达式中是无法访问到默认方法的，以下代码将无法编译：</p>
+<pre><code>Formula formula = (a) -&gt; sqrt( a * 100);
+Built-in Functional Interfaces
+
+</code></pre><p>JDK 1.8 API包含了很多内建的函数式接口，在老Java中常用到的比如Comparator或者Runnable接口，这些接口都增加了@FunctionalInterface注解以便能用在lambda上。<br>Java 8 API同样还提供了很多全新的函数式接口来让工作更加方便，有一些接口是来自Google Guava库里的，即便你对这些很熟悉了，还是有必要看看这些是如何扩展到lambda上使用的。</p>
+<h6 id="Predicate接口"><a href="#Predicate接口" class="headerlink" title="Predicate接口"></a><strong>Predicate接口</strong></h6><p>Predicate 接口只有一个参数，返回<strong>boolean</strong>类型。该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）：</p>
+<pre><code class="java">Predicate&lt;String&gt; predicate = (s) -&gt; s.length() &gt; 0;
+
+predicate.test(&quot;foo&quot;);              // true
+predicate.negate().test(&quot;foo&quot;);     // false
+
+Predicate&lt;Boolean&gt; nonNull = Objects::nonNull;
+Predicate&lt;Boolean&gt; isNull = Objects::isNull;
+
+Predicate&lt;String&gt; isEmpty = String::isEmpty;
+Predicate&lt;String&gt; isNotEmpty = isEmpty.negate();
+</code></pre>
+<h6 id="Function-接口"><a href="#Function-接口" class="headerlink" title="Function 接口"></a><strong>Function 接口</strong></h6><p>Function 接口有一个参数并且返回一个结果，并附带了一些可以和其他函数组合的默认方法（compose, andThen）：</p>
+<pre><code class="java">Function&lt;String, Integer&gt; toInteger = Integer::valueOf;
+Function&lt;String, String&gt; backToString = toInteger.andThen(String::valueOf);
+
+backToString.apply(&quot;123&quot;);     // &quot;123&quot;
+</code></pre>
+<h6 id="Supplier-接口"><a href="#Supplier-接口" class="headerlink" title="Supplier 接口"></a><strong>Supplier 接口</strong></h6><p>Supplier 接口返回一个任意范型的值，和Function接口不同的是该接口没有任何参数</p>
+<pre><code class="java">Supplier&lt;Person&gt; personSupplier = Person::new;
+personSupplier.get();   // new Person
+</code></pre>
+<h6 id="Consumer-接口"><a href="#Consumer-接口" class="headerlink" title="Consumer 接口"></a><strong>Consumer 接口</strong></h6><p>Consumer 接口表示执行在单个参数上的操作。</p>
+<pre><code class="java">Consumer&lt;Person&gt; greeter = (p) -&gt; System.out.println(&quot;Hello, &quot; + p.firstName);
+greeter.accept(new Person(&quot;Luke&quot;, &quot;Skywalker&quot;));
+</code></pre>
+<h6 id="Comparator-接口"><a href="#Comparator-接口" class="headerlink" title="Comparator 接口"></a><strong>Comparator 接口</strong></h6><p>Comparator 是老Java中的经典接口， Java 8在此之上添加了多种默认方法：</p>
+<pre><code class="java">Comparator&lt;Person&gt; comparator = (p1, p2) -&gt; p1.firstName.compareTo(p2.firstName);
+
+Person p1 = new Person(&quot;John&quot;, &quot;Doe&quot;);
+Person p2 = new Person(&quot;Alice&quot;, &quot;Wonderland&quot;);
+
+comparator.compare(p1, p2);             // &gt; 0
+comparator.reversed().compare(p1, p2);  // &lt; 0
+</code></pre>
+<h6 id="Optional-接口"><a href="#Optional-接口" class="headerlink" title="Optional 接口"></a><strong>Optional 接口</strong></h6><p>Optional 不是函数是接口，这是个用来防止NullPointerException异常的辅助类型，这是下一届中将要用到的重要概念，现在先简单的看看这个接口能干什么：</p>
+<p>Optional 被定义为一个简单的容器，其值可能是null或者不是null。在Java 8之前一般某个函数应该返回非空对象但是偶尔却可能返回了null，而在Java 8中，不推荐你返回null而是返回Optional。</p>
+<pre><code class="java">Optional&lt;String&gt; optional = Optional.of(&quot;bam&quot;);
+
+optional.isPresent();           // true
+optional.get();                 // &quot;bam&quot;
+optional.orElse(&quot;fallback&quot;);    // &quot;bam&quot;
+
+optional.ifPresent((s) -&gt; System.out.println(s.charAt(0)));     // &quot;b&quot;
+</code></pre>
+<h6 id="Stream-接口"><a href="#Stream-接口" class="headerlink" title="Stream 接口"></a><strong>Stream 接口</strong></h6><p>java.util.Stream 表示能应用在一组元素上一次执行的操作序列。Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，而中间操作返回Stream本身，这样你就可以将多个操作依次串起来。Stream 的创建需要指定一个数据源，比如 java.util.Collection的子类，List或者Set， Map不支持。Stream的操作可以串行执行或者并行执行。</p>
+<p>首先看看Stream是怎么用，首先创建实例代码的用到的数据List：</p>
+<pre><code class="java">List&lt;String&gt; stringCollection = new ArrayList&lt;&gt;();
+stringCollection.add(&quot;ddd2&quot;);
+stringCollection.add(&quot;aaa2&quot;);
+stringCollection.add(&quot;bbb1&quot;);
+stringCollection.add(&quot;aaa1&quot;);
+stringCollection.add(&quot;bbb3&quot;);
+stringCollection.add(&quot;ccc&quot;);
+stringCollection.add(&quot;bbb2&quot;);
+stringCollection.add(&quot;ddd1&quot;);
+</code></pre>
+<p>Java 8扩展了集合类，可以通过 Collection.stream() 或者 Collection.parallelStream() 来创建一个Stream。下面几节将详细解释常用的Stream操作：</p>
+<p><strong>Filter 过滤</strong></p>
+<p>过滤通过一个predicate接口来过滤并只保留符合条件的元素，该操作属于中间操作，所以我们可以在过滤后的结果来应用其他Stream操作（比如forEach）。forEach需要一个函数来对过滤后的元素依次执行。forEach是一个最终操作，所以我们不能在forEach之后来执行其他Stream操作。</p>
+<pre><code class="java">stringCollection
+    .stream()
+    .filter((s) -&gt; s.startsWith(&quot;a&quot;))
+    .forEach(System.out::println);
+
+// &quot;aaa2&quot;, &quot;aaa1&quot;
+</code></pre>
+<p><strong>Sort 排序</strong></p>
+<p>排序是一个中间操作，返回的是排序好后的Stream。如果你不指定一个自定义的Comparator则会使用默认排序。</p>
+<pre><code class="java">stringCollection
+    .stream()
+    .sorted()
+    .filter((s) -&gt; s.startsWith(&quot;a&quot;))
+    .forEach(System.out::println);
+
+// &quot;aaa1&quot;, &quot;aaa2&quot;
+</code></pre>
+<p>需要注意的是，排序只创建了一个排列好后的Stream，而不会影响原有的数据源，排序之后原数据stringCollection是不会被修改的。</p>
+<pre><code class="java">System.out.println(stringCollection);
+// ddd2, aaa2, bbb1, aaa1, bbb3, ccc, bbb2, ddd1
+</code></pre>
+<p><strong>Map 映射</strong></p>
+<p>中间操作map会将元素根据指定的Function接口来依次将元素转成另外的对象，下面的示例展示了将字符串转换为大写字符串。你也可以通过map来讲对象转换成其他类型，map返回的Stream类型是根据你map传递进去的函数的返回值决定的。</p>
+<pre><code class="java">stringCollection
+    .stream()
+    .map(String::toUpperCase)
+    .sorted((a, b) -&gt; b.compareTo(a))
+    .forEach(System.out::println);
+
+// &quot;DDD2&quot;, &quot;DDD1&quot;, &quot;CCC&quot;, &quot;BBB3&quot;, &quot;BBB2&quot;, &quot;AAA2&quot;, &quot;AAA1&quot;
+</code></pre>
+<p><strong>Match 匹配</strong></p>
+<p>Stream提供了多种匹配操作，允许检测指定的Predicate是否匹配整个Stream。所有的匹配操作都是最终操作，并返回一个boolean类型的值。</p>
+<pre><code class="java">boolean anyStartsWithA = 
+    stringCollection
+        .stream()
+        .anyMatch((s) -&gt; s.startsWith(&quot;a&quot;));
+
+System.out.println(anyStartsWithA);      // true
+
+boolean allStartsWithA = 
+    stringCollection
+        .stream()
+        .allMatch((s) -&gt; s.startsWith(&quot;a&quot;));
+
+System.out.println(allStartsWithA);      // false
+
+boolean noneStartsWithZ = 
+    stringCollection
+        .stream()
+        .noneMatch((s) -&gt; s.startsWith(&quot;z&quot;));
+
+System.out.println(noneStartsWithZ);      // true
+</code></pre>
+<p><strong>Count 计数</strong></p>
+<p>计数是一个最终操作，返回Stream中元素的个数，返回值类型是long。</p>
+<pre><code class="java">long startsWithB = 
+    stringCollection
+        .stream()
+        .filter((s) -&gt; s.startsWith(&quot;b&quot;))
+        .count();
+
+System.out.println(startsWithB);    // 3
+</code></pre>
+<p><strong>Reduce 规约</strong></p>
+<p>这是一个最终操作，允许通过指定的函数来讲stream中的多个元素规约为一个元素，规越后的结果是通过Optional接口表示的：</p>
+<pre><code class="java">Optional&lt;String&gt; reduced =
+    stringCollection
+        .stream()
+        .sorted()
+        .reduce((s1, s2) -&gt; s1 + &quot;#&quot; + s2);
+
+reduced.ifPresent(System.out::println);
+// &quot;aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2&quot;
+</code></pre>
+<p><strong>并行Streams</strong></p>
+<p>前面提到过Stream有串行和并行两种，串行Stream上的操作是在一个线程中依次完成，而并行Stream则是在多个线程上同时执行。</p>
+<p>下面的例子展示了是如何通过并行Stream来提升性能：</p>
+<p>首先我们创建一个没有重复元素的大表</p>
+<pre><code class="java">int max = 1000000;
+List&lt;String&gt; values = new ArrayList&lt;&gt;(max);
+for (int i = 0; i &lt; max; i++) {
+    UUID uuid = UUID.randomUUID();
+    values.add(uuid.toString());
+}
+</code></pre>
+<p>然后我们计算一下排序这个Stream要耗时多久，</p>
+<p><strong>串行排序：</strong></p>
+<pre><code class="java">long t0 = System.nanoTime();
+
+long count = values.stream().sorted().count();
+System.out.println(count);
+
+long t1 = System.nanoTime();
+
+long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+System.out.println(String.format(&quot;sequential sort took: %d ms&quot;, millis));
+</code></pre>
+<p>// 串行耗时: 899 ms</p>
+<p><strong>并行排序：</strong></p>
+<pre><code class="java">long t0 = System.nanoTime();
+
+long count = values.parallelStream().sorted().count();
+System.out.println(count);
+
+long t1 = System.nanoTime();
+
+long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+System.out.println(String.format(&quot;parallel sort took: %d ms&quot;, millis));
+</code></pre>
+<p>// 并行排序耗时: 472 ms<br>上面两个代码几乎是一样的，但是并行版的快了50%之多，唯一需要做的改动就是将stream()改为parallelStream()。</p>
+<p><strong>Map</strong></p>
+<p>前面提到过，Map类型不支持stream，不过Map提供了一些新的有用的方法来处理一些日常任务。</p>
+<pre><code class="java">Map&lt;Integer, String&gt; map = new HashMap&lt;&gt;();
+
+for (int i = 0; i &lt; 10; i++) {
+    map.putIfAbsent(i, &quot;val&quot; + i);
+}
+
+map.forEach((id, val) -&gt; System.out.println(val));
+</code></pre>
+<p>以上代码很容易理解， putIfAbsent 不需要我们做额外的存在性检查，而forEach则接收一个Consumer接口来对map里的每一个键值对进行操作。</p>
+<p>下面的例子展示了map上的其他有用的函数：</p>
+<pre><code class="java">map.computeIfPresent(3, (num, val) -&gt; val + num);
+map.get(3);             // val33
+
+map.computeIfPresent(9, (num, val) -&gt; null);
+map.containsKey(9);     // false
+
+map.computeIfAbsent(23, num -&gt; &quot;val&quot; + num);
+map.containsKey(23);    // true
+
+map.computeIfAbsent(3, num -&gt; &quot;bam&quot;);
+map.get(3);             // val33
+</code></pre>
+<p>接下来展示如何在Map里删除一个键值全都匹配的项</p>
+<pre><code class="java">map.remove(3, &quot;val3&quot;);
+map.get(3);             // val33
+
+map.remove(3, &quot;val33&quot;);
+map.get(3);             // null
+</code></pre>
+<p>另外一个有用的方法</p>
+<pre><code class="java">map.getOrDefault(42, &quot;not found&quot;);  // not found
+</code></pre>
+<p>对Map的元素做合并也变得很容易了：</p>
+<pre><code class="java">map.merge(9, &quot;val9&quot;, (value, newValue) -&gt; value.concat(newValue));
+map.get(9);             // val9
+
+map.merge(9, &quot;concat&quot;, (value, newValue) -&gt; value.concat(newValue));
+map.get(9);             // val9concat
+</code></pre>
+<p>Merge做的事情是如果键名不存在则插入，否则则对原键对应的值做合并操作并重新插入到map中。</p>
+<h3 id="3-annotation注解"><a href="#3-annotation注解" class="headerlink" title="3.annotation注解"></a>3.annotation注解</h3><p>在Java 8中支持多重注解了，先看个例子来理解一下是什么意思。<br>首先定义一个包装类Hints注解用来放置一组具体的Hint注解：</p>
+<pre><code class="java">@interface Hints {
+    Hint[] value();
+}
+
+@Repeatable(Hints.class)
+@interface Hint {
+    String value();
+}
+</code></pre>
+<p>Java 8允许我们把同一个类型的注解使用多次，只需要给该注解标注一下@Repeatable即可。</p>
+<p>例 1: 使用包装类当容器来存多个注解（老方法）</p>
+<pre><code class="java">@Hints({@Hint(&quot;hint1&quot;), @Hint(&quot;hint2&quot;)})
+class Person {}
+</code></pre>
+<p>例 2：使用多重注解（新方法）</p>
+<pre><code class="java">@Hint(&quot;hint1&quot;)
+@Hint(&quot;hint2&quot;)
+class Person {}
+</code></pre>
+<p>第二个例子里java编译器会隐性的帮你定义好@Hints注解，了解这一点有助于你用反射来获取这些信息：</p>
+<pre><code class="java">Hint hint = Person.class.getAnnotation(Hint.class);
+System.out.println(hint);                   // null
+
+Hints hints1 = Person.class.getAnnotation(Hints.class);
+System.out.println(hints1.value().length);  // 2
+
+Hint[] hints2 = Person.class.getAnnotationsByType(Hint.class);
+System.out.println(hints2.length);          // 2
+</code></pre>
+<p>即便我们没有在Person类上定义@Hints注解，我们还是可以通过 getAnnotation(Hints.class) 来获取 @Hints注解，更加方便的方法是使用 getAnnotationsByType 可以直接获取到所有的@Hint注解。<br>另外Java 8的注解还增加到两种新的target上了：</p>
+<pre><code class="java">@Target({ElementType.TYPE_PARAMETER, ElementType.TYPE_USE})
+@interface MyAnnotation {}
+</code></pre>
+<h2 id="二-Java编译器的新特性"><a href="#二-Java编译器的新特性" class="headerlink" title="二. Java编译器的新特性"></a>二. Java编译器的新特性</h2><h3 id="1-参数名称"><a href="#1-参数名称" class="headerlink" title="1.参数名称"></a>1.参数名称</h3><p>为了在运行时获得Java程序中方法的参数名称，老一辈的Java程序员必须使用不同方法，例如<a href="https://github.com/paul-hammant/paranamer" rel="external nofollow noopener noreferrer" target="_blank">Paranamer liberary</a>。Java 8终于将这个特性规范化，在语言层面（使用反射API和<strong>Parameter.getName()方法</strong>）和字节码层面（使用新的<strong>javac</strong>编译器以及<strong>-parameters</strong>参数）提供支持。</p>
+<pre><code class="java">package com.javacodegeeks.java8.parameter.names;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
+
+public class ParameterNames {
+    public static void main(String[] args) throws Exception {
+        Method method = ParameterNames.class.getMethod( &quot;main&quot;, String[].class );
+        for( final Parameter parameter: method.getParameters() ) {
+            System.out.println( &quot;Parameter: &quot; + parameter.getName() );
+        }
+    }
+}
+</code></pre>
+<p>在Java 8中这个特性是默认关闭的，因此如果不带<strong>-parameters</strong>参数编译上述代码并运行，则会输出如下结果：</p>
+<pre><code class="java">Parameter: arg0
+</code></pre>
+<p>如果带<strong>-parameters</strong>参数，则会输出如下结果（正确的结果）：</p>
+<pre><code class="java">Parameter: args
+</code></pre>
+<p>如果你使用Maven进行项目管理，则可以在<strong>maven-compiler-plugin</strong>编译器的配置项中配置<strong>-parameters</strong>参数：</p>
+<pre><code class="java">&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.1&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;compilerArgument&gt;-parameters&lt;/compilerArgument&gt;
+        &lt;source&gt;1.8&lt;/source&gt;
+        &lt;target&gt;1.8&lt;/target&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+
+</code></pre>
+<h2 id="三-java官方库的新特性"><a href="#三-java官方库的新特性" class="headerlink" title="三.java官方库的新特性"></a>三.java官方库的新特性</h2><h3 id="1-Date"><a href="#1-Date" class="headerlink" title="1.Date"></a>1.Date</h3><p>Java 8 在包java.time下包含了一组全新的时间日期API。新的日期API和开源的Joda-Time库差不多，但又不完全一样，下面的例子展示了这组新API里最重要的一些部分：</p>
+<h4 id="1-1Clock-时钟"><a href="#1-1Clock-时钟" class="headerlink" title="1.1Clock 时钟"></a>1.1<strong>Clock 时钟</strong></h4><p>Clock类提供了访问当前日期和时间的方法，Clock是时区敏感的，可以用来取代 System.currentTimeMillis() 来获取当前的微秒数。某一个特定的时间点也可以使用Instant类来表示，Instant类也可以用来创建老的java.util.Date对象。</p>
+<pre><code class="java">Clock clock = Clock.systemDefaultZone();
+long millis = clock.millis();
+
+Instant instant = clock.instant();
+Date legacyDate = Date.from(instant);   // legacy java.util.Date
+</code></pre>
+<h4 id="1-2Timezones-时区"><a href="#1-2Timezones-时区" class="headerlink" title="1.2Timezones 时区"></a>1.2<strong>Timezones 时区</strong></h4><p>在新API中时区使用ZoneId来表示。时区可以很方便的使用静态方法of来获取到。 时区定义了到UTS时间的时间差，在Instant时间点对象到本地日期对象之间转换的时候是极其重要的。</p>
+<pre><code class="java">System.out.println(ZoneId.getAvailableZoneIds());
+// prints all available timezone ids
+
+ZoneId zone1 = ZoneId.of(&quot;Europe/Berlin&quot;);
+ZoneId zone2 = ZoneId.of(&quot;Brazil/East&quot;);
+System.out.println(zone1.getRules());
+System.out.println(zone2.getRules());
+
+// ZoneRules[currentStandardOffset=+01:00]
+// ZoneRules[currentStandardOffset=-03:00]
+</code></pre>
+<h4 id="1-3-LocalTime-本地时间"><a href="#1-3-LocalTime-本地时间" class="headerlink" title="1.3 LocalTime 本地时间"></a>1.3 <strong>LocalTime 本地时间</strong></h4><p>LocalTime 定义了一个没有时区信息的时间，例如 晚上10点，或者 17:30:15。下面的例子使用前面代码创建的时区创建了两个本地时间。之后比较时间并以小时和分钟为单位计算两个时间的时间差：</p>
+<pre><code class="java">LocalTime now1 = LocalTime.now(zone1);
+LocalTime now2 = LocalTime.now(zone2);
+
+System.out.println(now1.isBefore(now2));  // false
+
+long hoursBetween = ChronoUnit.HOURS.between(now1, now2);
+long minutesBetween = ChronoUnit.MINUTES.between(now1, now2);
+
+System.out.println(hoursBetween);       // -3
+System.out.println(minutesBetween);     // -239
+</code></pre>
+<p>LocalTime 提供了多种工厂方法来简化对象的创建，包括解析时间字符串。</p>
+<pre><code class="java">LocalTime late = LocalTime.of(23, 59, 59);
+System.out.println(late);       // 23:59:59
+
+DateTimeFormatter germanFormatter =
+    DateTimeFormatter
+        .ofLocalizedTime(FormatStyle.SHORT)
+        .withLocale(Locale.GERMAN);
+
+LocalTime leetTime = LocalTime.parse(&quot;13:37&quot;, germanFormatter);
+System.out.println(leetTime);   // 13:37
+</code></pre>
+<h4 id="1-4-LocalDate-本地日期"><a href="#1-4-LocalDate-本地日期" class="headerlink" title="1.4 LocalDate 本地日期"></a>1.4 <strong>LocalDate 本地日期</strong></h4><p>LocalDate 表示了一个确切的日期，比如 2014-03-11。该对象值是不可变的，用起来和LocalTime基本一致。下面的例子展示了如何给Date对象加减天/月/年。另外要注意的是这些对象是不可变的，操作返回的总是一个新实例。</p>
+<pre><code class="java">LocalDate today = LocalDate.now();
+LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
+LocalDate yesterday = tomorrow.minusDays(2);
+
+LocalDate independenceDay = LocalDate.of(2014, Month.JULY, 4);
+DayOfWeek dayOfWeek = independenceDay.getDayOfWeek();
+
+System.out.println(dayOfWeek);    // FRIDAY
+</code></pre>
+<p>从字符串解析一个LocalDate类型和解析LocalTime一样简单：</p>
+<pre><code class="java">DateTimeFormatter germanFormatter =
+    DateTimeFormatter
+        .ofLocalizedDate(FormatStyle.MEDIUM)
+        .withLocale(Locale.GERMAN);
+
+LocalDate xmas = LocalDate.parse(&quot;24.12.2014&quot;, germanFormatter);
+System.out.println(xmas);   // 2014-12-24
+</code></pre>
+<h4 id="1-5-LocalDateTime-本地日期时间"><a href="#1-5-LocalDateTime-本地日期时间" class="headerlink" title="1.5 LocalDateTime 本地日期时间"></a>1.5 <strong>LocalDateTime 本地日期时间</strong></h4><p>LocalDateTime 同时表示了时间和日期，相当于前两节内容合并到一个对象上了。LocalDateTime和LocalTime还有LocalDate一样，都是不可变的。LocalDateTime提供了一些能访问具体字段的方法。</p>
+<pre><code>LocalDateTime sylvester = LocalDateTime.of(2014, Month.DECEMBER, 31, 23, 59, 59);
+
+DayOfWeek dayOfWeek = sylvester.getDayOfWeek();
+System.out.println(dayOfWeek);      // WEDNESDAY
+
+Month month = sylvester.getMonth();
+System.out.println(month);          // DECEMBER
+
+long minuteOfDay = sylvester.getLong(ChronoField.MINUTE_OF_DAY);
+System.out.println(minuteOfDay);    // 1439
+
+</code></pre><p>只要附加上时区信息，就可以将其转换为一个时间点Instant对象，Instant时间点对象可以很容易的转换为老式的java.util.Date。</p>
+<pre><code>Instant instant = sylvester
+        .atZone(ZoneId.systemDefault())
+        .toInstant();
+
+Date legacyDate = Date.from(instant);
+System.out.println(legacyDate);     // Wed Dec 31 23:59:59 CET 2014
+
+</code></pre><p>格式化LocalDateTime和格式化时间和日期一样的，除了使用预定义好的格式外，我们也可以自己定义格式：</p>
+<pre><code>DateTimeFormatter formatter =
+    DateTimeFormatter
+        .ofPattern(&quot;MMM dd, yyyy - HH:mm&quot;);
+
+LocalDateTime parsed = LocalDateTime.parse(&quot;Nov 03, 2014 - 07:13&quot;, formatter);
+String string = formatter.format(parsed);
+System.out.println(string);     // Nov 03, 2014 - 07:13
+
+</code></pre><p>和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。</p>
+<p>关于时间日期格式的详细信息：<a href="https://links.jianshu.com/go?to=http%3A%2F%2Fdownload.java.net%2Fjdk8%2Fdocs%2Fapi%2Fjava%2Ftime%2Fformat%2FDateTimeFormatter.html" rel="external nofollow noopener noreferrer" target="_blank">http://download.java.net/jdk8/docs/api/java/time/format/DateTimeFormatter.html</a></p>
+<h3 id="2-Optional"><a href="#2-Optional" class="headerlink" title="2. Optional"></a>2. Optional</h3><p>Java应用中最常见的bug就是空值异常。在Java 8之前，Google Guava引入了Optionals类来解决NullPointerException，从而避免源码被各种null检查污染，以便开发者写出更加整洁的代码。Java 8也将Optional加入了官方库。</p>
+<p>Optional仅仅是一个容易：存放T类型的值或者null。它提供了一些有用的接口来避免显式的null检查，可以参考Java 8官方文档了解更多细节。</p>
+<p>接下来看一点使用Optional的例子：可能为空的值或者某个类型的值：</p>
+<pre><code class="java">Optional&lt; String &gt; fullName = Optional.ofNullable( null );
+System.out.println( &quot;Full Name is set? &quot; + fullName.isPresent() );        
+System.out.println( &quot;Full Name: &quot; + fullName.orElseGet( () -&gt; &quot;[none]&quot; ) ); 
+System.out.println( fullName.map( s -&gt; &quot;Hey &quot; + s + &quot;!&quot; ).orElse( &quot;Hey Stranger!&quot; ) );
+</code></pre>
+<p>如果Optional实例持有一个非空值，则isPresent()方法返回true，否则返回false；orElseGet()方法，Optional实例持有null，则可以接受一个lambda表达式生成的默认值；map()方法可以将现有的Opetional实例的值转换成新的值；orElse()方法与orElseGet()方法类似，但是在持有null的时候返回传入的默认值。</p>
+<p>上述代码的输出结果如下：</p>
+<pre><code class="java">Full Name is set? false
+Full Name: [none]
+Hey Stranger!
+</code></pre>
+<p>再看下另一个简单的例子：</p>
+<pre><code class="java">Optional&lt; String &gt; firstName = Optional.of( &quot;Tom&quot; );
+System.out.println( &quot;First Name is set? &quot; + firstName.isPresent() );        
+System.out.println( &quot;First Name: &quot; + firstName.orElseGet( () -&gt; &quot;[none]&quot; ) ); 
+System.out.println( firstName.map( s -&gt; &quot;Hey &quot; + s + &quot;!&quot; ).orElse( &quot;Hey Stranger!&quot; ) );
+System.out.println();
+</code></pre>
+<p>这个例子的输出是：</p>
+<pre><code class="java">First Name is set? true
+First Name: Tom
+Hey Tom!
+</code></pre>
+<h3 id="3-Nashorn-JavaScript"><a href="#3-Nashorn-JavaScript" class="headerlink" title="3. Nashorn JavaScript"></a>3. Nashorn JavaScript</h3><p>Java 8提供了新的Nashorn JavaScript引擎，使得我们可以在JVM上开发和运行JS应用。Nashorn JavaScript引擎是javax.script.ScriptEngine的另一个实现版本，这类Script引擎遵循相同的规则，允许Java和JavaScript交互使用，例子代码如下：</p>
+<pre><code class="java">ScriptEngineManager manager = new ScriptEngineManager();
+ScriptEngine engine = manager.getEngineByName( &quot;JavaScript&quot; );
+
+System.out.println( engine.getClass().getName() );
+System.out.println( &quot;Result:&quot; + engine.eval( &quot;function f() { return 1; }; f() + 1;&quot; ) );
+</code></pre>
+<pre><code class="java">jdk.nashorn.api.scripting.NashornScriptEngine
+Result: 2
+</code></pre>
+<h3 id="4-Base64"><a href="#4-Base64" class="headerlink" title="4. Base64"></a>4. Base64</h3><p>对Base64编码的支持已经被加入到Java 8官方库中，这样不需要使用第三方库就可以进行Base64编码，例子代码如下：</p>
+<pre><code class="java">package com.javacodegeeks.java8.base64;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+public class Base64s {
+    public static void main(String[] args) {
+        final String text = &quot;Base64 finally in Java 8!&quot;;
+
+        final String encoded = Base64
+            .getEncoder()
+            .encodeToString( text.getBytes( StandardCharsets.UTF_8 ) );
+        System.out.println( encoded );
+
+        final String decoded = new String( 
+            Base64.getDecoder().decode( encoded ),
+            StandardCharsets.UTF_8 );
+        System.out.println( decoded );
+    }
+}
+</code></pre>
+<pre><code class="java">QmFzZTY0IGZpbmFsbHkgaW4gSmF2YSA4IQ==
+Base64 finally in Java 8!
+</code></pre>
+<p>新的Base64API也支持URL和MINE的编码解码。<br>(<strong>Base64.getUrlEncoder()</strong> / <strong>Base64.getUrlDecoder()</strong>, <strong>Base64.getMimeEncoder()</strong> / <strong>Base64.getMimeDecoder()</strong>)。</p>
+<h3 id="5-并行数组"><a href="#5-并行数组" class="headerlink" title="5. 并行数组"></a>5. 并行数组</h3><p>Java8版本新增了很多新的方法，用于支持并行数组处理。最重要的方法是<strong>parallelSort()</strong>，可以显著加快多核机器上的数组排序。下面的例子论证了<strong>parallexXxx</strong>系列的方法：</p>
+<pre><code class="java">package com.javacodegeeks.java8.parallel.arrays;
+
+import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
+
+public class ParallelArrays {
+    public static void main( String[] args ) {
+        long[] arrayOfLong = new long [ 20000 ];        
+
+        Arrays.parallelSetAll( arrayOfLong, 
+            index -&gt; ThreadLocalRandom.current().nextInt( 1000000 ) );
+        Arrays.stream( arrayOfLong ).limit( 10 ).forEach( 
+            i -&gt; System.out.print( i + &quot; &quot; ) );
+        System.out.println();
+
+        Arrays.parallelSort( arrayOfLong );        
+        Arrays.stream( arrayOfLong ).limit( 10 ).forEach( 
+            i -&gt; System.out.print( i + &quot; &quot; ) );
+        System.out.println();
+    }
+}
+</code></pre>
+<p>上述这些代码使用<strong>parallelSetAll()</strong>方法生成20000个随机数，然后使用<strong>parallelSort()</strong>方法进行排序。这个程序会输出乱序数组和排序数组的前10个元素。上述例子的代码输出的结果是：</p>
+<pre><code>Unsorted: 591217 891976 443951 424479 766825 351964 242997 642839 119108 552378 
+Sorted: 39 220 263 268 325 607 655 678 723 793
+</code></pre><h3 id="6-并发性"><a href="#6-并发性" class="headerlink" title="6.并发性"></a>6.并发性</h3><p>基于新增的lambda表达式和steam特性，为Java 8中为<strong>java.util.concurrent.ConcurrentHashMap</strong>类添加了新的方法来支持聚焦操作；另外，也为<strong>java.util.concurrentForkJoinPool</strong>类添加了新的方法来支持通用线程池操作（更多内容可以参考<a href="http://academy.javacodegeeks.com/course/java-concurrency-essentials/" rel="external nofollow noopener noreferrer" target="_blank">我们的并发编程课程</a>）。</p>
+<p>Java 8还添加了新的<strong>java.util.concurrent.locks.StampedLock</strong>类，用于支持基于容量的锁——该锁有三个模型用于支持读写操作（可以把这个锁当做是<strong>java.util.concurrent.locks.ReadWriteLock</strong>的替代者）。</p>
+<p>在<strong>java.util.concurrent.atomic</strong>包中也新增了不少工具类，列举如下：</p>
+<ul>
+<li><p>DoubleAccumulator</p>
+</li>
+<li><p>DoubleAdder</p>
+</li>
+<li><p>LongAccumulator</p>
+</li>
+<li><p>LongAdder</p>
+<p>​</p>
+</li>
+</ul>
+<h2 id="四-java工具"><a href="#四-java工具" class="headerlink" title="四.java工具"></a>四.java工具</h2><h3 id="1-Nashorn引擎：jjs"><a href="#1-Nashorn引擎：jjs" class="headerlink" title="1.Nashorn引擎：jjs"></a>1.Nashorn引擎：jjs</h3><p><strong>jjs</strong>是一个基于标准Nashorn引擎的命令行工具，可以接受js源码并执行。</p>
+<h3 id="2-类依赖分析器：jdeps"><a href="#2-类依赖分析器：jdeps" class="headerlink" title="2.类依赖分析器：jdeps"></a>2.类依赖分析器：jdeps</h3><p><strong>jdeps</strong>是一个相当棒的命令行工具，它可以展示包层级和类层级的Java类依赖关系，它以<strong>.class</strong>文件、目录或者Jar文件为输入，然后会把依赖关系输出到控制台。</p>
+<pre><code class="sh">jdeps org.springframework.core-3.0.5.RELEASE.jar
+</code></pre>
+<pre><code class="c">org.springframework.core-3.0.5.RELEASE.jar -&gt; C:\Program Files\Java\jdk1.8.0\jre\lib\rt.jar
+   org.springframework.core (org.springframework.core-3.0.5.RELEASE.jar)
+      -&gt; java.io                                            
+      -&gt; java.lang                                          
+      -&gt; java.lang.annotation                               
+      -&gt; java.lang.ref                                      
+      -&gt; java.lang.reflect                                  
+      -&gt; java.util                                          
+      -&gt; java.util.concurrent                               
+      -&gt; org.apache.commons.logging                         not found
+      -&gt; org.springframework.asm                            not found
+      -&gt; org.springframework.asm.commons                    not found
+   org.springframework.core.annotation (org.springframework.core-3.0.5.RELEASE.jar)
+      -&gt; java.lang                                          
+      -&gt; java.lang.annotation                               
+      -&gt; java.lang.reflect                                  
+      -&gt; java.util
+</code></pre>
+<p>这个命令会输出很多结果，我们仅看下其中的一部分：依赖关系按照包分组，如果在classpath上找不到依赖，则显示”not found”.</p>
+<h2 id="五-JVM的新特性"><a href="#五-JVM的新特性" class="headerlink" title="五. JVM的新特性"></a>五. JVM的新特性</h2><p>使用<strong>Metaspace</strong>（<a href="http://openjdk.java.net/jeps/122" rel="external nofollow noopener noreferrer" target="_blank">JEP 122</a>）代替持久代（<strong>PermGen</strong> space）。在JVM参数方面，使用<strong>-XX:MetaSpaceSize</strong>和<strong>-XX:MaxMetaspaceSize</strong>代替原来的<strong>-XX:PermSize</strong>和<strong>-XX:MaxPermSize</strong>。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://blog.csdn.net/yczz/article/details/50896975" rel="external nofollow noopener noreferrer" target="_blank">Java 8的新特性—终极版</a></li>
+<li><a href="https://www.jianshu.com/p/0bf8fe0f153b" rel="external nofollow noopener noreferrer" target="_blank">JAVA8十大新特性详解（精编）</a></li>
+</ul>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 gnuochen@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>java8新特性</p>
+    
+    <p><span class="copy-title">本文作者:</span><a title="gnuochen">gnuochen</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-11-26, 10:22:16</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-26, 12:16:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/java/java8新特性/" title="java8新特性">../index.html/wiki/java/java8新特性/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017-2020 gnuochen</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="external nofollow noopener noreferrer">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class id="rocket"></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1"></script>
+
+<script src="/js/script.js?v=1.0.1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#spring boot','#java2',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true,&#34;flowchart&#34;:{&#34;useMaxWidth&#34;:false,&#34;htmlLabels&#34;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/list_background.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out">
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url" href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+</html>
