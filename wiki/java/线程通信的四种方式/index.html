@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>TreadLocal | Home</title>
+  <title>线程通信的四种方式 | Home</title>
   <meta name="keywords" content>
-  <meta name="description" content="TreadLocal | Home">
+  <meta name="description" content="线程通信的四种方式 | Home">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Categories">
@@ -456,9 +456,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java/TreadLocal" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java/线程通信的四种方式" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">TreadLocal</h1>
+        <h1 class="article-title">线程通信的四种方式</h1>
     
     <div class="article-meta">
         
@@ -474,7 +474,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2020-11-22 21:27:12">2020-11-22 15:36</time>
+        创建时间:<time class="date" title="更新时间: 2020-11-27 23:00:06">2020-11-27 20:05</time>
         
     </div>
     <div class="article-meta">
@@ -496,7 +496,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实现原理"><span class="toc-text">实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码分析"><span class="toc-text">源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-变量"><span class="toc-text">1.变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-方法"><span class="toc-text">2.方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-set（）"><span class="toc-text">2.1 set（）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-get"><span class="toc-text">2.2 get()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-场景一，线程安全考虑"><span class="toc-text">1.场景一，线程安全考虑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-场景二，全局遍历，简化传参"><span class="toc-text">2.场景二，全局遍历，简化传参</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-join-方法"><span class="toc-text">1.join() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-wait-notify"><span class="toc-text">2.wait/notify</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-volatile"><span class="toc-text">3.volatile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-CountDownLatch"><span class="toc-text">4.CountDownLatch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-CyclicBarrier"><span class="toc-text">5.CyclicBarrier</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-interrupt-线程中断"><span class="toc-text">6.interrupt()线程中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-线程池-awaitTermination-方法"><span class="toc-text">7.线程池 awaitTermination() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-管道通信"><span class="toc-text">8.管道通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -512,241 +512,386 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>每一个线程（Thread）拥有一个自己独立的map 容器，用于保存变量，这样就可以在当前线程的任意地方获取保存的变量对象</p>
-<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><pre><code class="java">public class ThreadLocal&lt;T&gt; {
-
-
-    private final int threadLocalHashCode = nextHashCode();
-
-    private static AtomicInteger nextHashCode = new AtomicInteger();
-
-    private static final int HASH_INCREMENT = 0x61c88647;
-
-    private static int nextHashCode() {
-        return nextHashCode.getAndAdd(HASH_INCREMENT);
-    }
-
-
-    protected T initialValue() {
-        return null;
-    }
-
-    public static &lt;S&gt; ThreadLocal&lt;S&gt; withInitial(Supplier&lt;? extends S&gt; supplier) {
-        return new SuppliedThreadLocal&lt;&gt;(supplier);
-    }
-
-    public ThreadLocal() {
-    }
-
-    public T get() {
-        Thread t = Thread.currentThread();
-        ThreadLocalMap map = getMap(t);
-        if (map != null) {
-            ThreadLocalMap.Entry e = map.getEntry(this);
-            if (e != null) {
-                @SuppressWarnings(&quot;unchecked&quot;)
-                T result = (T)e.value;
-                return result;
+        <h2 id="1-join-方法"><a href="#1-join-方法" class="headerlink" title="1.join() 方法"></a>1.join() 方法</h2><p>主要作用是同步，它可以使得线程之间的并行执行变为串行执行。在A线程中调用了B线程的join()方法时，表示只有当B线程执行完毕时，A线程才能继续执行。 </p>
+<pre><code class="java">private static void join() throws InterruptedException {
+    Thread t1 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            LOGGER.info(&quot;running&quot;);
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
-        return setInitialValue();
-    }
-
-    private T setInitialValue() {
-        T value = initialValue();
-        Thread t = Thread.currentThread();
-        ThreadLocalMap map = getMap(t);
-        if (map != null)
-            map.set(this, value);
-        else
-            createMap(t, value);
-        return value;
-    }
-
-    public void set(T value) {
-        Thread t = Thread.currentThread();
-        ThreadLocalMap map = getMap(t);
-        if (map != null)
-            map.set(this, value);
-        else
-            createMap(t, value);
-    }
-
-     public void remove() {
-         ThreadLocalMap m = getMap(Thread.currentThread());
-         if (m != null)
-             m.remove(this);
-     }
-
-    ThreadLocalMap getMap(Thread t) {
-        return t.threadLocals;
-    }
-
-    void createMap(Thread t, T firstValue) {
-        t.threadLocals = new ThreadLocalMap(this, firstValue);
-    }
-
-    static ThreadLocalMap createInheritedMap(ThreadLocalMap parentMap) {
-        return new ThreadLocalMap(parentMap);
-    }
-
-    T childValue(T parentValue) {
-        throw new UnsupportedOperationException();
-    }
-
-    static final class SuppliedThreadLocal&lt;T&gt; extends ThreadLocal&lt;T&gt; {
-
-        private final Supplier&lt;? extends T&gt; supplier;
-
-        SuppliedThreadLocal(Supplier&lt;? extends T&gt; supplier) {
-            this.supplier = Objects.requireNonNull(supplier);
-        }
-
+    }) ;
+    Thread t2 = new Thread(new Runnable() {
         @Override
-        protected T initialValue() {
-            return supplier.get();
+        public void run() {
+            LOGGER.info(&quot;running2&quot;);
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }) ;
+    t1.start();
+    t2.start();
+    //等待线程1终止
+    t1.join();
+    //等待线程2终止
+    t2.join();
+    LOGGER.info(&quot;main over&quot;);
+}
+</code></pre>
+<h2 id="2-wait-notify"><a href="#2-wait-notify" class="headerlink" title="2.wait/notify"></a>2.wait/notify</h2><p>等待通知模式是 Java 中比较经典的线程通信方式。两个线程通过对同一对象调用等待 wait() 和通知 notify() 方法来进行通讯。</p>
+<p>等待通知有着一个经典范式：</p>
+<p>线程 A 作为消费者：</p>
+<ol>
+<li>获取对象的锁。</li>
+<li>进入 while(判断条件)，并调用 wait() 方法。</li>
+<li>当条件满足跳出循环执行具体处理逻辑。</li>
+</ol>
+<p>线程 B 作为生产者:</p>
+<ol>
+<li>获取对象锁。</li>
+<li>更改与线程 A 共用的判断条件。</li>
+<li>调用 notify() 方法。</li>
+</ol>
+<p>伪代码如下:</p>
+<pre><code>//Thread A
+
+synchronized(Object){
+    while(条件){
+        Object.wait();
+    }
+    //do something
+}
+
+//Thread B
+synchronized(Object){
+    条件=false;//改变条件
+    Object.notify();
+}
+</code></pre><p>两个线程交替打印奇偶数,通过<code>wait/notify</code>实现</p>
+<pre><code class="java">public class WaitNotify {
+    //状态锁
+    private static Object lock = new Object();
+    private static Integer i=0;
+    public void odd(){
+        while (i&lt;10){
+            synchronized (lock){
+                if(i%2 ==1){
+                    System.out.println(Thread.currentThread().getName()+&quot;_&quot;+i);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    i++;
+                    lock.notify();
+                }else {
+                    try {
+                        lock.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
         }
     }
-
-    static class ThreadLocalMap {
-        // 。。。
+    public void even(){
+        synchronized (lock){
+            while (i&lt;10){
+                if( i%2 == 0 ){
+                    System.out.println(Thread.currentThread().getName()+&quot;_&quot;+i);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    i++;
+                    lock.notify();
+                }else {
+                    try {
+                        lock.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
     }
-}
-</code></pre>
-<h3 id="1-变量"><a href="#1-变量" class="headerlink" title="1.变量"></a>1.变量</h3><p>可以发现ThreadLocal 的属性由两个变量 threadlocalHashCode（用于唯一表示当前ThreadLocal实例）,nextHashCode（用于下一个ThreadlocalHashCode的预计算），还有一个常量HASH_INCREMENT （用于计算HashCode）</p>
-<pre><code>private final int threadLocalHashCode = nextHashCode();
-
-private static AtomicInteger nextHashCode = new AtomicInteger();
-
-private static final int HASH_INCREMENT = 0x61c88647;
-</code></pre><h3 id="2-方法"><a href="#2-方法" class="headerlink" title="2.方法"></a>2.方法</h3><h4 id="2-1-set（）"><a href="#2-1-set（）" class="headerlink" title="2.1 set（）"></a>2.1 set（）</h4><pre><code class="java">/**
- * Sets the current thread&#39;s copy of this thread-local variable
- * to the specified value.  Most subclasses will have no need to
- * override this method, relying solely on the {@link #initialValue}
- * method to set the values of thread-locals.
- *
- * @param value the value to be stored in the current thread&#39;s copy of
- *        this thread-local.
- */
-public void set(T value) {
-    Thread t = Thread.currentThread();
-    ThreadLocalMap map = getMap(t);
-    if (map != null)
-        map.set(this, value);
-    else
-        createMap(t, value);
-}
-</code></pre>
-<pre><code class="java">public
-class Thread implements Runnable {
-    /* ThreadLocal values pertaining to this thread. This map is maintained
-     * by the ThreadLocal class. */
-    ThreadLocal.ThreadLocalMap threadLocals = null;
-}
-</code></pre>
-<p>可见，是先取到当前线程的实例，再获取到ThreadLocalMap，然后set值</p>
-<h4 id="2-2-get"><a href="#2-2-get" class="headerlink" title="2.2 get()"></a>2.2 get()</h4><pre><code class="java">/**
- * Returns the value in the current thread&#39;s copy of this
- * thread-local variable.  If the variable has no value for the
- * current thread, it is first initialized to the value returned
- * by an invocation of the {@link #initialValue} method.
- *
- * @return the current thread&#39;s value of this thread-local
- */
-public T get() {
-    Thread t = Thread.currentThread();
-    ThreadLocalMap map = getMap(t);
-    if (map != null) {
-        ThreadLocalMap.Entry e = map.getEntry(this);
-        if (e != null) {
-            @SuppressWarnings(&quot;unchecked&quot;)
-            T result = (T)e.value;
-            return result;
-        }
-    }
-    return setInitialValue();
-}
-</code></pre>
-<p>与set方法相对应，获取到ThreadLocalMap中的方法</p>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="1-场景一，线程安全考虑"><a href="#1-场景一，线程安全考虑" class="headerlink" title="1.场景一，线程安全考虑"></a>1.场景一，线程安全考虑</h3><p>ThreadLocal 用作保存每个线程独享的对象，为每个线程都创建一个副本，这样每个线程都可以修改自己所拥有的副本, 而不会影响其他线程的副本，确保了线程安全。</p>
-<p>所有的线程共用一个 simpleDateFormat 对象？但是simpleDateFormat 又不是线程安全的，我们必须做同步，比如使用synchronized加锁。到这里也许就是我们最终的一个解决方法。但是使用synchronized加锁会陷入一种排队的状态，多个线程不能同时工作，这样一来，整体的效率就被大大降低了。</p>
-<p>对这种场景，ThreadLocal再合适不过了，ThreadLocal给每个线程维护一个自己的simpleDateFormat对象，这个对象在线程之间是独立的，互相没有关系的。这也就避免了线程安全问题。与此同时，simpleDateFormat对象还不会创造过多，线程池一共只有 16 个线程，所以需要16个对象即可。</p>
-<pre><code class="java">public class TestThreadLocal2 {
-
-    public static ExecutorService threadPool = Executors.newFixedThreadPool(16);
-
-    public static void main(String[] args) throws InterruptedException {
-
-        for (int i = 0; i &lt; 1000; i++) {
-            int finalI = i;
-            threadPool.submit(() -&gt; {
-                String data = new TestThreadLocal2().date(finalI);
-                System.out.println(data);
-            });
-        }
-        threadPool.shutdown();
-    }
-
-    private String date(int seconds){
-        Date date = new Date(1000 * seconds);
-        SimpleDateFormat dateFormat = ThreadSafeFormater.dateFormatThreadLocal.get();
-        return dateFormat.format(date);
-    }
-}
-
-class ThreadSafeFormater{
-    public static ThreadLocal&lt;SimpleDateFormat&gt; dateFormatThreadLocal = ThreadLocal.withInitial(() -&gt; new SimpleDateFormat(&quot;mm:ss&quot;));
-}
-</code></pre>
-<h3 id="2-场景二，全局遍历，简化传参"><a href="#2-场景二，全局遍历，简化传参" class="headerlink" title="2.场景二，全局遍历，简化传参"></a>2.场景二，全局遍历，简化传参</h3><p>ThreadLocal 用作每个线程内需要独立保存信息，以便供其他方法更方便地获取该信息的场景。每个线程获取到的信息可能都是不一样的，前面执行的方法保存了信息后，后续方法可以通过ThreadLocal 直接获取到，避免了传参，类似于全局变量的概念。</p>
-<pre><code class="java">public class TestThreaLocal3 {
     public static void main(String[] args) {
-        User user = new User(&quot;jack&quot;);
-        new Service1().service1(user);
+        WaitNotify waitNotify = new WaitNotify();
+        Thread thread1 = new Thread( () -&gt; waitNotify.odd(),&quot;线程1&quot;);
+        Thread thread2 = new Thread( () -&gt; waitNotify.even(),&quot;线程2&quot;);
+        thread1.start();
+        thread2.start();
     }
 }
-class Service1 {
-    public void service1(User user){
-        //给ThreadLocal赋值，后续的服务直接通过ThreadLocal获取就行了。
-        UserContextHolder.holder.set(user);
-        new Service2().service2();
+</code></pre>
+<p>运行结果</p>
+<pre><code class="console">线程2_0
+线程1_1
+线程2_2
+线程1_3
+线程2_4
+线程1_5
+线程2_6
+线程1_7
+线程2_8
+线程1_9
+Process finished with exit code 0
+
+</code></pre>
+<h2 id="3-volatile"><a href="#3-volatile" class="headerlink" title="3.volatile"></a>3.volatile</h2><p><code>volatile</code> 修饰内存可见性</p>
+<pre><code class="java">public class Volatile  implements  Runnable{
+    private static volatile Boolean flag = true;
+
+    @Override
+    public void run() {
+        while (flag) {
+            System.out.println(Thread.currentThread().getName() + &quot; - 执行&quot;);
+        }
+        System.out.println(&quot;线程结束&quot;);
     }
+
+    public static void main(String[] args) {
+        Thread t = new Thread(new Volatile());
+        t.start();
+        try {
+            Thread.sleep(5);
+            flag = false;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<p>运行结果</p>
+<pre><code>Thread-0 - 执行
+Thread-0 - 执行
+。。。
+Thread-0 - 执行
+Thread-0 - 执行
+Thread-0 - 执行
+线程结束
+
+Process finished with exit code 0
+</code></pre><h2 id="4-CountDownLatch"><a href="#4-CountDownLatch" class="headerlink" title="4.CountDownLatch"></a>4.CountDownLatch</h2><p><code>CountDownLatch</code>可以代替<code>wait/notify</code>的使用,并去掉<code>synchronized</code>,下面重写第一个例子:</p>
+<pre><code class="java">import java.util.concurrent.CountDownLatch;
+
+public class CountDown {
+  private static Integer i = 0;
+  final static CountDownLatch countDown = new CountDownLatch(1);
+
+  public void odd() {
+    while (i &lt; 10) {
+      if (i % 2 == 1) {
+        System.out.println(Thread.currentThread().getName() + &quot; - &quot; + i);
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        i++;
+        countDown.countDown();
+      } else {
+        try {
+          countDown.await();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+
+  public void even() {
+    while (i &lt; 10) {
+      if (i % 2 == 0) {
+        System.out.println(Thread.currentThread().getName() + &quot; - &quot; + i);
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        i++;
+        countDown.countDown();
+      } else {
+        try {
+          countDown.await();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+
+  public static void main(String[] args) {
+
+    CountDown countDown = new CountDown();
+
+    Thread t1 = new Thread(() -&gt; countDown.odd(), &quot;线程1&quot;);
+    Thread t2 = new Thread(() -&gt; countDown.even(), &quot;线程2&quot;);
+
+    t1.start();
+    t2.start();
+  }
 }
 
-class Service2 {
-    public void service2(){
-        User user = UserContextHolder.holder.get();
-        System.out.println(&quot;service2拿到的用户:&quot;+user.name);
-        new Service3().service3();
+</code></pre>
+<h2 id="5-CyclicBarrier"><a href="#5-CyclicBarrier" class="headerlink" title="5.CyclicBarrier"></a>5.CyclicBarrier</h2><p>等待N个线程都达到某个状态后继续运行</p>
+<pre><code class="java">public class CyclicBarrierTest {
+    public static void main(String[] args) {
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+        new Thread(() -&gt; {
+            System.out.println(Thread.currentThread().getName() + &quot;: 准备...&quot;);
+            try {
+                cyclicBarrier.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;全部启动完毕!&quot;);
+        }, &quot;线程1&quot;).start();
+
+        new Thread(() -&gt; {
+            System.out.println(Thread.currentThread().getName() + &quot;: 准备...&quot;);
+            try {
+                cyclicBarrier.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;全部启动完毕!&quot;);
+        }, &quot;线程2&quot;).start();
+
+        new Thread(() -&gt; {
+            System.out.println(Thread.currentThread().getName() + &quot;: 准备...&quot;);
+            try {
+                cyclicBarrier.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;全部启动完毕!&quot;);
+        }, &quot;线程3&quot;).start();
     }
 }
-
-class Service3 {
-    public void service3(){
-        User user = UserContextHolder.holder.get();
-        System.out.println(&quot;service3拿到的用户:&quot;+user.name);
-        //在整个流程执行完毕后，一定要执行remove
-        UserContextHolder.holder.remove();
+</code></pre>
+<h2 id="6-interrupt-线程中断"><a href="#6-interrupt-线程中断" class="headerlink" title="6.interrupt()线程中断"></a>6.interrupt()线程中断</h2><p>可以采用中断线程的方式来通信，调用了 <code>thread.interrupt()</code> 方法其实就是将 thread 中的一个标志属性置为了 true。</p>
+<p>并不是说调用了该方法就可以中断线程，如果不对这个标志进行响应其实是没有什么作用(这里对这个标志进行了判断)。</p>
+<p><strong>但是如果抛出了 InterruptedException 异常，该标志就会被 JVM 重置为 false。</strong></p>
+<pre><code class="java">public class StopThread implements Runnable{
+    @Override
+    public void run() {
+        while ( !Thread.currentThread().isInterrupted()) {
+            // 线程执行具体逻辑
+            System.out.println(Thread.currentThread().getName() + &quot;运行中。。&quot;);
+        }
+        System.out.println(Thread.currentThread().getName() + &quot;退出。。&quot;);
+    }
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(new StopThread(), &quot;thread A&quot;);
+        thread.start();
+        System.out.println(&quot;main 线程正在运行&quot;) ;
+        TimeUnit.MILLISECONDS.sleep(10) ;
+        thread.interrupt();
     }
 }
-
-class UserContextHolder {
-    //创建ThreadLocal保存User对象
-    public static ThreadLocal&lt;User&gt; holder = new ThreadLocal&lt;&gt;();
-}
-
-class User {
-    String name;
-    public User(String name){
-        this.name = name;
+</code></pre>
+<h2 id="7-线程池-awaitTermination-方法"><a href="#7-线程池-awaitTermination-方法" class="headerlink" title="7.线程池 awaitTermination() 方法"></a>7.线程池 awaitTermination() 方法</h2><p>使用这个 <code>awaitTermination()</code> 方法的前提需要关闭线程池，如调用了 <code>shutdown()</code> 方法。调用了 <code>shutdown()</code> 之后线程池会停止接受新任务，并且会平滑的关闭线程池中现有的任务。</p>
+<pre><code class="java">private static void executorService() throws Exception{
+    BlockingQueue&lt;Runnable&gt; queue = new LinkedBlockingQueue&lt;&gt;(10) ;
+    ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(5,5,1, TimeUnit.MILLISECONDS,queue) ;
+    poolExecutor.execute(new Runnable() {
+        @Override
+        public void run() {
+            System.out.println(&quot;running&quot;);
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    });
+    poolExecutor.execute(new Runnable() {
+        @Override
+        public void run() {
+            System.out.println(&quot;running2&quot;);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    });
+    poolExecutor.shutdown();
+    while (!poolExecutor.awaitTermination(1,TimeUnit.SECONDS)){
+        System.out.println(&quot;线程还在执行。。。&quot;);
     }
+    System.out.println(&quot;main over&quot;);
+}
+</code></pre>
+<h2 id="8-管道通信"><a href="#8-管道通信" class="headerlink" title="8.管道通信"></a>8.管道通信</h2><p>Java 虽说是基于内存通信的，但也可以使用管道通信。需要注意的是，输入流和输出流需要首先建立连接。这样线程 B 就可以收到线程 A 发出的消息了。</p>
+<pre><code class="java">public static void piped() throws IOException {
+    //面向于字符 PipedInputStream 面向于字节
+    PipedWriter writer = new PipedWriter();
+    PipedReader reader = new PipedReader();
+    //输入输出流建立连接
+    writer.connect(reader);
+    Thread t1 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            System.out.println(&quot;running&quot;);
+            try {
+                for (int i = 0; i &lt; 10; i++) {
+                    writer.write(i+&quot;&quot;);
+                    Thread.sleep(10);
+                }
+            } catch (Exception e) {
+            } finally {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    });
+    Thread t2 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            System.out.println(&quot;running2&quot;);
+            int msg = 0;
+            try {
+                while ((msg = reader.read()) != -1) {
+                    System.out.println(&quot;msg=&quot;+(char) msg);
+                }
+            } catch (Exception e) {
+            }finally {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    });
+    t1.start();
+    t2.start();
 }
 </code></pre>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
-<li><a href="https://www.iteye.com/topic/103804" rel="external nofollow noopener noreferrer" target="_blank">正确理解ThreadLocal</a></li>
-<li><a href="https://www.cnblogs.com/zz-ksw/p/12684877.html" rel="external nofollow noopener noreferrer" target="_blank">ThreadLocal的应用场景</a></li>
+<li><a href="https://www.cnblogs.com/linyufeng/p/9671844.html#waitnotify_1" rel="external nofollow noopener noreferrer" target="_blank">线程通信的4种方式</a></li>
+<li><a href="https://crossoverjie.top/2018/03/16/java-senior/thread-communication/" rel="external nofollow noopener noreferrer" target="_blank">深入理解线程通信</a></li>
 </ul>
 </blockquote>
 
@@ -762,12 +907,12 @@ class User {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>TreadLocal</p>
+    <p><span class="copy-title">文章标题:</span>线程通信的四种方式</p>
     
     <p><span class="copy-title">本文作者:</span><a title="gnuochen">gnuochen</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-11-22, 15:36:55</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-22, 21:27:12</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/java/TreadLocal/" title="TreadLocal">../index.html/wiki/java/TreadLocal/</a>
+    <p><span class="copy-title">发布时间:</span>2020-11-27, 20:05:16</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-27, 23:00:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/wiki/java/线程通信的四种方式/" title="线程通信的四种方式">../index.html/wiki/java/线程通信的四种方式/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

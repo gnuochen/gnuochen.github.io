@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="../index.html/"/>
-  <updated>2020-11-26T04:16:40.071Z</updated>
+  <updated>2020-11-27T15:00:06.582Z</updated>
   <id>../index.html/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线程通信的四种方式</title>
+    <link href="../index.html/wiki/java/%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>../index.html/wiki/java/线程通信的四种方式/</id>
+    <published>2020-11-27T12:05:16.000Z</published>
+    <updated>2020-11-27T15:00:06.582Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-join-方法"><a href="#1-join-方法" class="headerlink" title="1.join() 方法"></a>1.join() 方法</h2><p>主要作用是同步，它可以使得线程之间的并行执行变为串行执行。在A线程中调用了B线程的join()方法时，表示只有当B线程执行完毕时，A线程才能继续执行。 </p><pre><code class="java">private static void join() throws InterruptedException {    Thread t1 = new Thread(new Runnable() {        @Override        public void run() {            LOGGER.info(&quot;running&quot;);            try {                Thread.sleep(3000);            } catch (InterruptedException e) {                e.printStackTrace();            }        }    }) ;    Thread t2 = new Thread(new Runnable() {        @Override        public void run() {            LOGGER.info(&quot;running2&quot;);            try {                Thread.sleep(4000);            } catch (InterruptedException e) {                e.printStackTrace();            }        }    }) ;    t1.start();    t2.start();    //等待线程1终止    t1.join();    //等待线程2终止    t2.join();    LOGGER.info(&quot;main over&quot;);}</code></pre><h2 id="2-wait-notify"><a href="#2-wait-notify" class="headerlink" title="2.wait/notify"></a>2.wait/notify</h2><p>等待通知模式是 Java 中比较经典的线程通信方式。两个线程通过对同一对象调用等待 wait() 和通知 notify() 方法来进行通讯。</p><p>等待通知有着一个经典范式：</p><p>线程 A 作为消费者：</p><ol><li>获取对象的锁。</li><li>进入 while(判断条件)，并调用 wait() 方法。</li><li>当条件满足跳出循环执行具体处理逻辑。</li></ol><p>线程 B 作为生产者:</p><ol><li>获取对象锁。</li><li>更改与线程 A 共用的判断条件。</li><li>调用 notify() 方法。</li></ol><p>伪代码如下:</p><pre><code>//Thread Asynchronized(Object){    while(条件){        Object.wait();    }    //do something}//Thread Bsynchronized(Object){    条件=false;//改变条件    Object.notify();}</code></pre><p>两个线程交替打印奇偶数,通过<code>wait/notify</code>实现</p><pre><code class="java">public class WaitNotify {    //状态锁    private static Object lock = new Object();    private static Integer i=0;    public void odd(){        while (i&lt;10){            synchronized (lock){                if(i%2 ==1){                    System.out.println(Thread.currentThread().getName()+&quot;_&quot;+i);                    try {                        Thread.sleep(1000);                    } catch (InterruptedException e) {                        e.printStackTrace();                    }                    i++;                    lock.notify();                }else {                    try {                        lock.wait();                    } catch (InterruptedException e) {                        e.printStackTrace();                    }                }            }        }    }    public void even(){        synchronized (lock){            while (i&lt;10){                if( i%2 == 0 ){                    System.out.println(Thread.currentThread().getName()+&quot;_&quot;+i);                    try {                        Thread.sleep(1000);                    } catch (InterruptedException e) {                        e.printStackTrace();                    }                    i++;                    lock.notify();                }else {                    try {                        lock.wait();                    } catch (InterruptedException e) {                        e.printStackTrace();                    }                }            }        }    }    public static void main(String[] args) {        WaitNotify waitNotify = new WaitNotify();        Thread thread1 = new Thread( () -&gt; waitNotify.odd(),&quot;线程1&quot;);        Thread thread2 = new Thread( () -&gt; waitNotify.even(),&quot;线程2&quot;);        thread1.start();        thread2.start();    }}</code></pre><p>运行结果</p><pre><code class="console">线程2_0线程1_1线程2_2线程1_3线程2_4线程1_5线程2_6线程1_7线程2_8线程1_9Process finished with exit code 0</code></pre><h2 id="3-volatile"><a href="#3-volatile" class="headerlink" title="3.volatile"></a>3.volatile</h2><p><code>volatile</code> 修饰内存可见性</p><pre><code class="java">public class Volatile  implements  Runnable{    private static volatile Boolean flag = true;    @Override    public void run() {        while (flag) {            System.out.println(Thread.currentThread().getName() + &quot; - 执行&quot;);        }        System.out.println(&quot;线程结束&quot;);    }    public static void main(String[] args) {        Thread t = new Thread(new Volatile());        t.start();        try {            Thread.sleep(5);            flag = false;        } catch (InterruptedException e) {            e.printStackTrace();        }    }}</code></pre><p>运行结果</p><pre><code>Thread-0 - 执行Thread-0 - 执行。。。Thread-0 - 执行Thread-0 - 执行Thread-0 - 执行线程结束Process finished with exit code 0</code></pre><h2 id="4-CountDownLatch"><a href="#4-CountDownLatch" class="headerlink" title="4.CountDownLatch"></a>4.CountDownLatch</h2><p><code>CountDownLatch</code>可以代替<code>wait/notify</code>的使用,并去掉<code>synchronized</code>,下面重写第一个例子:</p><pre><code class="java">import java.util.concurrent.CountDownLatch;public class CountDown {  private static Integer i = 0;  final static CountDownLatch countDown = new CountDownLatch(1);  public void odd() {    while (i &lt; 10) {      if (i % 2 == 1) {        System.out.println(Thread.currentThread().getName() + &quot; - &quot; + i);        try {          Thread.sleep(1000);        } catch (InterruptedException e) {          e.printStackTrace();        }        i++;        countDown.countDown();      } else {        try {          countDown.await();        } catch (InterruptedException e) {          e.printStackTrace();        }      }    }  }  public void even() {    while (i &lt; 10) {      if (i % 2 == 0) {        System.out.println(Thread.currentThread().getName() + &quot; - &quot; + i);        try {          Thread.sleep(1000);        } catch (InterruptedException e) {          e.printStackTrace();        }        i++;        countDown.countDown();      } else {        try {          countDown.await();        } catch (InterruptedException e) {          e.printStackTrace();        }      }    }  }  public static void main(String[] args) {    CountDown countDown = new CountDown();    Thread t1 = new Thread(() -&gt; countDown.odd(), &quot;线程1&quot;);    Thread t2 = new Thread(() -&gt; countDown.even(), &quot;线程2&quot;);    t1.start();    t2.start();  }}</code></pre><h2 id="5-CyclicBarrier"><a href="#5-CyclicBarrier" class="headerlink" title="5.CyclicBarrier"></a>5.CyclicBarrier</h2><p>等待N个线程都达到某个状态后继续运行</p><pre><code class="java">public class CyclicBarrierTest {    public static void main(String[] args) {        CyclicBarrier cyclicBarrier = new CyclicBarrier(3);        new Thread(() -&gt; {            System.out.println(Thread.currentThread().getName() + &quot;: 准备...&quot;);            try {                cyclicBarrier.await();            } catch (InterruptedException e) {                e.printStackTrace();            } catch (BrokenBarrierException e) {                e.printStackTrace();            }            System.out.println(&quot;全部启动完毕!&quot;);        }, &quot;线程1&quot;).start();        new Thread(() -&gt; {            System.out.println(Thread.currentThread().getName() + &quot;: 准备...&quot;);            try {                cyclicBarrier.await();            } catch (InterruptedException e) {                e.printStackTrace();            } catch (BrokenBarrierException e) {                e.printStackTrace();            }            System.out.println(&quot;全部启动完毕!&quot;);        }, &quot;线程2&quot;).start();        new Thread(() -&gt; {            System.out.println(Thread.currentThread().getName() + &quot;: 准备...&quot;);            try {                cyclicBarrier.await();            } catch (InterruptedException e) {                e.printStackTrace();            } catch (BrokenBarrierException e) {                e.printStackTrace();            }            System.out.println(&quot;全部启动完毕!&quot;);        }, &quot;线程3&quot;).start();    }}</code></pre><h2 id="6-interrupt-线程中断"><a href="#6-interrupt-线程中断" class="headerlink" title="6.interrupt()线程中断"></a>6.interrupt()线程中断</h2><p>可以采用中断线程的方式来通信，调用了 <code>thread.interrupt()</code> 方法其实就是将 thread 中的一个标志属性置为了 true。</p><p>并不是说调用了该方法就可以中断线程，如果不对这个标志进行响应其实是没有什么作用(这里对这个标志进行了判断)。</p><p><strong>但是如果抛出了 InterruptedException 异常，该标志就会被 JVM 重置为 false。</strong></p><pre><code class="java">public class StopThread implements Runnable{    @Override    public void run() {        while ( !Thread.currentThread().isInterrupted()) {            // 线程执行具体逻辑            System.out.println(Thread.currentThread().getName() + &quot;运行中。。&quot;);        }        System.out.println(Thread.currentThread().getName() + &quot;退出。。&quot;);    }    public static void main(String[] args) throws InterruptedException {        Thread thread = new Thread(new StopThread(), &quot;thread A&quot;);        thread.start();        System.out.println(&quot;main 线程正在运行&quot;) ;        TimeUnit.MILLISECONDS.sleep(10) ;        thread.interrupt();    }}</code></pre><h2 id="7-线程池-awaitTermination-方法"><a href="#7-线程池-awaitTermination-方法" class="headerlink" title="7.线程池 awaitTermination() 方法"></a>7.线程池 awaitTermination() 方法</h2><p>使用这个 <code>awaitTermination()</code> 方法的前提需要关闭线程池，如调用了 <code>shutdown()</code> 方法。调用了 <code>shutdown()</code> 之后线程池会停止接受新任务，并且会平滑的关闭线程池中现有的任务。</p><pre><code class="java">private static void executorService() throws Exception{    BlockingQueue&lt;Runnable&gt; queue = new LinkedBlockingQueue&lt;&gt;(10) ;    ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(5,5,1, TimeUnit.MILLISECONDS,queue) ;    poolExecutor.execute(new Runnable() {        @Override        public void run() {            System.out.println(&quot;running&quot;);            try {                Thread.sleep(3000);            } catch (InterruptedException e) {                e.printStackTrace();            }        }    });    poolExecutor.execute(new Runnable() {        @Override        public void run() {            System.out.println(&quot;running2&quot;);            try {                Thread.sleep(2000);            } catch (InterruptedException e) {                e.printStackTrace();            }        }    });    poolExecutor.shutdown();    while (!poolExecutor.awaitTermination(1,TimeUnit.SECONDS)){        System.out.println(&quot;线程还在执行。。。&quot;);    }    System.out.println(&quot;main over&quot;);}</code></pre><h2 id="8-管道通信"><a href="#8-管道通信" class="headerlink" title="8.管道通信"></a>8.管道通信</h2><p>Java 虽说是基于内存通信的，但也可以使用管道通信。需要注意的是，输入流和输出流需要首先建立连接。这样线程 B 就可以收到线程 A 发出的消息了。</p><pre><code class="java">public static void piped() throws IOException {    //面向于字符 PipedInputStream 面向于字节    PipedWriter writer = new PipedWriter();    PipedReader reader = new PipedReader();    //输入输出流建立连接    writer.connect(reader);    Thread t1 = new Thread(new Runnable() {        @Override        public void run() {            System.out.println(&quot;running&quot;);            try {                for (int i = 0; i &lt; 10; i++) {                    writer.write(i+&quot;&quot;);                    Thread.sleep(10);                }            } catch (Exception e) {            } finally {                try {                    writer.close();                } catch (IOException e) {                    e.printStackTrace();                }            }        }    });    Thread t2 = new Thread(new Runnable() {        @Override        public void run() {            System.out.println(&quot;running2&quot;);            int msg = 0;            try {                while ((msg = reader.read()) != -1) {                    System.out.println(&quot;msg=&quot;+(char) msg);                }            } catch (Exception e) {            }finally {                try {                    reader.close();                } catch (IOException e) {                    e.printStackTrace();                }            }        }    });    t1.start();    t2.start();}</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.cnblogs.com/linyufeng/p/9671844.html#waitnotify_1" rel="external nofollow noopener noreferrer" target="_blank">线程通信的4种方式</a></li><li><a href="https://crossoverjie.top/2018/03/16/java-senior/thread-communication/" rel="external nofollow noopener noreferrer" target="_blank">深入理解线程通信</a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-join-方法&quot;&gt;&lt;a href=&quot;#1-join-方法&quot; class=&quot;headerlink&quot; title=&quot;1.join() 方法&quot;&gt;&lt;/a&gt;1.join() 方法&lt;/h2&gt;&lt;p&gt;主要作用是同步，它可以使得线程之间的并行执行变为串行执行。在A线程中调用了B
+      
+    
+    </summary>
+    
+      <category term="java" scheme="../index.html/categories/java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>java8新特性</title>
@@ -87,35 +110,6 @@
   </entry>
   
   <entry>
-    <title>default</title>
-    <link href="../index.html/wiki/database/sql/default/"/>
-    <id>../index.html/wiki/database/sql/default/</id>
-    <published>2020-11-13T02:00:22.000Z</published>
-    <updated>2020-11-13T02:00:22.524Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/u
-      
-    
-    </summary>
-    
-      <category term="database" scheme="../index.html/categories/database/"/>
-    
-      <category term="sql" scheme="../index.html/categories/database/sql/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>十大经典排序算法</title>
     <link href="../index.html/wiki/algorithm/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     <id>../index.html/wiki/algorithm/十大经典排序算法/</id>
@@ -139,28 +133,26 @@
   </entry>
   
   <entry>
-    <title>default</title>
-    <link href="../index.html/wiki/python/default/"/>
-    <id>../index.html/wiki/python/default/</id>
+    <title>Having的用法</title>
+    <link href="../index.html/wiki/database/sql/Having%E7%9A%84%E7%94%A8%E6%B3%95/"/>
+    <id>../index.html/wiki/database/sql/Having的用法/</id>
     <published>2020-11-13T02:00:22.000Z</published>
-    <updated>2020-11-13T02:00:22.524Z</updated>
+    <updated>2020-11-27T11:38:16.169Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="Having-语法"><a href="#Having-语法" class="headerlink" title="Having 语法"></a>Having 语法</h2><pre><code class="sql">SELECT column_name, aggregate_function(column_name)FROM table_nameWHERE column_name operator valueGROUP BY column_nameHAVING aggregate_function(column_name) operator value;</code></pre><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="样本数据"><a href="#样本数据" class="headerlink" title="样本数据"></a>样本数据</h3><p>下面是选自 “Websites” 表的数据：</p><pre><code class="sh">+----+--------------+---------------------------+-------+---------+| id | name         | url                       | alexa | country |+----+--------------+---------------------------+-------+---------+| 1  | Google       | https://www.google.cm/    | 1     | USA     || 2  | 淘宝          | https://www.taobao.com/   | 13    | CN      || 3  | 菜鸟教程      | http://www.runoob.com/    | 4689  | CN      || 4  | 微博          | http://weibo.com/         | 20    | CN      || 5  | Facebook     | https://www.facebook.com/ | 3     | USA     || 7  | stackoverflow | http://stackoverflow.com/ |   0 | IND     |+----+---------------+---------------------------+-------+---------+</code></pre><p>下面是 “access_log” 网站访问记录表的数据：</p><pre><code class="sh">mysql&gt; SELECT * FROM access_log;+-----+---------+-------+------------+| aid | site_id | count | date       |+-----+---------+-------+------------+|   1 |       1 |    45 | 2016-05-10 ||   2 |       3 |   100 | 2016-05-13 ||   3 |       1 |   230 | 2016-05-14 ||   4 |       2 |    10 | 2016-05-14 ||   5 |       5 |   205 | 2016-05-14 ||   6 |       4 |    13 | 2016-05-15 ||   7 |       3 |   220 | 2016-05-15 ||   8 |       5 |   545 | 2016-05-16 ||   9 |       3 |   201 | 2016-05-17 |+-----+---------+-------+------------+9 rows in set (0.00 sec)</code></pre><h3 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h3><p>现在我们想要查找总访问量大于 200 的网站。</p><p>我们使用下面的 SQL 语句：</p><p>实例</p><pre><code class="sql">SELECT Websites.name, Websites.url, SUM(access_log.count) AS nums FROM (access_logINNER JOIN WebsitesON access_log.site_id=Websites.id)GROUP BY Websites.nameHAVING SUM(access_log.count) &gt; 200;</code></pre><p>执行以上 SQL 输出结果如下：</p><img src="/wiki/database/sql/Having的用法/having1.jpg" title="[having1]"><h3 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h3><p>现在我们想要查找总访问量大于 200 的网站，并且 alexa 排名小于 200。</p><p>我们在 SQL 语句中增加一个普通的 WHERE 子句：</p><p>实例</p><pre><code class="sql">SELECT Websites.name, SUM(access_log.count) AS nums FROM Websites INNER JOIN access_log ON Websites.id=access_log.site_id WHERE Websites.alexa &lt; 200 GROUP BY Websites.nameHAVING SUM(access_log.count) &gt; 200;</code></pre><p>执行以上 SQL 输出结果如下：</p><img src="/wiki/database/sql/Having的用法/having2.jpg" title="[having2]"><h3 id="实例3（面试题）"><a href="#实例3（面试题）" class="headerlink" title="实例3（面试题）"></a>实例3（面试题）</h3><p>name   kecheng   fenshu<br>张三    语文       81<br>张三     数学       75<br>李四     语文       76<br>李四     数学       90<br>王五     语文       81<br>王五     数学       100<br>王五     英语       90</p><pre><code class="sql">select distinct name from table where name not in (select distinct name from table where fenshu&lt;=80)select name from table group by name having min(fenshu)&gt;80</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.runoob.com/sql/sql-having.html" rel="external nofollow noopener noreferrer" target="_blank">菜鸟教程</a></li></ul></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/u
+        &lt;h2 id=&quot;Having-语法&quot;&gt;&lt;a href=&quot;#Having-语法&quot; class=&quot;headerlink&quot; title=&quot;Having 语法&quot;&gt;&lt;/a&gt;Having 语法&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;sql&quot;&gt;SELECT column_name, ag
       
     
     </summary>
     
-      <category term="python" scheme="../index.html/categories/python/"/>
+      <category term="database" scheme="../index.html/categories/database/"/>
+    
+      <category term="sql" scheme="../index.html/categories/database/sql/"/>
     
     
   </entry>
@@ -188,6 +180,33 @@
     </summary>
     
       <category term="tools" scheme="../index.html/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>default</title>
+    <link href="../index.html/wiki/python/default/"/>
+    <id>../index.html/wiki/python/default/</id>
+    <published>2020-11-13T02:00:22.000Z</published>
+    <updated>2020-11-13T02:00:22.524Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href></a></li><li><a href></a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/u
+      
+    
+    </summary>
+    
+      <category term="python" scheme="../index.html/categories/python/"/>
     
     
   </entry>
@@ -312,6 +331,32 @@
     </summary>
     
       <category term="java" scheme="../index.html/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sql快参表</title>
+    <link href="../index.html/wiki/database/sql/sql%E5%BF%AB%E5%8F%82%E8%A1%A8/"/>
+    <id>../index.html/wiki/database/sql/sql快参表/</id>
+    <published>2018-11-27T03:03:57.000Z</published>
+    <updated>2020-11-27T11:18:43.760Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="AND-OR"><a href="#AND-OR" class="headerlink" title="AND / OR"></a>AND / OR</h3><pre><code class="sql">SELECT column_name(s)FROM table_nameWHERE conditionAND | OR condition</code></pre><h3 id="ALTER-TABLE"><a href="#ALTER-TABLE" class="headerlink" title="ALTER TABLE"></a>ALTER TABLE</h3><pre><code class="sql">ALTER TABLE table_nameADD column_name datatypeorALTER TABLE table_nameDROP COLUMN column_name</code></pre><h3 id="AS-alias"><a href="#AS-alias" class="headerlink" title="AS (alias)"></a>AS (alias)</h3><pre><code class="sql">SELECT column_name AS column_aliasFROM table_nameorSELECT column_nameFROM table_name AS table_alias</code></pre><h3 id="BETWEEN"><a href="#BETWEEN" class="headerlink" title="BETWEEN"></a>BETWEEN</h3><pre><code class="sql">SELECT column_name(s)FROM table_nameWHERE column_nameBETWEEN value1 AND value2</code></pre><h3 id="CREATE-DATABASE"><a href="#CREATE-DATABASE" class="headerlink" title="CREATE DATABASE"></a>CREATE DATABASE</h3><pre><code class="sql">CREATE DATABASE database_name</code></pre><h3 id="CREATE-TABLE"><a href="#CREATE-TABLE" class="headerlink" title="CREATE TABLE"></a>CREATE TABLE</h3><pre><code class="sql">CREATE TABLE table_name(column_name1 data_type,column_name2 data_type,column_name2 data_type,...)</code></pre><h3 id="CREATE-INDEX"><a href="#CREATE-INDEX" class="headerlink" title="CREATE INDEX"></a>CREATE INDEX</h3><pre><code class="sql">CREATE INDEX index_nameON table_name (column_name)orCREATE UNIQUE INDEX index_nameON table_name (column_name)</code></pre><h3 id="CREATE-VIEW"><a href="#CREATE-VIEW" class="headerlink" title="CREATE VIEW"></a>CREATE VIEW</h3><pre><code class="sql">CREATE VIEW view_name ASSELECT column_name(s)FROM table_nameWHERE condition</code></pre><h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><pre><code class="sql">DELETE FROM table_nameWHERE some_column=some_valueorDELETE FROM table_name(Note: Deletes the entire table!!)DELETE * FROM table_name(Note: Deletes the entire table!!)</code></pre><h3 id="DROP-DATABASE"><a href="#DROP-DATABASE" class="headerlink" title="DROP DATABASE"></a>DROP DATABASE</h3><pre><code class="sql">DROP DATABASE database_name</code></pre><h3 id="DROP-INDEX"><a href="#DROP-INDEX" class="headerlink" title="DROP INDEX"></a>DROP INDEX</h3><pre><code class="sql">DROP INDEX table_name.index_name (SQL Server)DROP INDEX index_name ON table_name (MS Access)DROP INDEX index_name (DB2/Oracle)ALTER TABLE table_nameDROP INDEX index_name (MySQL)</code></pre><h3 id="DROP-TABLE"><a href="#DROP-TABLE" class="headerlink" title="DROP TABLE"></a>DROP TABLE</h3><pre><code class="sql">DROP TABLE table_name</code></pre><h3 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h3><pre><code class="sql">SELECT column_name, aggregate_function(column_name)FROM table_nameWHERE column_name operator valueGROUP BY column_name</code></pre><h3 id="HAVING"><a href="#HAVING" class="headerlink" title="HAVING"></a>HAVING</h3><pre><code class="sql">SELECT column_name, aggregate_function(column_name)FROM table_nameWHERE column_name operator valueGROUP BY column_nameHAVING aggregate_function(column_name) operator value</code></pre><h3 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h3><pre><code class="sql">SELECT column_name(s)FROM table_nameWHERE column_nameIN (value1,value2,..)</code></pre><h3 id="INSERT-INTO"><a href="#INSERT-INTO" class="headerlink" title="INSERT INTO"></a>INSERT INTO</h3><pre><code class="sql">INSERT INTO table_nameVALUES (value1, value2, value3,....)orINSERT INTO table_name(column1, column2, column3,...)VALUES (value1, value2, value3,....)</code></pre><h3 id="LEFT-JOIN"><a href="#LEFT-JOIN" class="headerlink" title="LEFT JOIN"></a>LEFT JOIN</h3><pre><code class="sql">SELECT column_name(s)FROM table_name1LEFT JOIN table_name2ON table_name1.column_name=table_name2.column_name</code></pre><h3 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a>INNER JOIN</h3><pre><code class="sql">SELECT column_name(s)FROM table_name1INNER JOIN table_name2ON table_name1.column_name=table_name2.column_name</code></pre><h3 id="RIGHT-JOIN"><a href="#RIGHT-JOIN" class="headerlink" title="RIGHT JOIN"></a>RIGHT JOIN</h3><pre><code class="sql">SELECT column_name(s)FROM table_name1RIGHT JOIN table_name2ON table_name1.column_name=table_name2.column_name</code></pre><h3 id="FULL-JOIN"><a href="#FULL-JOIN" class="headerlink" title="FULL JOIN"></a>FULL JOIN</h3><pre><code class="sql">SELECT column_name(s)FROM table_name1FULL JOIN table_name2ON table_name1.column_name=table_name2.column_name</code></pre><h3 id="LIKE"><a href="#LIKE" class="headerlink" title="LIKE"></a>LIKE</h3><pre><code class="sql">SELECT column_name(s)FROM table_nameWHERE column_name LIKE pattern</code></pre><h3 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h3><pre><code class="sql">SELECT column_name(s)FROM table_nameORDER BY column_name [ASC|DESC]</code></pre><h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><pre><code class="sql">SELECT column_name(s)FROM table_name</code></pre><h3 id="SELECT-DISTINCT"><a href="#SELECT-DISTINCT" class="headerlink" title="SELECT DISTINCT"></a>SELECT DISTINCT</h3><pre><code class="sql">SELECT DISTINCT column_name(s)FROM table_name</code></pre><h3 id="SELECT-INTO"><a href="#SELECT-INTO" class="headerlink" title="SELECT INTO"></a>SELECT INTO</h3><pre><code class="sql">SELECT *INTO new_table_name [IN externaldatabase]FROM old_table_nameorSELECT column_name(s)INTO new_table_name [IN externaldatabase]FROM old_table_name</code></pre><h3 id="SELECT-TOP"><a href="#SELECT-TOP" class="headerlink" title="SELECT TOP"></a>SELECT TOP</h3><pre><code class="sql">SELECT TOP number|percent column_name(s)FROM table_name</code></pre><h3 id="TRUNCATE-TABLE"><a href="#TRUNCATE-TABLE" class="headerlink" title="TRUNCATE TABLE"></a>TRUNCATE TABLE</h3><pre><code class="sql">TRUNCATE TABLE table_name</code></pre><h3 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h3><pre><code class="sql">SELECT column_name(s) FROM table_name1UNIONSELECT column_name(s) FROM table_name2</code></pre><h3 id="UNION-ALL"><a href="#UNION-ALL" class="headerlink" title="UNION ALL"></a>UNION ALL</h3><pre><code class="sql">SELECT column_name(s) FROM table_name1UNION ALLSELECT column_name(s) FROM table_name2</code></pre><h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><pre><code class="sql">UPDATE table_nameSET column1=value, column2=value,...WHERE some_column=some_value</code></pre><h3 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h3><pre><code class="sql">SELECT column_name(s)FROM table_nameWHERE column_name operator value</code></pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://www.runoob.com/sql/sql-quickref.html" rel="external nofollow noopener noreferrer" target="_blank">SQL 快速参考</a></li><li><a href></a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;AND-OR&quot;&gt;&lt;a href=&quot;#AND-OR&quot; class=&quot;headerlink&quot; title=&quot;AND / OR&quot;&gt;&lt;/a&gt;AND / OR&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;sql&quot;&gt;SELECT column_name(s)
+FROM tab
+      
+    
+    </summary>
+    
+      <category term="database" scheme="../index.html/categories/database/"/>
+    
+      <category term="sql" scheme="../index.html/categories/database/sql/"/>
     
     
   </entry>
